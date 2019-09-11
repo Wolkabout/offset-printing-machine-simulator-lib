@@ -136,6 +136,141 @@ modbus_simulator_testing/fast:
 	$(MAKE) -f CMakeFiles/modbus_simulator_testing.dir/build.make CMakeFiles/modbus_simulator_testing.dir/build
 .PHONY : modbus_simulator_testing/fast
 
+Component.o: Component.cpp.o
+
+.PHONY : Component.o
+
+# target to build an object file
+Component.cpp.o:
+	$(MAKE) -f CMakeFiles/modbus_simulator_cpp.dir/build.make CMakeFiles/modbus_simulator_cpp.dir/Component.cpp.o
+.PHONY : Component.cpp.o
+
+Component.i: Component.cpp.i
+
+.PHONY : Component.i
+
+# target to preprocess a source file
+Component.cpp.i:
+	$(MAKE) -f CMakeFiles/modbus_simulator_cpp.dir/build.make CMakeFiles/modbus_simulator_cpp.dir/Component.cpp.i
+.PHONY : Component.cpp.i
+
+Component.s: Component.cpp.s
+
+.PHONY : Component.s
+
+# target to generate assembly for a file
+Component.cpp.s:
+	$(MAKE) -f CMakeFiles/modbus_simulator_cpp.dir/build.make CMakeFiles/modbus_simulator_cpp.dir/Component.cpp.s
+.PHONY : Component.cpp.s
+
+Components/Conveyor.o: Components/Conveyor.cpp.o
+
+.PHONY : Components/Conveyor.o
+
+# target to build an object file
+Components/Conveyor.cpp.o:
+	$(MAKE) -f CMakeFiles/modbus_simulator_cpp.dir/build.make CMakeFiles/modbus_simulator_cpp.dir/Components/Conveyor.cpp.o
+.PHONY : Components/Conveyor.cpp.o
+
+Components/Conveyor.i: Components/Conveyor.cpp.i
+
+.PHONY : Components/Conveyor.i
+
+# target to preprocess a source file
+Components/Conveyor.cpp.i:
+	$(MAKE) -f CMakeFiles/modbus_simulator_cpp.dir/build.make CMakeFiles/modbus_simulator_cpp.dir/Components/Conveyor.cpp.i
+.PHONY : Components/Conveyor.cpp.i
+
+Components/Conveyor.s: Components/Conveyor.cpp.s
+
+.PHONY : Components/Conveyor.s
+
+# target to generate assembly for a file
+Components/Conveyor.cpp.s:
+	$(MAKE) -f CMakeFiles/modbus_simulator_cpp.dir/build.make CMakeFiles/modbus_simulator_cpp.dir/Components/Conveyor.cpp.s
+.PHONY : Components/Conveyor.cpp.s
+
+Components/Delivery.o: Components/Delivery.cpp.o
+
+.PHONY : Components/Delivery.o
+
+# target to build an object file
+Components/Delivery.cpp.o:
+	$(MAKE) -f CMakeFiles/modbus_simulator_cpp.dir/build.make CMakeFiles/modbus_simulator_cpp.dir/Components/Delivery.cpp.o
+.PHONY : Components/Delivery.cpp.o
+
+Components/Delivery.i: Components/Delivery.cpp.i
+
+.PHONY : Components/Delivery.i
+
+# target to preprocess a source file
+Components/Delivery.cpp.i:
+	$(MAKE) -f CMakeFiles/modbus_simulator_cpp.dir/build.make CMakeFiles/modbus_simulator_cpp.dir/Components/Delivery.cpp.i
+.PHONY : Components/Delivery.cpp.i
+
+Components/Delivery.s: Components/Delivery.cpp.s
+
+.PHONY : Components/Delivery.s
+
+# target to generate assembly for a file
+Components/Delivery.cpp.s:
+	$(MAKE) -f CMakeFiles/modbus_simulator_cpp.dir/build.make CMakeFiles/modbus_simulator_cpp.dir/Components/Delivery.cpp.s
+.PHONY : Components/Delivery.cpp.s
+
+Components/Feeder.o: Components/Feeder.cpp.o
+
+.PHONY : Components/Feeder.o
+
+# target to build an object file
+Components/Feeder.cpp.o:
+	$(MAKE) -f CMakeFiles/modbus_simulator_cpp.dir/build.make CMakeFiles/modbus_simulator_cpp.dir/Components/Feeder.cpp.o
+.PHONY : Components/Feeder.cpp.o
+
+Components/Feeder.i: Components/Feeder.cpp.i
+
+.PHONY : Components/Feeder.i
+
+# target to preprocess a source file
+Components/Feeder.cpp.i:
+	$(MAKE) -f CMakeFiles/modbus_simulator_cpp.dir/build.make CMakeFiles/modbus_simulator_cpp.dir/Components/Feeder.cpp.i
+.PHONY : Components/Feeder.cpp.i
+
+Components/Feeder.s: Components/Feeder.cpp.s
+
+.PHONY : Components/Feeder.s
+
+# target to generate assembly for a file
+Components/Feeder.cpp.s:
+	$(MAKE) -f CMakeFiles/modbus_simulator_cpp.dir/build.make CMakeFiles/modbus_simulator_cpp.dir/Components/Feeder.cpp.s
+.PHONY : Components/Feeder.cpp.s
+
+Components/PaintStation.o: Components/PaintStation.cpp.o
+
+.PHONY : Components/PaintStation.o
+
+# target to build an object file
+Components/PaintStation.cpp.o:
+	$(MAKE) -f CMakeFiles/modbus_simulator_cpp.dir/build.make CMakeFiles/modbus_simulator_cpp.dir/Components/PaintStation.cpp.o
+.PHONY : Components/PaintStation.cpp.o
+
+Components/PaintStation.i: Components/PaintStation.cpp.i
+
+.PHONY : Components/PaintStation.i
+
+# target to preprocess a source file
+Components/PaintStation.cpp.i:
+	$(MAKE) -f CMakeFiles/modbus_simulator_cpp.dir/build.make CMakeFiles/modbus_simulator_cpp.dir/Components/PaintStation.cpp.i
+.PHONY : Components/PaintStation.cpp.i
+
+Components/PaintStation.s: Components/PaintStation.cpp.s
+
+.PHONY : Components/PaintStation.s
+
+# target to generate assembly for a file
+Components/PaintStation.cpp.s:
+	$(MAKE) -f CMakeFiles/modbus_simulator_cpp.dir/build.make CMakeFiles/modbus_simulator_cpp.dir/Components/PaintStation.cpp.s
+.PHONY : Components/PaintStation.cpp.s
+
 Logger/Logger.o: Logger/Logger.cpp.o
 
 .PHONY : Logger/Logger.o
@@ -379,6 +514,33 @@ Test/main.cpp.s:
 	$(MAKE) -f CMakeFiles/modbus_simulator_testing.dir/build.make CMakeFiles/modbus_simulator_testing.dir/Test/main.cpp.s
 .PHONY : Test/main.cpp.s
 
+TestingComponents/SimpleComponent.o: TestingComponents/SimpleComponent.cpp.o
+
+.PHONY : TestingComponents/SimpleComponent.o
+
+# target to build an object file
+TestingComponents/SimpleComponent.cpp.o:
+	$(MAKE) -f CMakeFiles/modbus_simulator_cpp.dir/build.make CMakeFiles/modbus_simulator_cpp.dir/TestingComponents/SimpleComponent.cpp.o
+.PHONY : TestingComponents/SimpleComponent.cpp.o
+
+TestingComponents/SimpleComponent.i: TestingComponents/SimpleComponent.cpp.i
+
+.PHONY : TestingComponents/SimpleComponent.i
+
+# target to preprocess a source file
+TestingComponents/SimpleComponent.cpp.i:
+	$(MAKE) -f CMakeFiles/modbus_simulator_cpp.dir/build.make CMakeFiles/modbus_simulator_cpp.dir/TestingComponents/SimpleComponent.cpp.i
+.PHONY : TestingComponents/SimpleComponent.cpp.i
+
+TestingComponents/SimpleComponent.s: TestingComponents/SimpleComponent.cpp.s
+
+.PHONY : TestingComponents/SimpleComponent.s
+
+# target to generate assembly for a file
+TestingComponents/SimpleComponent.cpp.s:
+	$(MAKE) -f CMakeFiles/modbus_simulator_cpp.dir/build.make CMakeFiles/modbus_simulator_cpp.dir/TestingComponents/SimpleComponent.cpp.s
+.PHONY : TestingComponents/SimpleComponent.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -389,6 +551,21 @@ help:
 	@echo "... edit_cache"
 	@echo "... modbus_simulator_cpp"
 	@echo "... modbus_simulator_testing"
+	@echo "... Component.o"
+	@echo "... Component.i"
+	@echo "... Component.s"
+	@echo "... Components/Conveyor.o"
+	@echo "... Components/Conveyor.i"
+	@echo "... Components/Conveyor.s"
+	@echo "... Components/Delivery.o"
+	@echo "... Components/Delivery.i"
+	@echo "... Components/Delivery.s"
+	@echo "... Components/Feeder.o"
+	@echo "... Components/Feeder.i"
+	@echo "... Components/Feeder.s"
+	@echo "... Components/PaintStation.o"
+	@echo "... Components/PaintStation.i"
+	@echo "... Components/PaintStation.s"
 	@echo "... Logger/Logger.o"
 	@echo "... Logger/Logger.i"
 	@echo "... Logger/Logger.s"
@@ -416,6 +593,9 @@ help:
 	@echo "... Test/main.o"
 	@echo "... Test/main.i"
 	@echo "... Test/main.s"
+	@echo "... TestingComponents/SimpleComponent.o"
+	@echo "... TestingComponents/SimpleComponent.i"
+	@echo "... TestingComponents/SimpleComponent.s"
 .PHONY : help
 
 

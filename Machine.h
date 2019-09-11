@@ -14,19 +14,20 @@ class Machine : public ComponentMessageReceiver {
 private:
     bool running;
     std::string name;
-    std::vector<ComponentMessage *> messages;
+    std::vector<std::shared_ptr<ComponentMessage>> messages;
     std::vector<MachineStateMessageReceiver *> components;
     std::vector<ExternalMessageReceiver *> externalMessageReceivers;
     std::vector<ExternalMachineStateReceiver *> externalMachineStateReceivers;
     Logger logger;
+    void Emit(MachineMessageType, const std::string&, const std::function<void(std::shared_ptr<ComponentMessage>)>&);
 public:
-    Machine(const std::string &name);
+    explicit Machine(const std::string &name);
 
     bool isRunning() const;
 
     const std::string &getName() const;
 
-    const std::vector<ComponentMessage *> &getMessages() const;
+    const std::vector<std::shared_ptr<ComponentMessage>> &getMessages() const;
 
     const std::vector<MachineStateMessageReceiver *> &getComponents() const;
 

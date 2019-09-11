@@ -2,8 +2,6 @@
 
 #include <iostream>
 
-Machine::Machine(const std::string &name) : name(name), logger(name) {}
-
 bool Machine::isRunning() const {
     return running;
 }
@@ -12,7 +10,7 @@ const std::string &Machine::getName() const {
     return name;
 }
 
-const std::vector<ComponentMessage *> &Machine::getMessages() const {
+const std::vector<std::shared_ptr<ComponentMessage>> &Machine::getMessages() const {
     return messages;
 }
 
@@ -85,7 +83,7 @@ ActionStatusMessage Machine::CheckForErrors(bool starting = false) {
         // Check all components if they're working
         for (auto &component : components) {
             // Generate the callback for component reply
-            auto callback = [&](const std::shared_ptr<ComponentMessage>& message) {
+            auto callback = [&](const std::shared_ptr<ComponentMessage> &message) {
                 // If it's notification worthy
                 if (message->getType() != Neutral && starting) {
                     for (auto &externalMessageReceiver : externalMessageReceivers) {
@@ -116,6 +114,8 @@ ActionStatusMessage Machine::CheckForErrors(bool starting = false) {
 void Machine::ReceiveMessage(std::shared_ptr<ComponentMessage> message) {
     // Write it to console
     logger.Log(message->getContent());
+    // Add to the vector of messages
+    messages.push_back(message);
     // Notify all the external listeners
     for (auto &externalMessageReceiver : externalMessageReceivers) {
         externalMessageReceiver->ReceiveMessage(message);
@@ -124,4 +124,16 @@ void Machine::ReceiveMessage(std::shared_ptr<ComponentMessage> message) {
     if (message->getType() == Severe) {
         Stop();
     }
+}
+
+void Machine::Emit(MachineMessageType type, const std::string& content, const std::function<void(std::shared_ptr<ComponentMessage>)>& callback) {
+    std::shared_ptr<MachineStateMessage> message = std::make_shared<MachineStateMessage>(type, content, callback);
+    for (auto component: components) {
+        component->ReceiveMachineStateMessage(message);
+    }
+}
+
+Machine::Machine(const std::string &name) : name(name), logger(name) {
+    this->running = false;
+    this->name = name;
 }

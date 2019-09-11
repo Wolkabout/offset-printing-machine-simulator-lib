@@ -6,16 +6,18 @@ set(CMAKE_CXX_STANDARD 17)
 add_library(modbus_simulator_cpp
         Machine.cpp
         Machine.h
+        Component.cpp
+        Component.h
         Logger/Logger.cpp
         Logger/Logger.h
-        Messages/ComponentMessage.cpp
-        Messages/ComponentMessage.h
         Interfaces/ComponentMessageReceiver.h
         Interfaces/ConveyorRateMessageReceiver.h
         Interfaces/CountMessageReceiver.h
         Interfaces/ExternalMachineStateReceiver.h
         Interfaces/ExternalMessageReceiver.h
         Interfaces/MachineStateMessageReceiver.h
+        Messages/ComponentMessage.cpp
+        Messages/ComponentMessage.h
         Messages/ActionStatusMessage.cpp
         Messages/ActionStatusMessage.h
         Messages/ComponentMessage.cpp
@@ -27,7 +29,18 @@ add_library(modbus_simulator_cpp
         Messages/MachineStateMessage.cpp
         Messages/MachineStateMessage.h
         Messages/StateChangeMessage.cpp
-        Messages/StateChangeMessage.h)
+        Messages/StateChangeMessage.h
+        TestingComponents/SimpleComponent.cpp
+        TestingComponents/SimpleComponent.h
+        Components/Conveyor.cpp
+        Components/Conveyor.h
+        Components/Delivery.cpp
+        Components/Delivery.h
+        Components/Feeder.cpp
+        Components/Feeder.h
+        Components/PaintStation.cpp
+        Components/PaintStation.h
+        Components/TempoComponent.h)
 
 add_executable(modbus_simulator_testing Test/main.cpp)
 target_link_libraries(modbus_simulator_testing ${PROJECT_NAME})

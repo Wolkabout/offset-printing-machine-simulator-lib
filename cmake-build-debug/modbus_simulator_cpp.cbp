@@ -130,6 +130,39 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/nvuletic/git-nexylmao/modbus-simulator-cpp/Component.cpp">
+			<Option target="modbus_simulator_cpp"/>
+		</Unit>
+		<Unit filename="/home/nvuletic/git-nexylmao/modbus-simulator-cpp/Component.h">
+			<Option target="modbus_simulator_cpp"/>
+		</Unit>
+		<Unit filename="/home/nvuletic/git-nexylmao/modbus-simulator-cpp/Components/Conveyor.cpp">
+			<Option target="modbus_simulator_cpp"/>
+		</Unit>
+		<Unit filename="/home/nvuletic/git-nexylmao/modbus-simulator-cpp/Components/Conveyor.h">
+			<Option target="modbus_simulator_cpp"/>
+		</Unit>
+		<Unit filename="/home/nvuletic/git-nexylmao/modbus-simulator-cpp/Components/Delivery.cpp">
+			<Option target="modbus_simulator_cpp"/>
+		</Unit>
+		<Unit filename="/home/nvuletic/git-nexylmao/modbus-simulator-cpp/Components/Delivery.h">
+			<Option target="modbus_simulator_cpp"/>
+		</Unit>
+		<Unit filename="/home/nvuletic/git-nexylmao/modbus-simulator-cpp/Components/Feeder.cpp">
+			<Option target="modbus_simulator_cpp"/>
+		</Unit>
+		<Unit filename="/home/nvuletic/git-nexylmao/modbus-simulator-cpp/Components/Feeder.h">
+			<Option target="modbus_simulator_cpp"/>
+		</Unit>
+		<Unit filename="/home/nvuletic/git-nexylmao/modbus-simulator-cpp/Components/PaintStation.cpp">
+			<Option target="modbus_simulator_cpp"/>
+		</Unit>
+		<Unit filename="/home/nvuletic/git-nexylmao/modbus-simulator-cpp/Components/PaintStation.h">
+			<Option target="modbus_simulator_cpp"/>
+		</Unit>
+		<Unit filename="/home/nvuletic/git-nexylmao/modbus-simulator-cpp/Components/TempoComponent.h">
+			<Option target="modbus_simulator_cpp"/>
+		</Unit>
 		<Unit filename="/home/nvuletic/git-nexylmao/modbus-simulator-cpp/Interfaces/ComponentMessageReceiver.h">
 			<Option target="modbus_simulator_cpp"/>
 		</Unit>
@@ -198,6 +231,12 @@
 		</Unit>
 		<Unit filename="/home/nvuletic/git-nexylmao/modbus-simulator-cpp/Test/main.cpp">
 			<Option target="modbus_simulator_testing"/>
+		</Unit>
+		<Unit filename="/home/nvuletic/git-nexylmao/modbus-simulator-cpp/TestingComponents/SimpleComponent.cpp">
+			<Option target="modbus_simulator_cpp"/>
+		</Unit>
+		<Unit filename="/home/nvuletic/git-nexylmao/modbus-simulator-cpp/TestingComponents/SimpleComponent.h">
+			<Option target="modbus_simulator_cpp"/>
 		</Unit>
 		<Unit filename="/home/nvuletic/git-nexylmao/modbus-simulator-cpp/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
