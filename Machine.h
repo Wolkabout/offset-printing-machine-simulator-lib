@@ -12,7 +12,7 @@
 #include "Messages/ActionStatusMessage.h"
 #include "Messages/MachineStateMessage.h"
 
-class Machine : public ComponentMessageReceiver {
+class Machine : public ComponentMessageReceiver, std::enable_shared_from_this<Machine> {
 private:
     bool running;
     std::string name;
@@ -38,13 +38,15 @@ public:
 
     Machine(const std::string &name);
 
-    ActionStatusMessage Start();
+    void addComponent(std::shared_ptr<MachineStateMessageReceiver>);
 
-    ActionStatusMessage Stop();
+    ActionStatusMessage start();
 
-    ActionStatusMessage CheckForErrors(bool);
+    ActionStatusMessage stop();
 
-    void ReceiveMessage(std::shared_ptr<ComponentMessage> ptr) override;
+    ActionStatusMessage checkForErrors(bool);
+
+    void receiveMessages(std::shared_ptr<ComponentMessage> ptr) override;
 };
 
 #endif //MODBUS_SIMULATOR_CPP_MACHINE_H

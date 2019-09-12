@@ -21,7 +21,7 @@ std::vector<std::shared_ptr<CountMessageReceiver>> &Feeder::getCountMessageRecei
     return countMessageReceiver;
 }
 
-Feeder::Feeder(std::string name, std::shared_ptr<ComponentMessageReceiver> machine, int capacity, int initialCount) : TempoComponent(name, machine) {
+Feeder::Feeder(std::string name, ComponentMessageReceiver& machine, int capacity, int initialCount) : TempoComponent(name, machine) {
     if (capacity < 0) {
         throw std::invalid_argument("Capacity can't be a negative number!");
     }

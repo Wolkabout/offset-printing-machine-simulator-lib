@@ -25,14 +25,6 @@ private:
     void runTempo();
 
 public:
-    Conveyor(const std::string& name, std::shared_ptr<ComponentMessageReceiver> machine, int maxRatePerHour, int initialRatePerHour);
-
-    std::vector<std::shared_ptr<TempoComponent>> &getComponents();
-
-    std::vector<std::shared_ptr<ConveyorRateMessageReceiver>> &getRateMessageReceivers();
-
-    void ReceiveMachineStateMessage(std::shared_ptr<MachineStateMessage> ptr) override;
-
     int getPeriod() const;
 
     int getRatePerHour() const;
@@ -42,6 +34,14 @@ public:
     int getMaxRatePerHour() const;
 
     int getMinRatePerHour() const;
+
+    std::vector<std::shared_ptr<TempoComponent>> &getComponents();
+
+    std::vector<std::shared_ptr<ConveyorRateMessageReceiver>> &getRateMessageReceivers();
+
+    Conveyor(const std::string& name, ComponentMessageReceiver& machine, int maxRatePerHour, int initialRatePerHour);
+
+    void ReceiveMachineStateMessage(std::shared_ptr<MachineStateMessage> ptr) override;
 };
 
 #endif //MBS_SIMULATOR_CONVEYOR_H

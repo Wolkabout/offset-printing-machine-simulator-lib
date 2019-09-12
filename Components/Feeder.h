@@ -36,7 +36,7 @@ public:
 
     std::vector<std::shared_ptr<CountMessageReceiver>> &getCountMessageReceiver();
 
-    Feeder(std::string name, std::shared_ptr<ComponentMessageReceiver> machine, int capacity, int initialCount);
+    Feeder(std::string name, ComponentMessageReceiver& machine, int capacity, int initialCount);
 
     bool modifyCount(int i) override;
 

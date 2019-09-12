@@ -13,7 +13,7 @@ enum ActionStatusType {
 
 /*
  * This class is used to carry the message of
- * Machine actions like Start(), Stop(), CheckForErrors()
+ * Machine actions like start(), stop(), checkForErrors()
  */
 
 class ActionStatusMessage {

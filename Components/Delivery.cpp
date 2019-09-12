@@ -21,8 +21,8 @@ std::vector<std::shared_ptr<CountMessageReceiver>> &Delivery::getCountMessageRec
     return countMessageReceiver;
 }
 
-Delivery::Delivery(const std::string& name, std::shared_ptr<ComponentMessageReceiver> machine, int capacity, int initialCount)
-        : TempoComponent(name, std::move(machine)) {
+Delivery::Delivery(const std::string& name, ComponentMessageReceiver& machine, int capacity, int initialCount)
+        : TempoComponent(name, machine) {
     if (capacity < 0) {
         throw std::invalid_argument("Capacity can't be a negative number!");
     }
@@ -47,8 +47,7 @@ std::pair<ComponentMessageType, std::string> Delivery::checkCount() {
         content = wfull;
         warning90 = true;
         warning80 = true;
-    }
-    if ((capacity / 10) * 9 <= count && !warning90) {
+    } else if ((capacity / 10) * 9 <= count && !warning90) {
         type = Alarming;
         content = w90;
         warning90 = true;

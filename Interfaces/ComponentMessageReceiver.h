@@ -10,7 +10,7 @@
 
 class ComponentMessageReceiver {
 public:
-    virtual void ReceiveMessage(std::shared_ptr<ComponentMessage>) = 0;
+    virtual void receiveMessages(std::shared_ptr<ComponentMessage>) = 0;
 };
 
 #endif //MBS_SIMULATOR_COMPONENTMESSAGERECEIVER_H

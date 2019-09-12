@@ -38,12 +38,16 @@ void Machine::EmitToComponents(MachineMessageType type, const std::string& conte
     }
 }
 
-ActionStatusMessage Machine::Start() {
+void Machine::addComponent(std::shared_ptr<MachineStateMessageReceiver> component) {
+    components.push_back(component);
+}
+
+ActionStatusMessage Machine::start() {
     if (running) {
         return {message, "Machine is already running."};
     }
 
-    ActionStatusMessage result = CheckForErrors(true);
+    ActionStatusMessage result = checkForErrors(true);
     if (result.getType() == good) {
         // Notify all the components that we are starting
         this->EmitToComponents(Starting, "", nullptr);
@@ -62,7 +66,7 @@ ActionStatusMessage Machine::Start() {
     return result;
 }
 
-ActionStatusMessage Machine::Stop() {
+ActionStatusMessage Machine::stop() {
     if (!running) {
         return {message, "Machine is already stopped."};
     }
@@ -80,7 +84,7 @@ ActionStatusMessage Machine::Stop() {
     return {good, ""};
 }
 
-ActionStatusMessage Machine::CheckForErrors(bool starting = false) {
+ActionStatusMessage Machine::checkForErrors(bool starting = false) {
     if (running) {
         return {message, "Machine is already running."};
     }
@@ -116,17 +120,17 @@ ActionStatusMessage Machine::CheckForErrors(bool starting = false) {
     }
 }
 
-void Machine::ReceiveMessage(std::shared_ptr<ComponentMessage> message) {
+void Machine::receiveMessages(std::shared_ptr<ComponentMessage> ptr) {
     // Write it to console
-    logger.Log(message->getContent());
+    logger.Log(ptr->getContent());
     // Add to the vector of messages
-    messages.push_back(message);
+    messages.push_back(ptr);
     // Notify all the external listeners
     for (auto &externalMessageReceiver : externalMessageReceivers) {
-        externalMessageReceiver->ReceiveMessage(message);
+        externalMessageReceiver->ReceiveMessage(ptr);
     }
-    // Stop the machine if necessary
-    if (message->getType() == Severe) {
-        Stop();
+    // stop the machine if necessary
+    if (ptr->getType() == Severe) {
+        stop();
     }
 }

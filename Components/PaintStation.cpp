@@ -17,42 +17,11 @@ double PaintStation::getPercentage() {
     return round((double) count / capacity);
 }
 
-std::shared_ptr<ComponentMessage> PaintStation::checkCount() {
-    ComponentMessage *message = nullptr;
-    ComponentMessage defaultMessage(Neutral, "");
-    message = &defaultMessage;
-    if (count == 0) {
-        ComponentMessage newMessage(Severe, wempty);
-        message = &newMessage;
-        warning10 = true;
-        warning20 = true;
-    }
-
-    if (capacity / 10 > count && !warning10) {
-        ComponentMessage newMessage(Alarming, w10);
-        message = &newMessage;
-        warning10 = true;
-        warning20 = true;
-    } else if (capacity / 5 > count && !warning20) {
-        ComponentMessage newMessage(Alarming, w20);
-        message = &newMessage;
-        warning20 = true;
-    }
-    messages.push_back(*message);
-    return std::shared_ptr<ComponentMessage>(&(messages[messages.size() - 1]));
+std::vector<std::shared_ptr<CountMessageReceiver>> &PaintStation::getCountMessageReceiver() {
+    return countMessageReceiver;
 }
 
-bool PaintStation::checkCountAndEmit() {
-    std::shared_ptr<ComponentMessage> message = checkCount();
-    if (message != nullptr && message->getType() != Neutral) {
-        Emit(message->getType(), message->getContent());
-        return message->getType() != Severe;
-    }
-    return true;
-}
-
-PaintStation::PaintStation(std::string name, Machine &machine, int capacity, int initialCount) : TempoComponent(name,
-                                                                                                          machine) {
+PaintStation::PaintStation(std::string name, ComponentMessageReceiver& machine, int capacity, int initialCount) : TempoComponent(name, machine) {
     if (capacity < 0) {
         throw std::invalid_argument("Capacity can't be a negative number!");
     }
@@ -67,6 +36,36 @@ PaintStation::PaintStation(std::string name, Machine &machine, int capacity, int
     this->capacity = capacity;
     this->count = initialCount;
     checkCountAndEmit();
+}
+
+std::pair<ComponentMessageType, std::string> PaintStation::checkCount() {
+    ComponentMessageType type = Neutral;
+    std::string content;
+    if (count == 0) {
+        type = Severe;
+        content = wempty;
+        warning10 = true;
+        warning20 = true;
+    } else if (capacity / 10 > count && !warning10) {
+        type = Alarming;
+        content = w10;
+        warning10 = true;
+        warning20 = true;
+    } else if (capacity / 5 > count && !warning20) {
+        type = Alarming;
+        content = w20;
+        warning20 = true;
+    }
+    return std::pair<ComponentMessageType, std::string>(type, content);
+}
+
+bool PaintStation::checkCountAndEmit() {
+    std::pair<ComponentMessageType, std::string> result = checkCount();
+    if (result.first != Neutral) {
+        Emit(result.first, result.second);
+        return result.first != Severe;
+    }
+    return true;
 }
 
 bool PaintStation::modifyCount(int i) {
@@ -100,17 +99,13 @@ void PaintStation::ReceiveMachineStateMessage(std::shared_ptr<MachineStateMessag
             break;
         case CheckForErrors:
             if (stateMessage->getCallback() != nullptr) {
-                std::shared_ptr<ComponentMessage> message = checkCount();
+                std::pair<ComponentMessageType, std::string> result = checkCount();
                 std::function<void(std::shared_ptr<ComponentMessage>)> callback = stateMessage->getCallback();
-                callback(message);
+                callback(std::make_shared<ComponentMessage>(result.first, result.second));
             }
             break;
         case Stopping:
             logger.Log("Stopping work with " + std::to_string(count) + '/' + std::to_string(capacity));
             break;
     }
-}
-
-const std::vector<CountMessageReceiver *> &PaintStation::getCountMessageReceiver() const {
-    return countMessageReceiver;
 }

@@ -43,7 +43,7 @@ void Conveyor::setRatePerHour(int value) {
     }
 }
 
-Conveyor::Conveyor(const std::string& name, std::shared_ptr<ComponentMessageReceiver> machine, int maxRatePerHour, int initialRatePerHour) : Component(name, std::move(machine)) {
+Conveyor::Conveyor(const std::string& name, ComponentMessageReceiver& machine, int maxRatePerHour, int initialRatePerHour) : Component(name, machine) {
     if (maxRatePerHour < minRatePerHour) {
         throw std::invalid_argument(
                 "You can\'t put a rate lower than the minimut rate per hour! (" + std::to_string(minRatePerHour) + ')');
@@ -69,13 +69,6 @@ void Conveyor::runTempo() {
         std::this_thread::sleep_for(timespan);
     }
 }
-
-//template< class T, class U >
-//std::shared_ptr<T> static_pointer_cast( const std::shared_ptr<U>& r ) noexcept
-//{
-//    auto p = static_cast<typename std::shared_ptr<T>::element_type*>(r.get());
-//    return std::shared_ptr<T>(r, p);
-//}
 
 void Conveyor::ReceiveMachineStateMessage(std::shared_ptr<MachineStateMessage> message) {
     switch (message->getType()) {

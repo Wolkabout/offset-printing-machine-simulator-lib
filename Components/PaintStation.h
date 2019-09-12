@@ -18,22 +18,22 @@ private:
     char *w20;
     char *w10;
     char *wempty;
-    std::vector<CountMessageReceiver *> countMessageReceiver;
+    std::vector<std::shared_ptr<CountMessageReceiver>> countMessageReceiver;
 
-    std::shared_ptr<ComponentMessage> checkCount();
+    std::pair<ComponentMessageType, std::string> checkCount();
 
     bool checkCountAndEmit();
 
 public:
-    const std::vector<CountMessageReceiver *> &getCountMessageReceiver() const;
-
     int getCapacity() const;
 
     int getCount() const;
 
     double getPercentage();
 
-    PaintStation(std::string name, Machine &machine, int capacity, int initialCount);
+    std::vector<std::shared_ptr<CountMessageReceiver>> &getCountMessageReceiver();
+
+    PaintStation(std::string name, ComponentMessageReceiver& machine, int capacity, int initialCount);
 
     bool modifyCount(int i) override;
 

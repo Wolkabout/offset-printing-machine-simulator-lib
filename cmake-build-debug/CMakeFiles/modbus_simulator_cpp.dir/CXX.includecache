@@ -6,6 +6,12 @@
 
 #IncludeRegexTransform: 
 
+/home/nvuletic/git-nexylmao/modbus-simulator-cpp/Component.cpp
+Component.h
+/home/nvuletic/git-nexylmao/modbus-simulator-cpp/Component.h
+utility
+-
+
 /home/nvuletic/git-nexylmao/modbus-simulator-cpp/Component.h
 Logger/Logger.h
 /home/nvuletic/git-nexylmao/modbus-simulator-cpp/Logger/Logger.h
@@ -121,6 +127,14 @@ memory
 /home/nvuletic/git-nexylmao/modbus-simulator-cpp/Logger/Logger.h
 string
 -
+
+/home/nvuletic/git-nexylmao/modbus-simulator-cpp/Machine.cpp
+iostream
+-
+Machine.h
+/home/nvuletic/git-nexylmao/modbus-simulator-cpp/Machine.h
+Messages/MachineStateMessage.h
+/home/nvuletic/git-nexylmao/modbus-simulator-cpp/Messages/MachineStateMessage.h
 
 /home/nvuletic/git-nexylmao/modbus-simulator-cpp/Machine.h
 vector
