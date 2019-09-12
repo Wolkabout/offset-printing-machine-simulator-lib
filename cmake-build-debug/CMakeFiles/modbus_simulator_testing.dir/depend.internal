@@ -9,8 +9,8 @@ CMakeFiles/modbus_simulator_testing.dir/Test/main.cpp.o
  /home/nvuletic/git-nexylmao/modbus-simulator-cpp/Interfaces/ComponentMessageReceiver.h
  /home/nvuletic/git-nexylmao/modbus-simulator-cpp/Interfaces/ConveyorRateMessageReceiver.h
  /home/nvuletic/git-nexylmao/modbus-simulator-cpp/Interfaces/CountMessageReceiver.h
+ /home/nvuletic/git-nexylmao/modbus-simulator-cpp/Interfaces/ExternalMachineMessageReceiver.h
  /home/nvuletic/git-nexylmao/modbus-simulator-cpp/Interfaces/ExternalMachineStateReceiver.h
- /home/nvuletic/git-nexylmao/modbus-simulator-cpp/Interfaces/ExternalMessageReceiver.h
  /home/nvuletic/git-nexylmao/modbus-simulator-cpp/Interfaces/MachineStateMessageReceiver.h
  /home/nvuletic/git-nexylmao/modbus-simulator-cpp/Logger/Logger.h
  /home/nvuletic/git-nexylmao/modbus-simulator-cpp/Machine.h

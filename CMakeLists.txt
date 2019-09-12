@@ -16,7 +16,7 @@ add_library(${PROJECT_NAME}
         Interfaces/ConveyorRateMessageReceiver.h
         Interfaces/CountMessageReceiver.h
         Interfaces/ExternalMachineStateReceiver.h
-        Interfaces/ExternalMessageReceiver.h
+        Interfaces/ExternalMachineMessageReceiver.h
         Interfaces/MachineStateMessageReceiver.h
         Messages/ComponentMessage.cpp
         Messages/ComponentMessage.h

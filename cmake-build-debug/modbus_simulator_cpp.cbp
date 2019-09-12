@@ -172,10 +172,10 @@
 		<Unit filename="/home/nvuletic/git-nexylmao/modbus-simulator-cpp/Interfaces/CountMessageReceiver.h">
 			<Option target="modbus_simulator_cpp"/>
 		</Unit>
-		<Unit filename="/home/nvuletic/git-nexylmao/modbus-simulator-cpp/Interfaces/ExternalMachineStateReceiver.h">
+		<Unit filename="/home/nvuletic/git-nexylmao/modbus-simulator-cpp/Interfaces/ExternalMachineMessageReceiver.h">
 			<Option target="modbus_simulator_cpp"/>
 		</Unit>
-		<Unit filename="/home/nvuletic/git-nexylmao/modbus-simulator-cpp/Interfaces/ExternalMessageReceiver.h">
+		<Unit filename="/home/nvuletic/git-nexylmao/modbus-simulator-cpp/Interfaces/ExternalMachineStateReceiver.h">
 			<Option target="modbus_simulator_cpp"/>
 		</Unit>
 		<Unit filename="/home/nvuletic/git-nexylmao/modbus-simulator-cpp/Interfaces/MachineStateMessageReceiver.h">

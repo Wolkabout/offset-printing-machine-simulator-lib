@@ -8,8 +8,8 @@ CMakeFiles/modbus_simulator_testing.dir/Test/main.cpp.o: ../Components/TempoComp
 CMakeFiles/modbus_simulator_testing.dir/Test/main.cpp.o: ../Interfaces/ComponentMessageReceiver.h
 CMakeFiles/modbus_simulator_testing.dir/Test/main.cpp.o: ../Interfaces/ConveyorRateMessageReceiver.h
 CMakeFiles/modbus_simulator_testing.dir/Test/main.cpp.o: ../Interfaces/CountMessageReceiver.h
+CMakeFiles/modbus_simulator_testing.dir/Test/main.cpp.o: ../Interfaces/ExternalMachineMessageReceiver.h
 CMakeFiles/modbus_simulator_testing.dir/Test/main.cpp.o: ../Interfaces/ExternalMachineStateReceiver.h
-CMakeFiles/modbus_simulator_testing.dir/Test/main.cpp.o: ../Interfaces/ExternalMessageReceiver.h
 CMakeFiles/modbus_simulator_testing.dir/Test/main.cpp.o: ../Interfaces/MachineStateMessageReceiver.h
 CMakeFiles/modbus_simulator_testing.dir/Test/main.cpp.o: ../Logger/Logger.h
 CMakeFiles/modbus_simulator_testing.dir/Test/main.cpp.o: ../Machine.h

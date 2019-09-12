@@ -30,9 +30,9 @@ Delivery::Delivery(const std::string& name, ComponentMessageReceiver& machine, i
         throw std::invalid_argument("Your initial amount of paper must fit in the capacity!");
     }
 
-    w80 = const_cast<char *>(("The " + std::string(name) + " is 80% full.").c_str());
-    w90 = const_cast<char *>(("The " + std::string(name) + " is 90% full.").c_str());
-    wfull = const_cast<char *>(("The " + std::string(name) + " is full.").c_str());
+    w80 = "The " + std::string(name) + " is 80% full.";
+    w90 = "The " + std::string(name) + " is 90% full.";
+    wfull = "The " + std::string(name) + " is full.";
 
     this->capacity = capacity;
     this->count = initialCount;

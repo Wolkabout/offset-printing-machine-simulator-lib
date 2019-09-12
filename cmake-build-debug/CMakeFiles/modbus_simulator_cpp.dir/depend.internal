@@ -5,8 +5,8 @@ CMakeFiles/modbus_simulator_cpp.dir/Component.cpp.o
  /home/nvuletic/git-nexylmao/modbus-simulator-cpp/Component.cpp
  /home/nvuletic/git-nexylmao/modbus-simulator-cpp/Component.h
  /home/nvuletic/git-nexylmao/modbus-simulator-cpp/Interfaces/ComponentMessageReceiver.h
+ /home/nvuletic/git-nexylmao/modbus-simulator-cpp/Interfaces/ExternalMachineMessageReceiver.h
  /home/nvuletic/git-nexylmao/modbus-simulator-cpp/Interfaces/ExternalMachineStateReceiver.h
- /home/nvuletic/git-nexylmao/modbus-simulator-cpp/Interfaces/ExternalMessageReceiver.h
  /home/nvuletic/git-nexylmao/modbus-simulator-cpp/Interfaces/MachineStateMessageReceiver.h
  /home/nvuletic/git-nexylmao/modbus-simulator-cpp/Logger/Logger.h
  /home/nvuletic/git-nexylmao/modbus-simulator-cpp/Machine.h
@@ -20,8 +20,8 @@ CMakeFiles/modbus_simulator_cpp.dir/Components/Conveyor.cpp.o
  /home/nvuletic/git-nexylmao/modbus-simulator-cpp/Components/TempoComponent.h
  /home/nvuletic/git-nexylmao/modbus-simulator-cpp/Interfaces/ComponentMessageReceiver.h
  /home/nvuletic/git-nexylmao/modbus-simulator-cpp/Interfaces/ConveyorRateMessageReceiver.h
+ /home/nvuletic/git-nexylmao/modbus-simulator-cpp/Interfaces/ExternalMachineMessageReceiver.h
  /home/nvuletic/git-nexylmao/modbus-simulator-cpp/Interfaces/ExternalMachineStateReceiver.h
- /home/nvuletic/git-nexylmao/modbus-simulator-cpp/Interfaces/ExternalMessageReceiver.h
  /home/nvuletic/git-nexylmao/modbus-simulator-cpp/Interfaces/MachineStateMessageReceiver.h
  /home/nvuletic/git-nexylmao/modbus-simulator-cpp/Logger/Logger.h
  /home/nvuletic/git-nexylmao/modbus-simulator-cpp/Machine.h
@@ -36,8 +36,8 @@ CMakeFiles/modbus_simulator_cpp.dir/Components/Delivery.cpp.o
  /home/nvuletic/git-nexylmao/modbus-simulator-cpp/Components/TempoComponent.h
  /home/nvuletic/git-nexylmao/modbus-simulator-cpp/Interfaces/ComponentMessageReceiver.h
  /home/nvuletic/git-nexylmao/modbus-simulator-cpp/Interfaces/CountMessageReceiver.h
+ /home/nvuletic/git-nexylmao/modbus-simulator-cpp/Interfaces/ExternalMachineMessageReceiver.h
  /home/nvuletic/git-nexylmao/modbus-simulator-cpp/Interfaces/ExternalMachineStateReceiver.h
- /home/nvuletic/git-nexylmao/modbus-simulator-cpp/Interfaces/ExternalMessageReceiver.h
  /home/nvuletic/git-nexylmao/modbus-simulator-cpp/Interfaces/MachineStateMessageReceiver.h
  /home/nvuletic/git-nexylmao/modbus-simulator-cpp/Logger/Logger.h
  /home/nvuletic/git-nexylmao/modbus-simulator-cpp/Machine.h
@@ -52,8 +52,8 @@ CMakeFiles/modbus_simulator_cpp.dir/Components/Feeder.cpp.o
  /home/nvuletic/git-nexylmao/modbus-simulator-cpp/Components/TempoComponent.h
  /home/nvuletic/git-nexylmao/modbus-simulator-cpp/Interfaces/ComponentMessageReceiver.h
  /home/nvuletic/git-nexylmao/modbus-simulator-cpp/Interfaces/CountMessageReceiver.h
+ /home/nvuletic/git-nexylmao/modbus-simulator-cpp/Interfaces/ExternalMachineMessageReceiver.h
  /home/nvuletic/git-nexylmao/modbus-simulator-cpp/Interfaces/ExternalMachineStateReceiver.h
- /home/nvuletic/git-nexylmao/modbus-simulator-cpp/Interfaces/ExternalMessageReceiver.h
  /home/nvuletic/git-nexylmao/modbus-simulator-cpp/Interfaces/MachineStateMessageReceiver.h
  /home/nvuletic/git-nexylmao/modbus-simulator-cpp/Logger/Logger.h
  /home/nvuletic/git-nexylmao/modbus-simulator-cpp/Machine.h
@@ -68,8 +68,8 @@ CMakeFiles/modbus_simulator_cpp.dir/Components/PaintStation.cpp.o
  /home/nvuletic/git-nexylmao/modbus-simulator-cpp/Components/TempoComponent.h
  /home/nvuletic/git-nexylmao/modbus-simulator-cpp/Interfaces/ComponentMessageReceiver.h
  /home/nvuletic/git-nexylmao/modbus-simulator-cpp/Interfaces/CountMessageReceiver.h
+ /home/nvuletic/git-nexylmao/modbus-simulator-cpp/Interfaces/ExternalMachineMessageReceiver.h
  /home/nvuletic/git-nexylmao/modbus-simulator-cpp/Interfaces/ExternalMachineStateReceiver.h
- /home/nvuletic/git-nexylmao/modbus-simulator-cpp/Interfaces/ExternalMessageReceiver.h
  /home/nvuletic/git-nexylmao/modbus-simulator-cpp/Interfaces/MachineStateMessageReceiver.h
  /home/nvuletic/git-nexylmao/modbus-simulator-cpp/Logger/Logger.h
  /home/nvuletic/git-nexylmao/modbus-simulator-cpp/Machine.h
@@ -83,8 +83,8 @@ CMakeFiles/modbus_simulator_cpp.dir/Logger/Logger.cpp.o
 CMakeFiles/modbus_simulator_cpp.dir/Machine.cpp.o
  /home/nvuletic/git-nexylmao/modbus-simulator-cpp/Component.h
  /home/nvuletic/git-nexylmao/modbus-simulator-cpp/Interfaces/ComponentMessageReceiver.h
+ /home/nvuletic/git-nexylmao/modbus-simulator-cpp/Interfaces/ExternalMachineMessageReceiver.h
  /home/nvuletic/git-nexylmao/modbus-simulator-cpp/Interfaces/ExternalMachineStateReceiver.h
- /home/nvuletic/git-nexylmao/modbus-simulator-cpp/Interfaces/ExternalMessageReceiver.h
  /home/nvuletic/git-nexylmao/modbus-simulator-cpp/Interfaces/MachineStateMessageReceiver.h
  /home/nvuletic/git-nexylmao/modbus-simulator-cpp/Logger/Logger.h
  /home/nvuletic/git-nexylmao/modbus-simulator-cpp/Machine.cpp

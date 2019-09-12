@@ -15,9 +15,9 @@ private:
     int count;
     bool warning20;
     bool warning10;
-    char *w20;
-    char *w10;
-    char *wempty;
+    std::string w20;
+    std::string w10;
+    std::string wempty;
     std::vector<std::shared_ptr<CountMessageReceiver>> countMessageReceiver;
 
     std::pair<ComponentMessageType, std::string> checkCount();

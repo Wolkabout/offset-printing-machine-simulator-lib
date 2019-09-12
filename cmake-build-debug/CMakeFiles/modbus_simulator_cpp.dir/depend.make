@@ -4,8 +4,8 @@
 CMakeFiles/modbus_simulator_cpp.dir/Component.cpp.o: ../Component.cpp
 CMakeFiles/modbus_simulator_cpp.dir/Component.cpp.o: ../Component.h
 CMakeFiles/modbus_simulator_cpp.dir/Component.cpp.o: ../Interfaces/ComponentMessageReceiver.h
+CMakeFiles/modbus_simulator_cpp.dir/Component.cpp.o: ../Interfaces/ExternalMachineMessageReceiver.h
 CMakeFiles/modbus_simulator_cpp.dir/Component.cpp.o: ../Interfaces/ExternalMachineStateReceiver.h
-CMakeFiles/modbus_simulator_cpp.dir/Component.cpp.o: ../Interfaces/ExternalMessageReceiver.h
 CMakeFiles/modbus_simulator_cpp.dir/Component.cpp.o: ../Interfaces/MachineStateMessageReceiver.h
 CMakeFiles/modbus_simulator_cpp.dir/Component.cpp.o: ../Logger/Logger.h
 CMakeFiles/modbus_simulator_cpp.dir/Component.cpp.o: ../Machine.h
@@ -19,8 +19,8 @@ CMakeFiles/modbus_simulator_cpp.dir/Components/Conveyor.cpp.o: ../Components/Con
 CMakeFiles/modbus_simulator_cpp.dir/Components/Conveyor.cpp.o: ../Components/TempoComponent.h
 CMakeFiles/modbus_simulator_cpp.dir/Components/Conveyor.cpp.o: ../Interfaces/ComponentMessageReceiver.h
 CMakeFiles/modbus_simulator_cpp.dir/Components/Conveyor.cpp.o: ../Interfaces/ConveyorRateMessageReceiver.h
+CMakeFiles/modbus_simulator_cpp.dir/Components/Conveyor.cpp.o: ../Interfaces/ExternalMachineMessageReceiver.h
 CMakeFiles/modbus_simulator_cpp.dir/Components/Conveyor.cpp.o: ../Interfaces/ExternalMachineStateReceiver.h
-CMakeFiles/modbus_simulator_cpp.dir/Components/Conveyor.cpp.o: ../Interfaces/ExternalMessageReceiver.h
 CMakeFiles/modbus_simulator_cpp.dir/Components/Conveyor.cpp.o: ../Interfaces/MachineStateMessageReceiver.h
 CMakeFiles/modbus_simulator_cpp.dir/Components/Conveyor.cpp.o: ../Logger/Logger.h
 CMakeFiles/modbus_simulator_cpp.dir/Components/Conveyor.cpp.o: ../Machine.h
@@ -35,8 +35,8 @@ CMakeFiles/modbus_simulator_cpp.dir/Components/Delivery.cpp.o: ../Components/Del
 CMakeFiles/modbus_simulator_cpp.dir/Components/Delivery.cpp.o: ../Components/TempoComponent.h
 CMakeFiles/modbus_simulator_cpp.dir/Components/Delivery.cpp.o: ../Interfaces/ComponentMessageReceiver.h
 CMakeFiles/modbus_simulator_cpp.dir/Components/Delivery.cpp.o: ../Interfaces/CountMessageReceiver.h
+CMakeFiles/modbus_simulator_cpp.dir/Components/Delivery.cpp.o: ../Interfaces/ExternalMachineMessageReceiver.h
 CMakeFiles/modbus_simulator_cpp.dir/Components/Delivery.cpp.o: ../Interfaces/ExternalMachineStateReceiver.h
-CMakeFiles/modbus_simulator_cpp.dir/Components/Delivery.cpp.o: ../Interfaces/ExternalMessageReceiver.h
 CMakeFiles/modbus_simulator_cpp.dir/Components/Delivery.cpp.o: ../Interfaces/MachineStateMessageReceiver.h
 CMakeFiles/modbus_simulator_cpp.dir/Components/Delivery.cpp.o: ../Logger/Logger.h
 CMakeFiles/modbus_simulator_cpp.dir/Components/Delivery.cpp.o: ../Machine.h
@@ -51,8 +51,8 @@ CMakeFiles/modbus_simulator_cpp.dir/Components/Feeder.cpp.o: ../Components/Feede
 CMakeFiles/modbus_simulator_cpp.dir/Components/Feeder.cpp.o: ../Components/TempoComponent.h
 CMakeFiles/modbus_simulator_cpp.dir/Components/Feeder.cpp.o: ../Interfaces/ComponentMessageReceiver.h
 CMakeFiles/modbus_simulator_cpp.dir/Components/Feeder.cpp.o: ../Interfaces/CountMessageReceiver.h
+CMakeFiles/modbus_simulator_cpp.dir/Components/Feeder.cpp.o: ../Interfaces/ExternalMachineMessageReceiver.h
 CMakeFiles/modbus_simulator_cpp.dir/Components/Feeder.cpp.o: ../Interfaces/ExternalMachineStateReceiver.h
-CMakeFiles/modbus_simulator_cpp.dir/Components/Feeder.cpp.o: ../Interfaces/ExternalMessageReceiver.h
 CMakeFiles/modbus_simulator_cpp.dir/Components/Feeder.cpp.o: ../Interfaces/MachineStateMessageReceiver.h
 CMakeFiles/modbus_simulator_cpp.dir/Components/Feeder.cpp.o: ../Logger/Logger.h
 CMakeFiles/modbus_simulator_cpp.dir/Components/Feeder.cpp.o: ../Machine.h
@@ -67,8 +67,8 @@ CMakeFiles/modbus_simulator_cpp.dir/Components/PaintStation.cpp.o: ../Components
 CMakeFiles/modbus_simulator_cpp.dir/Components/PaintStation.cpp.o: ../Components/TempoComponent.h
 CMakeFiles/modbus_simulator_cpp.dir/Components/PaintStation.cpp.o: ../Interfaces/ComponentMessageReceiver.h
 CMakeFiles/modbus_simulator_cpp.dir/Components/PaintStation.cpp.o: ../Interfaces/CountMessageReceiver.h
+CMakeFiles/modbus_simulator_cpp.dir/Components/PaintStation.cpp.o: ../Interfaces/ExternalMachineMessageReceiver.h
 CMakeFiles/modbus_simulator_cpp.dir/Components/PaintStation.cpp.o: ../Interfaces/ExternalMachineStateReceiver.h
-CMakeFiles/modbus_simulator_cpp.dir/Components/PaintStation.cpp.o: ../Interfaces/ExternalMessageReceiver.h
 CMakeFiles/modbus_simulator_cpp.dir/Components/PaintStation.cpp.o: ../Interfaces/MachineStateMessageReceiver.h
 CMakeFiles/modbus_simulator_cpp.dir/Components/PaintStation.cpp.o: ../Logger/Logger.h
 CMakeFiles/modbus_simulator_cpp.dir/Components/PaintStation.cpp.o: ../Machine.h
@@ -82,8 +82,8 @@ CMakeFiles/modbus_simulator_cpp.dir/Logger/Logger.cpp.o: ../Logger/Logger.h
 
 CMakeFiles/modbus_simulator_cpp.dir/Machine.cpp.o: ../Component.h
 CMakeFiles/modbus_simulator_cpp.dir/Machine.cpp.o: ../Interfaces/ComponentMessageReceiver.h
+CMakeFiles/modbus_simulator_cpp.dir/Machine.cpp.o: ../Interfaces/ExternalMachineMessageReceiver.h
 CMakeFiles/modbus_simulator_cpp.dir/Machine.cpp.o: ../Interfaces/ExternalMachineStateReceiver.h
-CMakeFiles/modbus_simulator_cpp.dir/Machine.cpp.o: ../Interfaces/ExternalMessageReceiver.h
 CMakeFiles/modbus_simulator_cpp.dir/Machine.cpp.o: ../Interfaces/MachineStateMessageReceiver.h
 CMakeFiles/modbus_simulator_cpp.dir/Machine.cpp.o: ../Logger/Logger.h
 CMakeFiles/modbus_simulator_cpp.dir/Machine.cpp.o: ../Machine.cpp

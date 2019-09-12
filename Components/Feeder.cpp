@@ -29,13 +29,15 @@ Feeder::Feeder(std::string name, ComponentMessageReceiver& machine, int capacity
         throw std::invalid_argument("Your initial amount of paper must fit in the capacity!");
     }
 
-    w20 = const_cast<char *>(("The " + std::string(name) + " has less than 20% of its capacity left.").c_str());
-    w10 = const_cast<char *>(("The " + std::string(name) + " has less than 10% of its capacity left.").c_str());
-    wempty = const_cast<char *>(("The " + std::string(name) + " is empty.").c_str());
+    w20 = "The " + std::string(name) + " has less than 20% of its capacity left.";
+    w10 = "The " + std::string(name) + " has less than 10% of its capacity left.";
+    wempty = "The " + std::string(name) + " is empty.";
 
     this->capacity = capacity;
     this->count = initialCount;
     checkCountAndEmit();
+    warning20 = false;
+    warning10 = false;
 }
 
 std::pair<ComponentMessageType, std::string> Feeder::checkCount() {

@@ -83,8 +83,7 @@ void Conveyor::ReceiveMachineStateMessage(std::shared_ptr<MachineStateMessage> m
         case CheckForErrors:
             if (message->getCallback() != nullptr) {
                 std::function<void(std::shared_ptr<ComponentMessage>)> callback = message->getCallback();
-                ComponentMessage componentMessage(Neutral, "");
-                callback(std::shared_ptr<ComponentMessage>(&componentMessage));
+                callback(std::make_shared<ComponentMessage>(Neutral, ""));
             }
             break;
         case Stopping:

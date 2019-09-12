@@ -6,7 +6,7 @@
 #include "Logger/Logger.h"
 #include "Interfaces/ComponentMessageReceiver.h"
 #include "Interfaces/ExternalMachineStateReceiver.h"
-#include "Interfaces/ExternalMessageReceiver.h"
+#include "Interfaces/ExternalMachineMessageReceiver.h"
 #include "Interfaces/MachineStateMessageReceiver.h"
 #include "Messages/ComponentMessage.h"
 #include "Messages/ActionStatusMessage.h"
@@ -18,7 +18,7 @@ private:
     std::string name;
     std::vector<std::shared_ptr<ComponentMessage>> messages;
     std::vector<std::shared_ptr<MachineStateMessageReceiver>> components;
-    std::vector<std::shared_ptr<ExternalMessageReceiver>> externalMessageReceivers;
+    std::vector<std::shared_ptr<ExternalMachineMessageReceiver>> externalMessageReceivers;
     std::vector<std::shared_ptr<ExternalMachineStateReceiver>> externalMachineStateReceivers;
     Logger logger;
     void EmitToComponents(MachineMessageType type, const std::string &content,
@@ -32,7 +32,7 @@ public:
 
     std::vector<std::shared_ptr<MachineStateMessageReceiver>> &getComponents();
 
-    const std::vector<std::shared_ptr<ExternalMessageReceiver>> &getExternalMessageReceivers() const;
+    const std::vector<std::shared_ptr<ExternalMachineMessageReceiver>> &getExternalMessageReceivers() const;
 
     const std::vector<std::shared_ptr<ExternalMachineStateReceiver>> &getExternalMachineStateReceivers() const;
 

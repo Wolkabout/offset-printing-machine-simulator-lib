@@ -6,12 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/home/nvuletic/git-nexylmao/modbus-simulator-cpp/Component.cpp
-Component.h
-/home/nvuletic/git-nexylmao/modbus-simulator-cpp/Component.h
-utility
--
-
 /home/nvuletic/git-nexylmao/modbus-simulator-cpp/Component.h
 Logger/Logger.h
 /home/nvuletic/git-nexylmao/modbus-simulator-cpp/Logger/Logger.h
@@ -21,26 +15,6 @@ Interfaces/MachineStateMessageReceiver.h
 /home/nvuletic/git-nexylmao/modbus-simulator-cpp/Interfaces/MachineStateMessageReceiver.h
 Interfaces/ComponentMessageReceiver.h
 /home/nvuletic/git-nexylmao/modbus-simulator-cpp/Interfaces/ComponentMessageReceiver.h
-
-/home/nvuletic/git-nexylmao/modbus-simulator-cpp/Components/Conveyor.cpp
-cmath
--
-sstream
--
-Conveyor.h
-/home/nvuletic/git-nexylmao/modbus-simulator-cpp/Components/Conveyor.h
-
-/home/nvuletic/git-nexylmao/modbus-simulator-cpp/Components/Conveyor.h
-thread
--
-vector
--
-TempoComponent.h
-/home/nvuletic/git-nexylmao/modbus-simulator-cpp/Components/TempoComponent.h
-../Component.h
-/home/nvuletic/git-nexylmao/modbus-simulator-cpp/Component.h
-../Interfaces/ConveyorRateMessageReceiver.h
-/home/nvuletic/git-nexylmao/modbus-simulator-cpp/Interfaces/ConveyorRateMessageReceiver.h
 
 /home/nvuletic/git-nexylmao/modbus-simulator-cpp/Components/Delivery.cpp
 cmath
@@ -74,18 +48,6 @@ vector
 TempoComponent.h
 /home/nvuletic/git-nexylmao/modbus-simulator-cpp/Components/TempoComponent.h
 
-/home/nvuletic/git-nexylmao/modbus-simulator-cpp/Components/PaintStation.cpp
-cmath
--
-PaintStation.h
-/home/nvuletic/git-nexylmao/modbus-simulator-cpp/Components/PaintStation.h
-
-/home/nvuletic/git-nexylmao/modbus-simulator-cpp/Components/PaintStation.h
-TempoComponent.h
-/home/nvuletic/git-nexylmao/modbus-simulator-cpp/Components/TempoComponent.h
-../Interfaces/CountMessageReceiver.h
-/home/nvuletic/git-nexylmao/modbus-simulator-cpp/Interfaces/CountMessageReceiver.h
-
 /home/nvuletic/git-nexylmao/modbus-simulator-cpp/Components/TempoComponent.h
 ../Component.h
 /home/nvuletic/git-nexylmao/modbus-simulator-cpp/Component.h
@@ -98,25 +60,19 @@ memory
 ../Messages/ComponentMessage.h
 /home/nvuletic/git-nexylmao/modbus-simulator-cpp/Messages/ComponentMessage.h
 
-/home/nvuletic/git-nexylmao/modbus-simulator-cpp/Interfaces/ConveyorRateMessageReceiver.h
-memory
--
-../Messages/ConveyorRateMessage.h
-/home/nvuletic/git-nexylmao/modbus-simulator-cpp/Messages/ConveyorRateMessage.h
-
 /home/nvuletic/git-nexylmao/modbus-simulator-cpp/Interfaces/CountMessageReceiver.h
 memory
 -
 ../Messages/CountMessage.h
 /home/nvuletic/git-nexylmao/modbus-simulator-cpp/Messages/CountMessage.h
 
-/home/nvuletic/git-nexylmao/modbus-simulator-cpp/Interfaces/ExternalMachineStateReceiver.h
-
-/home/nvuletic/git-nexylmao/modbus-simulator-cpp/Interfaces/ExternalMessageReceiver.h
+/home/nvuletic/git-nexylmao/modbus-simulator-cpp/Interfaces/ExternalMachineMessageReceiver.h
 memory
 -
 ../Messages/ComponentMessage.h
 /home/nvuletic/git-nexylmao/modbus-simulator-cpp/Messages/ComponentMessage.h
+
+/home/nvuletic/git-nexylmao/modbus-simulator-cpp/Interfaces/ExternalMachineStateReceiver.h
 
 /home/nvuletic/git-nexylmao/modbus-simulator-cpp/Interfaces/MachineStateMessageReceiver.h
 memory
@@ -127,14 +83,6 @@ memory
 /home/nvuletic/git-nexylmao/modbus-simulator-cpp/Logger/Logger.h
 string
 -
-
-/home/nvuletic/git-nexylmao/modbus-simulator-cpp/Machine.cpp
-iostream
--
-Machine.h
-/home/nvuletic/git-nexylmao/modbus-simulator-cpp/Machine.h
-Messages/MachineStateMessage.h
-/home/nvuletic/git-nexylmao/modbus-simulator-cpp/Messages/MachineStateMessage.h
 
 /home/nvuletic/git-nexylmao/modbus-simulator-cpp/Machine.h
 vector
@@ -147,8 +95,8 @@ Interfaces/ComponentMessageReceiver.h
 /home/nvuletic/git-nexylmao/modbus-simulator-cpp/Interfaces/ComponentMessageReceiver.h
 Interfaces/ExternalMachineStateReceiver.h
 /home/nvuletic/git-nexylmao/modbus-simulator-cpp/Interfaces/ExternalMachineStateReceiver.h
-Interfaces/ExternalMessageReceiver.h
-/home/nvuletic/git-nexylmao/modbus-simulator-cpp/Interfaces/ExternalMessageReceiver.h
+Interfaces/ExternalMachineMessageReceiver.h
+/home/nvuletic/git-nexylmao/modbus-simulator-cpp/Interfaces/ExternalMachineMessageReceiver.h
 Interfaces/MachineStateMessageReceiver.h
 /home/nvuletic/git-nexylmao/modbus-simulator-cpp/Interfaces/MachineStateMessageReceiver.h
 Messages/ComponentMessage.h
@@ -165,8 +113,6 @@ string
 /home/nvuletic/git-nexylmao/modbus-simulator-cpp/Messages/ComponentMessage.h
 string
 -
-
-/home/nvuletic/git-nexylmao/modbus-simulator-cpp/Messages/ConveyorRateMessage.h
 
 /home/nvuletic/git-nexylmao/modbus-simulator-cpp/Messages/CountMessage.h
 

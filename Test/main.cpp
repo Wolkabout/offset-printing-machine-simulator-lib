@@ -17,16 +17,18 @@ void printActionResults(ActionStatusMessage &message) {
     cout << "[ACM] " << message.getType() << " | " << message.getContent() << endl;
 }
 
+
+
 int main() {
     try {
         std::shared_ptr<Machine> machine = std::make_shared<Machine>("Test Machine 1");
         printMachineState(machine);
         std::shared_ptr<Conveyor> conveyor = std::make_shared<Conveyor>("Conveyor Test 1", *machine.get(), 15000, 15000);
         machine->addComponent(conveyor);
-        std::shared_ptr<Feeder> feeder = std::make_shared<Feeder>("Feeder Test 1", *machine.get(), 17000, 17000);
+        std::shared_ptr<Feeder> feeder = std::make_shared<Feeder>("Feeder Test 1", *machine.get(), 17000, 100);
         machine->addComponent(feeder);
         printMachineState(machine);
-        feeder->Emit(Neutral, "");
+        machine->checkForErrors(false);
     } catch (std::exception& e) {
         cout << "Exception was thrown : " << e.what();
     }

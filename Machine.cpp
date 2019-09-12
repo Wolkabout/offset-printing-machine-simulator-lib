@@ -18,7 +18,7 @@ std::vector<std::shared_ptr<MachineStateMessageReceiver>> &Machine::getComponent
     return components;
 }
 
-const std::vector<std::shared_ptr<ExternalMessageReceiver>> &Machine::getExternalMessageReceivers() const {
+const std::vector<std::shared_ptr<ExternalMachineMessageReceiver>> &Machine::getExternalMessageReceivers() const {
     return externalMessageReceivers;
 }
 
@@ -94,6 +94,7 @@ ActionStatusMessage Machine::checkForErrors(bool starting = false) {
         for (auto &component : components) {
             // Generate the callback for component reply
             auto callback = [&](const std::shared_ptr<ComponentMessage> &message) {
+                logger.Log("(CFE) " + std::to_string(message->getType()) + " | " + message->getContent());
                 // If it's notification worthy
                 if (message->getType() != Neutral && starting) {
                     for (auto &externalMessageReceiver : externalMessageReceivers) {
@@ -122,7 +123,7 @@ ActionStatusMessage Machine::checkForErrors(bool starting = false) {
 
 void Machine::receiveMessages(std::shared_ptr<ComponentMessage> ptr) {
     // Write it to console
-    logger.Log(ptr->getContent());
+    logger.Log("(E) " + std::to_string(ptr->getType()) + " | " + ptr->getContent());
     // Add to the vector of messages
     messages.push_back(ptr);
     // Notify all the external listeners

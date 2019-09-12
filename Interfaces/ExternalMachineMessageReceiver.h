@@ -8,7 +8,7 @@
 #include <memory>
 #include "../Messages/ComponentMessage.h"
 
-class ExternalMessageReceiver {
+class ExternalMachineMessageReceiver {
 public:
     virtual void ReceiveMessage(std::shared_ptr<ComponentMessage>) = 0;
 };

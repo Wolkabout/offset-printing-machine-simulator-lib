@@ -12,5 +12,5 @@ Logger::Logger(std::string name) : name(std::move(name)) {}
 
 void Logger::Log(std::string message) {
     auto time = std::time(nullptr);
-    std::cout << '[' << name << ']' << '[' << std::put_time(std::localtime(&time), "%F %T%z") << ']' << " -> " << message;
+    std::cout << '[' << name << ']' << '[' << std::put_time(std::localtime(&time), "%F %T%z") << ']' << " -> " << message << std::endl;
 }
