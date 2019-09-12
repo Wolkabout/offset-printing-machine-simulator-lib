@@ -43,7 +43,8 @@ void Conveyor::setRatePerHour(int value) {
     }
 }
 
-Conveyor::Conveyor(const std::string& name, ComponentMessageReceiver& machine, int maxRatePerHour, int initialRatePerHour) : Component(name, machine) {
+Conveyor::Conveyor(const std::string &name, ComponentMessageReceiver &machine, int maxRatePerHour,
+                   int initialRatePerHour) : Component(name, machine) {
     if (maxRatePerHour < minRatePerHour) {
         throw std::invalid_argument(
                 "You can\'t put a rate lower than the minimut rate per hour! (" + std::to_string(minRatePerHour) + ')');
@@ -58,6 +59,7 @@ Conveyor::Conveyor(const std::string& name, ComponentMessageReceiver& machine, i
 }
 
 void Conveyor::runTempo() {
+    logger.Log("Started task!");
     while (runningLoop) {
         logger.Log("Tempo " + std::to_string(period) + "ms!");
         for (auto &component: components) {
@@ -71,14 +73,21 @@ void Conveyor::runTempo() {
 }
 
 void Conveyor::ReceiveMachineStateMessage(std::shared_ptr<MachineStateMessage> message) {
+//    logger.Log("(SM) " + std::to_string(message->getType()) + " | " + message->getContent());
     switch (message->getType()) {
         case Starting:
             components.clear();
-            for (std::shared_ptr<MachineStateMessageReceiver> component : ((Machine &)machine).getComponents()) {
-
+            for (std::shared_ptr<MachineStateMessageReceiver> component : ((Machine &) machine).getComponents()) {
+                logger.Log("Found component " + ((TempoComponent &) *component.get()).getName());
+                try {
+                    TempoComponent &tc = dynamic_cast<TempoComponent&>(*component.get());
+                    logger.Log("TempoComponent : " + tc.getName());
+                } catch (std::exception& e) {
+                    logger.Log(((Component &) *component.get()).getName() + " is not a tempo component!");
+                }
             }
             runningLoop = true;
-            loop = std::thread([&] { runTempo(); });
+//            loop = std::thread([&] { runTempo(); });
             break;
         case CheckForErrors:
             if (message->getCallback() != nullptr) {

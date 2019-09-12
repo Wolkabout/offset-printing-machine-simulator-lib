@@ -16,37 +16,25 @@ Interfaces/MachineStateMessageReceiver.h
 Interfaces/ComponentMessageReceiver.h
 /home/nvuletic/git-nexylmao/modbus-simulator-cpp/Interfaces/ComponentMessageReceiver.h
 
-/home/nvuletic/git-nexylmao/modbus-simulator-cpp/Components/Delivery.cpp
+/home/nvuletic/git-nexylmao/modbus-simulator-cpp/Components/Conveyor.cpp
 cmath
 -
-Delivery.h
-/home/nvuletic/git-nexylmao/modbus-simulator-cpp/Components/Delivery.h
-
-/home/nvuletic/git-nexylmao/modbus-simulator-cpp/Components/Delivery.h
-string
+sstream
 -
-TempoComponent.h
-/home/nvuletic/git-nexylmao/modbus-simulator-cpp/Components/TempoComponent.h
-../Interfaces/CountMessageReceiver.h
-/home/nvuletic/git-nexylmao/modbus-simulator-cpp/Interfaces/CountMessageReceiver.h
+Conveyor.h
+/home/nvuletic/git-nexylmao/modbus-simulator-cpp/Components/Conveyor.h
 
-/home/nvuletic/git-nexylmao/modbus-simulator-cpp/Components/Feeder.cpp
-cmath
+/home/nvuletic/git-nexylmao/modbus-simulator-cpp/Components/Conveyor.h
+thread
 -
-Feeder.h
-/home/nvuletic/git-nexylmao/modbus-simulator-cpp/Components/Feeder.h
-
-/home/nvuletic/git-nexylmao/modbus-simulator-cpp/Components/Feeder.h
 vector
 -
-../Interfaces/CountMessageReceiver.h
-/home/nvuletic/git-nexylmao/modbus-simulator-cpp/Interfaces/CountMessageReceiver.h
-../Messages/ComponentMessage.h
-/home/nvuletic/git-nexylmao/modbus-simulator-cpp/Messages/ComponentMessage.h
-../Machine.h
-/home/nvuletic/git-nexylmao/modbus-simulator-cpp/Machine.h
 TempoComponent.h
 /home/nvuletic/git-nexylmao/modbus-simulator-cpp/Components/TempoComponent.h
+../Component.h
+/home/nvuletic/git-nexylmao/modbus-simulator-cpp/Component.h
+../Interfaces/ConveyorRateMessageReceiver.h
+/home/nvuletic/git-nexylmao/modbus-simulator-cpp/Interfaces/ConveyorRateMessageReceiver.h
 
 /home/nvuletic/git-nexylmao/modbus-simulator-cpp/Components/TempoComponent.h
 ../Component.h
@@ -60,11 +48,11 @@ memory
 ../Messages/ComponentMessage.h
 /home/nvuletic/git-nexylmao/modbus-simulator-cpp/Messages/ComponentMessage.h
 
-/home/nvuletic/git-nexylmao/modbus-simulator-cpp/Interfaces/CountMessageReceiver.h
+/home/nvuletic/git-nexylmao/modbus-simulator-cpp/Interfaces/ConveyorRateMessageReceiver.h
 memory
 -
-../Messages/CountMessage.h
-/home/nvuletic/git-nexylmao/modbus-simulator-cpp/Messages/CountMessage.h
+../Messages/ConveyorRateMessage.h
+/home/nvuletic/git-nexylmao/modbus-simulator-cpp/Messages/ConveyorRateMessage.h
 
 /home/nvuletic/git-nexylmao/modbus-simulator-cpp/Interfaces/ExternalMachineMessageReceiver.h
 memory
@@ -114,7 +102,7 @@ string
 string
 -
 
-/home/nvuletic/git-nexylmao/modbus-simulator-cpp/Messages/CountMessage.h
+/home/nvuletic/git-nexylmao/modbus-simulator-cpp/Messages/ConveyorRateMessage.h
 
 /home/nvuletic/git-nexylmao/modbus-simulator-cpp/Messages/MachineStateMessage.h
 functional

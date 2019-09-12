@@ -92,15 +92,16 @@ bool PaintStation::iterate() {
     return false;
 }
 
-void PaintStation::ReceiveMachineStateMessage(std::shared_ptr<MachineStateMessage> stateMessage) {
-    switch (stateMessage->getType()) {
+void PaintStation::ReceiveMachineStateMessage(std::shared_ptr<MachineStateMessage> message) {
+//    logger.Log("(SM) " + std::to_string(message->getType()) + " | " + message->getContent());
+    switch (message->getType()) {
         case Starting:
             logger.Log("Starting work with " + std::to_string(count) + '/' + std::to_string(capacity));
             break;
         case CheckForErrors:
-            if (stateMessage->getCallback() != nullptr) {
+            if (message->getCallback() != nullptr) {
                 std::pair<ComponentMessageType, std::string> result = checkCount();
-                std::function<void(std::shared_ptr<ComponentMessage>)> callback = stateMessage->getCallback();
+                std::function<void(std::shared_ptr<ComponentMessage>)> callback = message->getCallback();
                 callback(std::make_shared<ComponentMessage>(result.first, result.second));
             }
             break;
