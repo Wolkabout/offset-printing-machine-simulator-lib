@@ -8,7 +8,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/modbus_simulator_cpp.dir/Messages/CountMessage.cpp.o"
   "CMakeFiles/modbus_simulator_cpp.dir/Messages/MachineStateMessage.cpp.o"
   "CMakeFiles/modbus_simulator_cpp.dir/Messages/StateChangeMessage.cpp.o"
-  "CMakeFiles/modbus_simulator_cpp.dir/TestingComponents/SimpleComponent.cpp.o"
   "CMakeFiles/modbus_simulator_cpp.dir/Components/Conveyor.cpp.o"
   "CMakeFiles/modbus_simulator_cpp.dir/Components/Delivery.cpp.o"
   "CMakeFiles/modbus_simulator_cpp.dir/Components/Feeder.cpp.o"

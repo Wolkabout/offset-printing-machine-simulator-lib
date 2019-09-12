@@ -5,7 +5,6 @@
 #include <cmath>
 #include <sstream>
 #include "Conveyor.h"
-#include "../Messages/ConveyorRateMessage.h"
 
 int Conveyor::getRatePerHour() const {
     return ratePerHour;
@@ -19,6 +18,18 @@ int Conveyor::getMinRatePerHour() const {
     return minRatePerHour;
 }
 
+int Conveyor::getPeriod() const {
+    return period;
+}
+
+std::vector<std::shared_ptr<TempoComponent>> &Conveyor::getComponents() {
+    return components;
+}
+
+std::vector<std::shared_ptr<ConveyorRateMessageReceiver>> &Conveyor::getRateMessageReceivers() {
+    return rateMessageReceivers;
+}
+
 void Conveyor::setRatePerHour(int value) {
     if (value < minRatePerHour || value > maxRatePerHour) {
         throw std::invalid_argument("The rate has to be in the appropriate range.");
@@ -26,18 +37,13 @@ void Conveyor::setRatePerHour(int value) {
     ratePerHour = value;
     period = round(3600 / ratePerHour * 1000);
 
-    ConveyorRateMessage message(ratePerHour);
+    std::shared_ptr<ConveyorRateMessage> message = std::make_shared<ConveyorRateMessage>(ratePerHour);
     for (auto &conveyorRateMessageReceiver : rateMessageReceivers) {
-        conveyorRateMessageReceiver->ReceiveMessage(&message);
+        conveyorRateMessageReceiver->ReceiveMessage(message);
     }
 }
 
-int Conveyor::getPeriod() const {
-    return period;
-}
-
-Conveyor::Conveyor(char *name, Machine *machine, int maxRatePerHour, int initialRatePerHour) : Component(name,
-                                                                                                         machine) {
+Conveyor::Conveyor(const std::string& name, std::shared_ptr<ComponentMessageReceiver> machine, int maxRatePerHour, int initialRatePerHour) : Component(name, std::move(machine)) {
     if (maxRatePerHour < minRatePerHour) {
         throw std::invalid_argument(
                 "You can\'t put a rate lower than the minimut rate per hour! (" + std::to_string(minRatePerHour) + ')');
@@ -64,15 +70,19 @@ void Conveyor::runTempo() {
     }
 }
 
-void Conveyor::ReceiveMachineStateMessage(MachineStateMessage *message) {
+//template< class T, class U >
+//std::shared_ptr<T> static_pointer_cast( const std::shared_ptr<U>& r ) noexcept
+//{
+//    auto p = static_cast<typename std::shared_ptr<T>::element_type*>(r.get());
+//    return std::shared_ptr<T>(r, p);
+//}
+
+void Conveyor::ReceiveMachineStateMessage(std::shared_ptr<MachineStateMessage> message) {
     switch (message->getType()) {
         case Starting:
             components.clear();
-            for (auto component : ((Machine *) machine)->getComponents()) {
-                auto *tempoComponent = dynamic_cast<TempoComponent *>(component);
-                if (tempoComponent != nullptr) {
-                    components.push_back(tempoComponent);
-                }
+            for (std::shared_ptr<MachineStateMessageReceiver> component : ((Machine &)machine).getComponents()) {
+
             }
             runningLoop = true;
             loop = std::thread([&] { runTempo(); });
@@ -88,8 +98,4 @@ void Conveyor::ReceiveMachineStateMessage(MachineStateMessage *message) {
             runningLoop = false;
             break;
     }
-}
-
-const std::vector<ConveyorRateMessageReceiver *> &Conveyor::getRateMessageReceivers() const {
-    return rateMessageReceivers;
 }

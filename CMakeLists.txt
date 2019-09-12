@@ -3,7 +3,9 @@ project(modbus_simulator_cpp)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_library(modbus_simulator_cpp
+find_package(Threads REQUIRED)
+
+add_library(${PROJECT_NAME}
         Machine.cpp
         Machine.h
         Component.cpp
@@ -30,8 +32,6 @@ add_library(modbus_simulator_cpp
         Messages/MachineStateMessage.h
         Messages/StateChangeMessage.cpp
         Messages/StateChangeMessage.h
-        TestingComponents/SimpleComponent.cpp
-        TestingComponents/SimpleComponent.h
         Components/Conveyor.cpp
         Components/Conveyor.h
         Components/Delivery.cpp
@@ -41,6 +41,7 @@ add_library(modbus_simulator_cpp
         Components/PaintStation.cpp
         Components/PaintStation.h
         Components/TempoComponent.h)
+target_link_libraries(${PROJECT_NAME} Threads::Threads)
 
 add_executable(modbus_simulator_testing Test/main.cpp)
 target_link_libraries(modbus_simulator_testing ${PROJECT_NAME})

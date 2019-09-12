@@ -45,13 +45,13 @@ std::shared_ptr<ComponentMessage> PaintStation::checkCount() {
 bool PaintStation::checkCountAndEmit() {
     std::shared_ptr<ComponentMessage> message = checkCount();
     if (message != nullptr && message->getType() != Neutral) {
-        Emit(message);
+        Emit(message->getType(), message->getContent());
         return message->getType() != Severe;
     }
     return true;
 }
 
-PaintStation::PaintStation(char *name, Machine *machine, int capacity, int initialCount) : TempoComponent(name,
+PaintStation::PaintStation(std::string name, Machine &machine, int capacity, int initialCount) : TempoComponent(name,
                                                                                                           machine) {
     if (capacity < 0) {
         throw std::invalid_argument("Capacity can't be a negative number!");
@@ -71,8 +71,7 @@ PaintStation::PaintStation(char *name, Machine *machine, int capacity, int initi
 
 bool PaintStation::modifyCount(int i) {
     if (capacity - count < i) {
-        ComponentMessage message(Alarming, "You can\'t put more paint than there's room for.");
-        Emit(std::shared_ptr<ComponentMessage>(&message));
+        Emit(Alarming, "You can\'t put more paint than there's room for.");
         return false;
     }
 
@@ -82,9 +81,8 @@ bool PaintStation::modifyCount(int i) {
 }
 
 bool PaintStation::iterate() {
-    if (!((Machine *) machine)->isRunning()) {
-        ComponentMessage message(Severe, "You can\'t take paint, the machine isn\'t running.");
-        Emit(std::shared_ptr<ComponentMessage>(&message));
+    if (!((Machine &) machine).isRunning()) {
+        Emit(Severe, "You can\'t take paint, the machine isn\'t running.");
         return false;
     }
     if (checkCountAndEmit()) {
@@ -95,7 +93,7 @@ bool PaintStation::iterate() {
     return false;
 }
 
-void PaintStation::ReceiveMachineStateMessage(MachineStateMessage *stateMessage) {
+void PaintStation::ReceiveMachineStateMessage(std::shared_ptr<MachineStateMessage> stateMessage) {
     switch (stateMessage->getType()) {
         case Starting:
             logger.Log("Starting work with " + std::to_string(count) + '/' + std::to_string(capacity));

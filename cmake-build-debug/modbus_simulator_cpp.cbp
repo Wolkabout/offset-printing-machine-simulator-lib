@@ -232,12 +232,6 @@
 		<Unit filename="/home/nvuletic/git-nexylmao/modbus-simulator-cpp/Test/main.cpp">
 			<Option target="modbus_simulator_testing"/>
 		</Unit>
-		<Unit filename="/home/nvuletic/git-nexylmao/modbus-simulator-cpp/TestingComponents/SimpleComponent.cpp">
-			<Option target="modbus_simulator_cpp"/>
-		</Unit>
-		<Unit filename="/home/nvuletic/git-nexylmao/modbus-simulator-cpp/TestingComponents/SimpleComponent.h">
-			<Option target="modbus_simulator_cpp"/>
-		</Unit>
 		<Unit filename="/home/nvuletic/git-nexylmao/modbus-simulator-cpp/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>

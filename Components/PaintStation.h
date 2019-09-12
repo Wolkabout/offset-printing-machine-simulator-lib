@@ -18,7 +18,6 @@ private:
     char *w20;
     char *w10;
     char *wempty;
-    std::vector<ComponentMessage> messages;
     std::vector<CountMessageReceiver *> countMessageReceiver;
 
     std::shared_ptr<ComponentMessage> checkCount();
@@ -34,13 +33,13 @@ public:
 
     double getPercentage();
 
-    PaintStation(char *name, Machine *machine, int capacity, int initialCount);
+    PaintStation(std::string name, Machine &machine, int capacity, int initialCount);
 
     bool modifyCount(int i) override;
 
     bool iterate() override;
 
-    void ReceiveMachineStateMessage(MachineStateMessage *stateMessage) override;
+    void ReceiveMachineStateMessage(std::shared_ptr<MachineStateMessage> ptr) override;
 };
 
 

@@ -514,33 +514,6 @@ Test/main.cpp.s:
 	$(MAKE) -f CMakeFiles/modbus_simulator_testing.dir/build.make CMakeFiles/modbus_simulator_testing.dir/Test/main.cpp.s
 .PHONY : Test/main.cpp.s
 
-TestingComponents/SimpleComponent.o: TestingComponents/SimpleComponent.cpp.o
-
-.PHONY : TestingComponents/SimpleComponent.o
-
-# target to build an object file
-TestingComponents/SimpleComponent.cpp.o:
-	$(MAKE) -f CMakeFiles/modbus_simulator_cpp.dir/build.make CMakeFiles/modbus_simulator_cpp.dir/TestingComponents/SimpleComponent.cpp.o
-.PHONY : TestingComponents/SimpleComponent.cpp.o
-
-TestingComponents/SimpleComponent.i: TestingComponents/SimpleComponent.cpp.i
-
-.PHONY : TestingComponents/SimpleComponent.i
-
-# target to preprocess a source file
-TestingComponents/SimpleComponent.cpp.i:
-	$(MAKE) -f CMakeFiles/modbus_simulator_cpp.dir/build.make CMakeFiles/modbus_simulator_cpp.dir/TestingComponents/SimpleComponent.cpp.i
-.PHONY : TestingComponents/SimpleComponent.cpp.i
-
-TestingComponents/SimpleComponent.s: TestingComponents/SimpleComponent.cpp.s
-
-.PHONY : TestingComponents/SimpleComponent.s
-
-# target to generate assembly for a file
-TestingComponents/SimpleComponent.cpp.s:
-	$(MAKE) -f CMakeFiles/modbus_simulator_cpp.dir/build.make CMakeFiles/modbus_simulator_cpp.dir/TestingComponents/SimpleComponent.cpp.s
-.PHONY : TestingComponents/SimpleComponent.cpp.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -593,9 +566,6 @@ help:
 	@echo "... Test/main.o"
 	@echo "... Test/main.i"
 	@echo "... Test/main.s"
-	@echo "... TestingComponents/SimpleComponent.o"
-	@echo "... TestingComponents/SimpleComponent.i"
-	@echo "... TestingComponents/SimpleComponent.s"
 .PHONY : help
 
 

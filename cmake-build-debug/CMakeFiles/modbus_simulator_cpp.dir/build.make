@@ -174,22 +174,9 @@ CMakeFiles/modbus_simulator_cpp.dir/Messages/StateChangeMessage.cpp.s: cmake_for
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/modbus_simulator_cpp.dir/Messages/StateChangeMessage.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/nvuletic/git-nexylmao/modbus-simulator-cpp/Messages/StateChangeMessage.cpp -o CMakeFiles/modbus_simulator_cpp.dir/Messages/StateChangeMessage.cpp.s
 
-CMakeFiles/modbus_simulator_cpp.dir/TestingComponents/SimpleComponent.cpp.o: CMakeFiles/modbus_simulator_cpp.dir/flags.make
-CMakeFiles/modbus_simulator_cpp.dir/TestingComponents/SimpleComponent.cpp.o: ../TestingComponents/SimpleComponent.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/nvuletic/git-nexylmao/modbus-simulator-cpp/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/modbus_simulator_cpp.dir/TestingComponents/SimpleComponent.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/modbus_simulator_cpp.dir/TestingComponents/SimpleComponent.cpp.o -c /home/nvuletic/git-nexylmao/modbus-simulator-cpp/TestingComponents/SimpleComponent.cpp
-
-CMakeFiles/modbus_simulator_cpp.dir/TestingComponents/SimpleComponent.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/modbus_simulator_cpp.dir/TestingComponents/SimpleComponent.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/nvuletic/git-nexylmao/modbus-simulator-cpp/TestingComponents/SimpleComponent.cpp > CMakeFiles/modbus_simulator_cpp.dir/TestingComponents/SimpleComponent.cpp.i
-
-CMakeFiles/modbus_simulator_cpp.dir/TestingComponents/SimpleComponent.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/modbus_simulator_cpp.dir/TestingComponents/SimpleComponent.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/nvuletic/git-nexylmao/modbus-simulator-cpp/TestingComponents/SimpleComponent.cpp -o CMakeFiles/modbus_simulator_cpp.dir/TestingComponents/SimpleComponent.cpp.s
-
 CMakeFiles/modbus_simulator_cpp.dir/Components/Conveyor.cpp.o: CMakeFiles/modbus_simulator_cpp.dir/flags.make
 CMakeFiles/modbus_simulator_cpp.dir/Components/Conveyor.cpp.o: ../Components/Conveyor.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/nvuletic/git-nexylmao/modbus-simulator-cpp/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/modbus_simulator_cpp.dir/Components/Conveyor.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/nvuletic/git-nexylmao/modbus-simulator-cpp/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/modbus_simulator_cpp.dir/Components/Conveyor.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/modbus_simulator_cpp.dir/Components/Conveyor.cpp.o -c /home/nvuletic/git-nexylmao/modbus-simulator-cpp/Components/Conveyor.cpp
 
 CMakeFiles/modbus_simulator_cpp.dir/Components/Conveyor.cpp.i: cmake_force
@@ -202,7 +189,7 @@ CMakeFiles/modbus_simulator_cpp.dir/Components/Conveyor.cpp.s: cmake_force
 
 CMakeFiles/modbus_simulator_cpp.dir/Components/Delivery.cpp.o: CMakeFiles/modbus_simulator_cpp.dir/flags.make
 CMakeFiles/modbus_simulator_cpp.dir/Components/Delivery.cpp.o: ../Components/Delivery.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/nvuletic/git-nexylmao/modbus-simulator-cpp/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/modbus_simulator_cpp.dir/Components/Delivery.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/nvuletic/git-nexylmao/modbus-simulator-cpp/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/modbus_simulator_cpp.dir/Components/Delivery.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/modbus_simulator_cpp.dir/Components/Delivery.cpp.o -c /home/nvuletic/git-nexylmao/modbus-simulator-cpp/Components/Delivery.cpp
 
 CMakeFiles/modbus_simulator_cpp.dir/Components/Delivery.cpp.i: cmake_force
@@ -215,7 +202,7 @@ CMakeFiles/modbus_simulator_cpp.dir/Components/Delivery.cpp.s: cmake_force
 
 CMakeFiles/modbus_simulator_cpp.dir/Components/Feeder.cpp.o: CMakeFiles/modbus_simulator_cpp.dir/flags.make
 CMakeFiles/modbus_simulator_cpp.dir/Components/Feeder.cpp.o: ../Components/Feeder.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/nvuletic/git-nexylmao/modbus-simulator-cpp/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/modbus_simulator_cpp.dir/Components/Feeder.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/nvuletic/git-nexylmao/modbus-simulator-cpp/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/modbus_simulator_cpp.dir/Components/Feeder.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/modbus_simulator_cpp.dir/Components/Feeder.cpp.o -c /home/nvuletic/git-nexylmao/modbus-simulator-cpp/Components/Feeder.cpp
 
 CMakeFiles/modbus_simulator_cpp.dir/Components/Feeder.cpp.i: cmake_force
@@ -228,7 +215,7 @@ CMakeFiles/modbus_simulator_cpp.dir/Components/Feeder.cpp.s: cmake_force
 
 CMakeFiles/modbus_simulator_cpp.dir/Components/PaintStation.cpp.o: CMakeFiles/modbus_simulator_cpp.dir/flags.make
 CMakeFiles/modbus_simulator_cpp.dir/Components/PaintStation.cpp.o: ../Components/PaintStation.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/nvuletic/git-nexylmao/modbus-simulator-cpp/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/modbus_simulator_cpp.dir/Components/PaintStation.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/nvuletic/git-nexylmao/modbus-simulator-cpp/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/modbus_simulator_cpp.dir/Components/PaintStation.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/modbus_simulator_cpp.dir/Components/PaintStation.cpp.o -c /home/nvuletic/git-nexylmao/modbus-simulator-cpp/Components/PaintStation.cpp
 
 CMakeFiles/modbus_simulator_cpp.dir/Components/PaintStation.cpp.i: cmake_force
@@ -250,7 +237,6 @@ modbus_simulator_cpp_OBJECTS = \
 "CMakeFiles/modbus_simulator_cpp.dir/Messages/CountMessage.cpp.o" \
 "CMakeFiles/modbus_simulator_cpp.dir/Messages/MachineStateMessage.cpp.o" \
 "CMakeFiles/modbus_simulator_cpp.dir/Messages/StateChangeMessage.cpp.o" \
-"CMakeFiles/modbus_simulator_cpp.dir/TestingComponents/SimpleComponent.cpp.o" \
 "CMakeFiles/modbus_simulator_cpp.dir/Components/Conveyor.cpp.o" \
 "CMakeFiles/modbus_simulator_cpp.dir/Components/Delivery.cpp.o" \
 "CMakeFiles/modbus_simulator_cpp.dir/Components/Feeder.cpp.o" \
@@ -268,14 +254,13 @@ libmodbus_simulator_cpp.a: CMakeFiles/modbus_simulator_cpp.dir/Messages/Conveyor
 libmodbus_simulator_cpp.a: CMakeFiles/modbus_simulator_cpp.dir/Messages/CountMessage.cpp.o
 libmodbus_simulator_cpp.a: CMakeFiles/modbus_simulator_cpp.dir/Messages/MachineStateMessage.cpp.o
 libmodbus_simulator_cpp.a: CMakeFiles/modbus_simulator_cpp.dir/Messages/StateChangeMessage.cpp.o
-libmodbus_simulator_cpp.a: CMakeFiles/modbus_simulator_cpp.dir/TestingComponents/SimpleComponent.cpp.o
 libmodbus_simulator_cpp.a: CMakeFiles/modbus_simulator_cpp.dir/Components/Conveyor.cpp.o
 libmodbus_simulator_cpp.a: CMakeFiles/modbus_simulator_cpp.dir/Components/Delivery.cpp.o
 libmodbus_simulator_cpp.a: CMakeFiles/modbus_simulator_cpp.dir/Components/Feeder.cpp.o
 libmodbus_simulator_cpp.a: CMakeFiles/modbus_simulator_cpp.dir/Components/PaintStation.cpp.o
 libmodbus_simulator_cpp.a: CMakeFiles/modbus_simulator_cpp.dir/build.make
 libmodbus_simulator_cpp.a: CMakeFiles/modbus_simulator_cpp.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/nvuletic/git-nexylmao/modbus-simulator-cpp/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Linking CXX static library libmodbus_simulator_cpp.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/nvuletic/git-nexylmao/modbus-simulator-cpp/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Linking CXX static library libmodbus_simulator_cpp.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/modbus_simulator_cpp.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/modbus_simulator_cpp.dir/link.txt --verbose=$(VERBOSE)
 

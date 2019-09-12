@@ -1,1 +1,1 @@
-/usr/bin/c++  -g   CMakeFiles/modbus_simulator_testing.dir/Test/main.cpp.o  -o modbus_simulator_testing libmodbus_simulator_cpp.a 
+/usr/bin/c++  -g   CMakeFiles/modbus_simulator_testing.dir/Test/main.cpp.o  -o modbus_simulator_testing libmodbus_simulator_cpp.a -lpthread 

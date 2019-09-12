@@ -1,6 +1,6 @@
-#include "Machine.h"
-
 #include <iostream>
+#include "Machine.h"
+#include "Messages/MachineStateMessage.h"
 
 bool Machine::isRunning() const {
     return running;
@@ -14,16 +14,28 @@ const std::vector<std::shared_ptr<ComponentMessage>> &Machine::getMessages() con
     return messages;
 }
 
-const std::vector<MachineStateMessageReceiver *> &Machine::getComponents() const {
+std::vector<std::shared_ptr<MachineStateMessageReceiver>> &Machine::getComponents() {
     return components;
 }
 
-const std::vector<ExternalMessageReceiver *> &Machine::getExternalMessageReceivers() const {
+const std::vector<std::shared_ptr<ExternalMessageReceiver>> &Machine::getExternalMessageReceivers() const {
     return externalMessageReceivers;
 }
 
-const std::vector<ExternalMachineStateReceiver *> &Machine::getExternalMachineStateReceivers() const {
+const std::vector<std::shared_ptr<ExternalMachineStateReceiver>> &Machine::getExternalMachineStateReceivers() const {
     return externalMachineStateReceivers;
+}
+
+Machine::Machine(const std::string &name) : name(name), logger(name) {
+    this->running = false;
+    this->name = name;
+}
+
+void Machine::EmitToComponents(MachineMessageType type, const std::string& content, const std::function<void(std::shared_ptr<ComponentMessage>)>& callback) {
+    std::shared_ptr<MachineStateMessage> message = std::make_shared<MachineStateMessage>(type, content, callback);
+    for (std::shared_ptr<MachineStateMessageReceiver> component: components) {
+        component->ReceiveMachineStateMessage(message);
+    }
 }
 
 ActionStatusMessage Machine::Start() {
@@ -34,10 +46,7 @@ ActionStatusMessage Machine::Start() {
     ActionStatusMessage result = CheckForErrors(true);
     if (result.getType() == good) {
         // Notify all the components that we are starting
-        MachineStateMessage message(Starting, "", nullptr);
-        for (auto &machineStateMessageReceiver : components) {
-            machineStateMessageReceiver->ReceiveMachineStateMessage(std::shared_ptr<MachineStateMessage>(&message));
-        }
+        this->EmitToComponents(Starting, "", nullptr);
 
         running = true;
 
@@ -59,10 +68,7 @@ ActionStatusMessage Machine::Stop() {
     }
 
     // Notify all the components that we are shutting down
-    MachineStateMessage message(Stopping, "", nullptr);
-    for (auto &machineStateMessageReceiver : components) {
-        machineStateMessageReceiver->ReceiveMachineStateMessage(std::shared_ptr<MachineStateMessage>(&message));
-    }
+    this->EmitToComponents(Stopping, "", nullptr);
 
     running = false;
 
@@ -98,8 +104,7 @@ ActionStatusMessage Machine::CheckForErrors(bool starting = false) {
             };
 
             // Send the message to each component
-            MachineStateMessage message(MachineMessageType::CheckForErrors, "", callback);
-            component->ReceiveMachineStateMessage(std::shared_ptr<MachineStateMessage>(&message));
+            this->EmitToComponents(MachineMessageType::CheckForErrors, "", callback);
         }
 
         return {good, ""};
@@ -124,16 +129,4 @@ void Machine::ReceiveMessage(std::shared_ptr<ComponentMessage> message) {
     if (message->getType() == Severe) {
         Stop();
     }
-}
-
-void Machine::Emit(MachineMessageType type, const std::string& content, const std::function<void(std::shared_ptr<ComponentMessage>)>& callback) {
-    std::shared_ptr<MachineStateMessage> message = std::make_shared<MachineStateMessage>(type, content, callback);
-    for (auto component: components) {
-        component->ReceiveMachineStateMessage(message);
-    }
-}
-
-Machine::Machine(const std::string &name) : name(name), logger(name) {
-    this->running = false;
-    this->name = name;
 }

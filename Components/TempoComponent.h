@@ -10,7 +10,7 @@
 
 class TempoComponent : public Component {
 protected:
-    TempoComponent(char *name, Machine &machine) : Component(name, machine) {}
+    TempoComponent(std::string name, std::shared_ptr<ComponentMessageReceiver> machine) : Component(name, std::move(machine)) {}
 
 public:
     virtual bool modifyCount(int) = 0;

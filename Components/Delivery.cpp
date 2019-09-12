@@ -17,41 +17,12 @@ double Delivery::getPercentage() {
     return round((double) count / capacity);
 }
 
-std::shared_ptr<ComponentMessage> Delivery::checkCount() {
-    ComponentMessage *message = nullptr;
-    ComponentMessage defaultMessage(Neutral, "");
-    message = &defaultMessage;
-    if (count == capacity) {
-        ComponentMessage newMessage(Severe, wfull);
-        message = &newMessage;
-        warning90 = true;
-        warning80 = true;
-    }
-
-    if ((capacity / 10) * 9 <= count && !warning90) {
-        ComponentMessage newMessage(Alarming, w90);
-        message = &newMessage;
-        warning90 = true;
-        warning80 = true;
-    } else if ((capacity / 5) * 4 <= count && !warning80) {
-        ComponentMessage newMessage(Alarming, w80);
-        message = &newMessage;
-        warning80 = true;
-    }
-    messages.push_back(*message);
-    return std::shared_ptr<ComponentMessage>(&(messages[messages.size() - 1]));
+std::vector<std::shared_ptr<CountMessageReceiver>> &Delivery::getCountMessageReceiver() {
+    return countMessageReceiver;
 }
 
-bool Delivery::checkCountAndEmit() {
-    std::shared_ptr<ComponentMessage> message = checkCount();
-    if (message != nullptr && message->getType() != Neutral) {
-        Emit(message);
-        return message->getType() != Severe;
-    }
-    return true;
-}
-
-Delivery::Delivery(char *name, Machine *machine, int capacity, int initialCount) : TempoComponent(name, machine) {
+Delivery::Delivery(const std::string& name, std::shared_ptr<ComponentMessageReceiver> machine, int capacity, int initialCount)
+        : TempoComponent(name, std::move(machine)) {
     if (capacity < 0) {
         throw std::invalid_argument("Capacity can't be a negative number!");
     }
@@ -68,10 +39,40 @@ Delivery::Delivery(char *name, Machine *machine, int capacity, int initialCount)
     checkCountAndEmit();
 }
 
+std::pair<ComponentMessageType, std::string> Delivery::checkCount() {
+    ComponentMessageType type = Neutral;
+    std::string content;
+    if (count == capacity) {
+        type = Severe;
+        content = wfull;
+        warning90 = true;
+        warning80 = true;
+    }
+    if ((capacity / 10) * 9 <= count && !warning90) {
+        type = Alarming;
+        content = w90;
+        warning90 = true;
+        warning80 = true;
+    } else if ((capacity / 5) * 4 <= count && !warning80) {
+        type = Alarming;
+        content = w80;
+        warning80 = true;
+    }
+    return std::pair<ComponentMessageType, std::string>(type, content);
+}
+
+bool Delivery::checkCountAndEmit() {
+    std::pair<ComponentMessageType, std::string> result = checkCount();
+    if (result.first != Neutral) {
+        Emit(result.first, result.second);
+        return result.first != Severe;
+    }
+    return true;
+}
+
 bool Delivery::modifyCount(int i) {
     if (count < i) {
-        ComponentMessage message(Alarming, "You can\'t take more paper than there is here.");
-        Emit(std::shared_ptr<ComponentMessage>(&message));
+        Emit(Alarming, "You can\'t take more paper than there is here.");
         return false;
     }
 
@@ -81,9 +82,8 @@ bool Delivery::modifyCount(int i) {
 }
 
 bool Delivery::iterate() {
-    if (!((Machine *) machine)->isRunning()) {
-        ComponentMessage message(Severe, "You can\'t take paper, the machine isn\'t runing.");
-        Emit(std::shared_ptr<ComponentMessage>(&message));
+    if (!((Machine &) machine).isRunning()) {
+        Emit(Severe, "You can\'t take paper, the machine isn\'t runing.");
         return false;
     }
     if (checkCountAndEmit()) {
@@ -94,24 +94,20 @@ bool Delivery::iterate() {
     return false;
 }
 
-void Delivery::ReceiveMachineStateMessage(MachineStateMessage *stateMessage) {
+void Delivery::ReceiveMachineStateMessage(std::shared_ptr<MachineStateMessage> stateMessage) {
     switch (stateMessage->getType()) {
         case Starting:
             logger.Log("Starting work with " + std::to_string(count) + '/' + std::to_string(capacity));
             break;
         case CheckForErrors:
             if (stateMessage->getCallback() != nullptr) {
-                std::shared_ptr<ComponentMessage> message = checkCount();
+                std::pair<ComponentMessageType, std::string> result = checkCount();
                 std::function<void(std::shared_ptr<ComponentMessage>)> callback = stateMessage->getCallback();
-                callback(message);
+                callback(std::make_shared<ComponentMessage>(result.first, result.second));
             }
             break;
         case Stopping:
             logger.Log("Stopping work with " + std::to_string(count) + '/' + std::to_string(capacity));
             break;
     }
-}
-
-const std::vector<CountMessageReceiver *> &Delivery::getCountMessageReceiver() const {
-    return countMessageReceiver;
 }

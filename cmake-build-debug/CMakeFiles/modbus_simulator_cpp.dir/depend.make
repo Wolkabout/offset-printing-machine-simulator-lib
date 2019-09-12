@@ -4,14 +4,83 @@
 CMakeFiles/modbus_simulator_cpp.dir/Component.cpp.o: ../Component.cpp
 CMakeFiles/modbus_simulator_cpp.dir/Component.cpp.o: ../Component.h
 CMakeFiles/modbus_simulator_cpp.dir/Component.cpp.o: ../Interfaces/ComponentMessageReceiver.h
+CMakeFiles/modbus_simulator_cpp.dir/Component.cpp.o: ../Interfaces/ExternalMachineStateReceiver.h
+CMakeFiles/modbus_simulator_cpp.dir/Component.cpp.o: ../Interfaces/ExternalMessageReceiver.h
 CMakeFiles/modbus_simulator_cpp.dir/Component.cpp.o: ../Interfaces/MachineStateMessageReceiver.h
 CMakeFiles/modbus_simulator_cpp.dir/Component.cpp.o: ../Logger/Logger.h
+CMakeFiles/modbus_simulator_cpp.dir/Component.cpp.o: ../Machine.h
+CMakeFiles/modbus_simulator_cpp.dir/Component.cpp.o: ../Messages/ActionStatusMessage.h
 CMakeFiles/modbus_simulator_cpp.dir/Component.cpp.o: ../Messages/ComponentMessage.h
 CMakeFiles/modbus_simulator_cpp.dir/Component.cpp.o: ../Messages/MachineStateMessage.h
+
+CMakeFiles/modbus_simulator_cpp.dir/Components/Conveyor.cpp.o: ../Component.h
+CMakeFiles/modbus_simulator_cpp.dir/Components/Conveyor.cpp.o: ../Components/Conveyor.cpp
+CMakeFiles/modbus_simulator_cpp.dir/Components/Conveyor.cpp.o: ../Components/Conveyor.h
+CMakeFiles/modbus_simulator_cpp.dir/Components/Conveyor.cpp.o: ../Components/TempoComponent.h
+CMakeFiles/modbus_simulator_cpp.dir/Components/Conveyor.cpp.o: ../Interfaces/ComponentMessageReceiver.h
+CMakeFiles/modbus_simulator_cpp.dir/Components/Conveyor.cpp.o: ../Interfaces/ConveyorRateMessageReceiver.h
+CMakeFiles/modbus_simulator_cpp.dir/Components/Conveyor.cpp.o: ../Interfaces/ExternalMachineStateReceiver.h
+CMakeFiles/modbus_simulator_cpp.dir/Components/Conveyor.cpp.o: ../Interfaces/ExternalMessageReceiver.h
+CMakeFiles/modbus_simulator_cpp.dir/Components/Conveyor.cpp.o: ../Interfaces/MachineStateMessageReceiver.h
+CMakeFiles/modbus_simulator_cpp.dir/Components/Conveyor.cpp.o: ../Logger/Logger.h
+CMakeFiles/modbus_simulator_cpp.dir/Components/Conveyor.cpp.o: ../Machine.h
+CMakeFiles/modbus_simulator_cpp.dir/Components/Conveyor.cpp.o: ../Messages/ActionStatusMessage.h
+CMakeFiles/modbus_simulator_cpp.dir/Components/Conveyor.cpp.o: ../Messages/ComponentMessage.h
+CMakeFiles/modbus_simulator_cpp.dir/Components/Conveyor.cpp.o: ../Messages/ConveyorRateMessage.h
+CMakeFiles/modbus_simulator_cpp.dir/Components/Conveyor.cpp.o: ../Messages/MachineStateMessage.h
+
+CMakeFiles/modbus_simulator_cpp.dir/Components/Delivery.cpp.o: ../Component.h
+CMakeFiles/modbus_simulator_cpp.dir/Components/Delivery.cpp.o: ../Components/Delivery.cpp
+CMakeFiles/modbus_simulator_cpp.dir/Components/Delivery.cpp.o: ../Components/Delivery.h
+CMakeFiles/modbus_simulator_cpp.dir/Components/Delivery.cpp.o: ../Components/TempoComponent.h
+CMakeFiles/modbus_simulator_cpp.dir/Components/Delivery.cpp.o: ../Interfaces/ComponentMessageReceiver.h
+CMakeFiles/modbus_simulator_cpp.dir/Components/Delivery.cpp.o: ../Interfaces/CountMessageReceiver.h
+CMakeFiles/modbus_simulator_cpp.dir/Components/Delivery.cpp.o: ../Interfaces/ExternalMachineStateReceiver.h
+CMakeFiles/modbus_simulator_cpp.dir/Components/Delivery.cpp.o: ../Interfaces/ExternalMessageReceiver.h
+CMakeFiles/modbus_simulator_cpp.dir/Components/Delivery.cpp.o: ../Interfaces/MachineStateMessageReceiver.h
+CMakeFiles/modbus_simulator_cpp.dir/Components/Delivery.cpp.o: ../Logger/Logger.h
+CMakeFiles/modbus_simulator_cpp.dir/Components/Delivery.cpp.o: ../Machine.h
+CMakeFiles/modbus_simulator_cpp.dir/Components/Delivery.cpp.o: ../Messages/ActionStatusMessage.h
+CMakeFiles/modbus_simulator_cpp.dir/Components/Delivery.cpp.o: ../Messages/ComponentMessage.h
+CMakeFiles/modbus_simulator_cpp.dir/Components/Delivery.cpp.o: ../Messages/CountMessage.h
+CMakeFiles/modbus_simulator_cpp.dir/Components/Delivery.cpp.o: ../Messages/MachineStateMessage.h
+
+CMakeFiles/modbus_simulator_cpp.dir/Components/Feeder.cpp.o: ../Component.h
+CMakeFiles/modbus_simulator_cpp.dir/Components/Feeder.cpp.o: ../Components/Feeder.cpp
+CMakeFiles/modbus_simulator_cpp.dir/Components/Feeder.cpp.o: ../Components/Feeder.h
+CMakeFiles/modbus_simulator_cpp.dir/Components/Feeder.cpp.o: ../Components/TempoComponent.h
+CMakeFiles/modbus_simulator_cpp.dir/Components/Feeder.cpp.o: ../Interfaces/ComponentMessageReceiver.h
+CMakeFiles/modbus_simulator_cpp.dir/Components/Feeder.cpp.o: ../Interfaces/CountMessageReceiver.h
+CMakeFiles/modbus_simulator_cpp.dir/Components/Feeder.cpp.o: ../Interfaces/ExternalMachineStateReceiver.h
+CMakeFiles/modbus_simulator_cpp.dir/Components/Feeder.cpp.o: ../Interfaces/ExternalMessageReceiver.h
+CMakeFiles/modbus_simulator_cpp.dir/Components/Feeder.cpp.o: ../Interfaces/MachineStateMessageReceiver.h
+CMakeFiles/modbus_simulator_cpp.dir/Components/Feeder.cpp.o: ../Logger/Logger.h
+CMakeFiles/modbus_simulator_cpp.dir/Components/Feeder.cpp.o: ../Machine.h
+CMakeFiles/modbus_simulator_cpp.dir/Components/Feeder.cpp.o: ../Messages/ActionStatusMessage.h
+CMakeFiles/modbus_simulator_cpp.dir/Components/Feeder.cpp.o: ../Messages/ComponentMessage.h
+CMakeFiles/modbus_simulator_cpp.dir/Components/Feeder.cpp.o: ../Messages/CountMessage.h
+CMakeFiles/modbus_simulator_cpp.dir/Components/Feeder.cpp.o: ../Messages/MachineStateMessage.h
+
+CMakeFiles/modbus_simulator_cpp.dir/Components/PaintStation.cpp.o: ../Component.h
+CMakeFiles/modbus_simulator_cpp.dir/Components/PaintStation.cpp.o: ../Components/PaintStation.cpp
+CMakeFiles/modbus_simulator_cpp.dir/Components/PaintStation.cpp.o: ../Components/PaintStation.h
+CMakeFiles/modbus_simulator_cpp.dir/Components/PaintStation.cpp.o: ../Components/TempoComponent.h
+CMakeFiles/modbus_simulator_cpp.dir/Components/PaintStation.cpp.o: ../Interfaces/ComponentMessageReceiver.h
+CMakeFiles/modbus_simulator_cpp.dir/Components/PaintStation.cpp.o: ../Interfaces/CountMessageReceiver.h
+CMakeFiles/modbus_simulator_cpp.dir/Components/PaintStation.cpp.o: ../Interfaces/ExternalMachineStateReceiver.h
+CMakeFiles/modbus_simulator_cpp.dir/Components/PaintStation.cpp.o: ../Interfaces/ExternalMessageReceiver.h
+CMakeFiles/modbus_simulator_cpp.dir/Components/PaintStation.cpp.o: ../Interfaces/MachineStateMessageReceiver.h
+CMakeFiles/modbus_simulator_cpp.dir/Components/PaintStation.cpp.o: ../Logger/Logger.h
+CMakeFiles/modbus_simulator_cpp.dir/Components/PaintStation.cpp.o: ../Machine.h
+CMakeFiles/modbus_simulator_cpp.dir/Components/PaintStation.cpp.o: ../Messages/ActionStatusMessage.h
+CMakeFiles/modbus_simulator_cpp.dir/Components/PaintStation.cpp.o: ../Messages/ComponentMessage.h
+CMakeFiles/modbus_simulator_cpp.dir/Components/PaintStation.cpp.o: ../Messages/CountMessage.h
+CMakeFiles/modbus_simulator_cpp.dir/Components/PaintStation.cpp.o: ../Messages/MachineStateMessage.h
 
 CMakeFiles/modbus_simulator_cpp.dir/Logger/Logger.cpp.o: ../Logger/Logger.cpp
 CMakeFiles/modbus_simulator_cpp.dir/Logger/Logger.cpp.o: ../Logger/Logger.h
 
+CMakeFiles/modbus_simulator_cpp.dir/Machine.cpp.o: ../Component.h
 CMakeFiles/modbus_simulator_cpp.dir/Machine.cpp.o: ../Interfaces/ComponentMessageReceiver.h
 CMakeFiles/modbus_simulator_cpp.dir/Machine.cpp.o: ../Interfaces/ExternalMachineStateReceiver.h
 CMakeFiles/modbus_simulator_cpp.dir/Machine.cpp.o: ../Interfaces/ExternalMessageReceiver.h
@@ -41,13 +110,4 @@ CMakeFiles/modbus_simulator_cpp.dir/Messages/MachineStateMessage.cpp.o: ../Messa
 
 CMakeFiles/modbus_simulator_cpp.dir/Messages/StateChangeMessage.cpp.o: ../Messages/StateChangeMessage.cpp
 CMakeFiles/modbus_simulator_cpp.dir/Messages/StateChangeMessage.cpp.o: ../Messages/StateChangeMessage.h
-
-CMakeFiles/modbus_simulator_cpp.dir/TestingComponents/SimpleComponent.cpp.o: ../Component.h
-CMakeFiles/modbus_simulator_cpp.dir/TestingComponents/SimpleComponent.cpp.o: ../Interfaces/ComponentMessageReceiver.h
-CMakeFiles/modbus_simulator_cpp.dir/TestingComponents/SimpleComponent.cpp.o: ../Interfaces/MachineStateMessageReceiver.h
-CMakeFiles/modbus_simulator_cpp.dir/TestingComponents/SimpleComponent.cpp.o: ../Logger/Logger.h
-CMakeFiles/modbus_simulator_cpp.dir/TestingComponents/SimpleComponent.cpp.o: ../Messages/ComponentMessage.h
-CMakeFiles/modbus_simulator_cpp.dir/TestingComponents/SimpleComponent.cpp.o: ../Messages/MachineStateMessage.h
-CMakeFiles/modbus_simulator_cpp.dir/TestingComponents/SimpleComponent.cpp.o: ../TestingComponents/SimpleComponent.cpp
-CMakeFiles/modbus_simulator_cpp.dir/TestingComponents/SimpleComponent.cpp.o: ../TestingComponents/SimpleComponent.h
 

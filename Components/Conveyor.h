@@ -7,11 +7,9 @@
 
 #include <thread>
 #include <vector>
-#include "../Component.h"
 #include "TempoComponent.h"
+#include "../Component.h"
 #include "../Interfaces/ConveyorRateMessageReceiver.h"
-
-#define MAX_ARRAY 10
 
 class Conveyor : public Component {
 private:
@@ -21,17 +19,19 @@ private:
     int period;
     bool runningLoop;
     std::thread loop;
-    std::vector<TempoComponent *> components;
-    std::vector<ConveyorRateMessageReceiver *> rateMessageReceivers;
+    std::vector<std::shared_ptr<TempoComponent>> components;
+    std::vector<std::shared_ptr<ConveyorRateMessageReceiver>> rateMessageReceivers;
 
     void runTempo();
 
 public:
-    Conveyor(char *name, Machine &machine, int maxRatePerHour, int initialRatePerHour);
+    Conveyor(const std::string& name, std::shared_ptr<ComponentMessageReceiver> machine, int maxRatePerHour, int initialRatePerHour);
 
-    const std::vector<ConveyorRateMessageReceiver *> &getRateMessageReceivers() const;
+    std::vector<std::shared_ptr<TempoComponent>> &getComponents();
 
-    void ReceiveMachineStateMessage(MachineStateMessage *stateMessage) override;
+    std::vector<std::shared_ptr<ConveyorRateMessageReceiver>> &getRateMessageReceivers();
+
+    void ReceiveMachineStateMessage(std::shared_ptr<MachineStateMessage> ptr) override;
 
     int getPeriod() const;
 

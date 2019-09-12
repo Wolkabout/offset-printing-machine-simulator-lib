@@ -2,25 +2,26 @@
 // Created by nvuletic on 11.9.19..
 //
 
-#include "../Logger/Logger.h"
+#include <iostream>
 #include "../Machine.h"
-#include "../Component.h"
-#include "../TestingComponents/SimpleComponent.h"
+#include "../Components/Conveyor.h"
+#include "../Components/Feeder.h"
 
 using namespace std;
 
-void loggerTest() {
-    Logger logger("Main");
-    logger.Log("Hello World!");
+void printMachineState(std::shared_ptr<Machine> machine) {
+    cout << "[MS] " << machine->getName() << " | " << machine->getComponents().size() << endl;
 }
 
-void machineTestReceiveMessage() {
-    Machine machine("Test Machine 1");
-    SimpleComponent simpleComponent("Test Component 1", machine);
-    simpleComponent.Emit(std::make_shared<ComponentMessage>(Neutral, "Test Neutral Message!"));
+void printActionResults(ActionStatusMessage &message) {
+    cout << "[ACM] " << message.getType() << " | " << message.getContent() << endl;
 }
 
 int main() {
-    machineTestReceiveMessage();
+    std::shared_ptr<Machine> machine = std::make_shared<Machine>("Test Machine 1");
+    printMachineState(machine);
+    std::shared_ptr<Conveyor> conveyor = std::make_shared<Conveyor>("Conveyor Test 1", machine, 15000, 15000);
+    std::shared_ptr<Feeder> feeder = std::make_shared<Feeder>("Feeder Test 1", machine, 17000, 17000);
+    printMachineState(machine);
     return 0;
 }

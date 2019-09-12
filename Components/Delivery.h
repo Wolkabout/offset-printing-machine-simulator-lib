@@ -18,29 +18,28 @@ private:
     char *w80;
     char *w90;
     char *wfull;
-    std::vector<ComponentMessage> messages;
-    std::vector<CountMessageReceiver *> countMessageReceiver;
+    std::vector<std::shared_ptr<CountMessageReceiver>> countMessageReceiver;
 
-    std::shared_ptr<ComponentMessage> checkCount();
+    std::pair<ComponentMessageType, std::string> checkCount();
 
     bool checkCountAndEmit();
 
 public:
-    const std::vector<CountMessageReceiver *> &getCountMessageReceiver() const;
-
     int getCapacity() const;
 
     int getCount() const;
 
     double getPercentage();
 
-    Delivery(char *name, Machine *machine, int capacity, int initialCount);
+    std::vector<std::shared_ptr<CountMessageReceiver>> &getCountMessageReceiver();
+
+    Delivery(const std::string& name, std::shared_ptr<ComponentMessageReceiver> machine, int capacity, int initialCount);
 
     bool modifyCount(int i) override;
 
     bool iterate() override;
 
-    void ReceiveMachineStateMessage(MachineStateMessage *stateMessage) override;
+    void ReceiveMachineStateMessage(std::shared_ptr<MachineStateMessage> ptr) override;
 };
 
 
