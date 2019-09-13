@@ -4,7 +4,9 @@
 CMakeFiles/modbus_simulator_testing.dir/Test/main.cpp.o
  /home/nvuletic/git-nexylmao/modbus-simulator-cpp/Component.h
  /home/nvuletic/git-nexylmao/modbus-simulator-cpp/Components/Conveyor.h
+ /home/nvuletic/git-nexylmao/modbus-simulator-cpp/Components/Delivery.h
  /home/nvuletic/git-nexylmao/modbus-simulator-cpp/Components/Feeder.h
+ /home/nvuletic/git-nexylmao/modbus-simulator-cpp/Components/PaintStation.h
  /home/nvuletic/git-nexylmao/modbus-simulator-cpp/Components/TempoComponent.h
  /home/nvuletic/git-nexylmao/modbus-simulator-cpp/Interfaces/ComponentMessageReceiver.h
  /home/nvuletic/git-nexylmao/modbus-simulator-cpp/Interfaces/ConveyorRateMessageReceiver.h

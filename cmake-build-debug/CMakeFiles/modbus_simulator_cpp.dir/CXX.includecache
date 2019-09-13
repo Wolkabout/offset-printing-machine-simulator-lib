@@ -16,43 +16,11 @@ Interfaces/MachineStateMessageReceiver.h
 Interfaces/ComponentMessageReceiver.h
 /home/nvuletic/git-nexylmao/modbus-simulator-cpp/Interfaces/ComponentMessageReceiver.h
 
-/home/nvuletic/git-nexylmao/modbus-simulator-cpp/Components/Conveyor.cpp
-cmath
--
-sstream
--
-Conveyor.h
-/home/nvuletic/git-nexylmao/modbus-simulator-cpp/Components/Conveyor.h
-
-/home/nvuletic/git-nexylmao/modbus-simulator-cpp/Components/Conveyor.h
-thread
--
-vector
--
-TempoComponent.h
-/home/nvuletic/git-nexylmao/modbus-simulator-cpp/Components/TempoComponent.h
-../Component.h
-/home/nvuletic/git-nexylmao/modbus-simulator-cpp/Component.h
-../Interfaces/ConveyorRateMessageReceiver.h
-/home/nvuletic/git-nexylmao/modbus-simulator-cpp/Interfaces/ConveyorRateMessageReceiver.h
-
-/home/nvuletic/git-nexylmao/modbus-simulator-cpp/Components/TempoComponent.h
-../Component.h
-/home/nvuletic/git-nexylmao/modbus-simulator-cpp/Component.h
-../Machine.h
-/home/nvuletic/git-nexylmao/modbus-simulator-cpp/Machine.h
-
 /home/nvuletic/git-nexylmao/modbus-simulator-cpp/Interfaces/ComponentMessageReceiver.h
 memory
 -
 ../Messages/ComponentMessage.h
 /home/nvuletic/git-nexylmao/modbus-simulator-cpp/Messages/ComponentMessage.h
-
-/home/nvuletic/git-nexylmao/modbus-simulator-cpp/Interfaces/ConveyorRateMessageReceiver.h
-memory
--
-../Messages/ConveyorRateMessage.h
-/home/nvuletic/git-nexylmao/modbus-simulator-cpp/Messages/ConveyorRateMessage.h
 
 /home/nvuletic/git-nexylmao/modbus-simulator-cpp/Interfaces/ExternalMachineMessageReceiver.h
 memory
@@ -71,6 +39,14 @@ memory
 /home/nvuletic/git-nexylmao/modbus-simulator-cpp/Logger/Logger.h
 string
 -
+
+/home/nvuletic/git-nexylmao/modbus-simulator-cpp/Machine.cpp
+iostream
+-
+Machine.h
+/home/nvuletic/git-nexylmao/modbus-simulator-cpp/Machine.h
+Messages/MachineStateMessage.h
+/home/nvuletic/git-nexylmao/modbus-simulator-cpp/Messages/MachineStateMessage.h
 
 /home/nvuletic/git-nexylmao/modbus-simulator-cpp/Machine.h
 vector
@@ -101,8 +77,6 @@ string
 /home/nvuletic/git-nexylmao/modbus-simulator-cpp/Messages/ComponentMessage.h
 string
 -
-
-/home/nvuletic/git-nexylmao/modbus-simulator-cpp/Messages/ConveyorRateMessage.h
 
 /home/nvuletic/git-nexylmao/modbus-simulator-cpp/Messages/MachineStateMessage.h
 functional

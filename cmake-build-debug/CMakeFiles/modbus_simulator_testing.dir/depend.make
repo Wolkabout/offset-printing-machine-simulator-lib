@@ -3,7 +3,9 @@
 
 CMakeFiles/modbus_simulator_testing.dir/Test/main.cpp.o: ../Component.h
 CMakeFiles/modbus_simulator_testing.dir/Test/main.cpp.o: ../Components/Conveyor.h
+CMakeFiles/modbus_simulator_testing.dir/Test/main.cpp.o: ../Components/Delivery.h
 CMakeFiles/modbus_simulator_testing.dir/Test/main.cpp.o: ../Components/Feeder.h
+CMakeFiles/modbus_simulator_testing.dir/Test/main.cpp.o: ../Components/PaintStation.h
 CMakeFiles/modbus_simulator_testing.dir/Test/main.cpp.o: ../Components/TempoComponent.h
 CMakeFiles/modbus_simulator_testing.dir/Test/main.cpp.o: ../Interfaces/ComponentMessageReceiver.h
 CMakeFiles/modbus_simulator_testing.dir/Test/main.cpp.o: ../Interfaces/ConveyorRateMessageReceiver.h

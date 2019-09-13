@@ -80,13 +80,14 @@ void Conveyor::ReceiveMachineStateMessage(std::shared_ptr<MachineStateMessage> m
             for (std::shared_ptr<MachineStateMessageReceiver> component : ((Machine &) machine).getComponents()) {
                 logger.Log("Found component " + ((TempoComponent &) *component.get()).getName());
                 try {
-                    TempoComponent &tc = dynamic_cast<TempoComponent&>(*component.get());
-                    logger.Log("TempoComponent : " + tc.getName());
+                    auto &tc = dynamic_cast<TempoComponent&>(*component.get());
+                    components.push_back(std::dynamic_pointer_cast<TempoComponent>(component));
                 } catch (std::exception& e) {
-                    logger.Log(((Component &) *component.get()).getName() + " is not a tempo component!");
+//                    logger.Log(((Component &) *component.get()).getName() + " is not a tempo component!");
                 }
             }
             runningLoop = true;
+            logger.Log("(SM) Found " + std::to_string(components.size()) + " tempo components!");
 //            loop = std::thread([&] { runTempo(); });
             break;
         case CheckForErrors:

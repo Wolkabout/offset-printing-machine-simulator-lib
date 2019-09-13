@@ -28,6 +28,14 @@ TempoComponent.h
 ../Interfaces/ConveyorRateMessageReceiver.h
 /home/nvuletic/git-nexylmao/modbus-simulator-cpp/Interfaces/ConveyorRateMessageReceiver.h
 
+/home/nvuletic/git-nexylmao/modbus-simulator-cpp/Components/Delivery.h
+string
+-
+TempoComponent.h
+/home/nvuletic/git-nexylmao/modbus-simulator-cpp/Components/TempoComponent.h
+../Interfaces/CountMessageReceiver.h
+/home/nvuletic/git-nexylmao/modbus-simulator-cpp/Interfaces/CountMessageReceiver.h
+
 /home/nvuletic/git-nexylmao/modbus-simulator-cpp/Components/Feeder.h
 vector
 -
@@ -39,6 +47,12 @@ vector
 /home/nvuletic/git-nexylmao/modbus-simulator-cpp/Machine.h
 TempoComponent.h
 /home/nvuletic/git-nexylmao/modbus-simulator-cpp/Components/TempoComponent.h
+
+/home/nvuletic/git-nexylmao/modbus-simulator-cpp/Components/PaintStation.h
+TempoComponent.h
+/home/nvuletic/git-nexylmao/modbus-simulator-cpp/Components/TempoComponent.h
+../Interfaces/CountMessageReceiver.h
+/home/nvuletic/git-nexylmao/modbus-simulator-cpp/Interfaces/CountMessageReceiver.h
 
 /home/nvuletic/git-nexylmao/modbus-simulator-cpp/Components/TempoComponent.h
 ../Component.h
@@ -131,4 +145,8 @@ iostream
 /home/nvuletic/git-nexylmao/modbus-simulator-cpp/Components/Conveyor.h
 ../Components/Feeder.h
 /home/nvuletic/git-nexylmao/modbus-simulator-cpp/Components/Feeder.h
+../Components/PaintStation.h
+/home/nvuletic/git-nexylmao/modbus-simulator-cpp/Components/PaintStation.h
+../Components/Delivery.h
+/home/nvuletic/git-nexylmao/modbus-simulator-cpp/Components/Delivery.h
 
