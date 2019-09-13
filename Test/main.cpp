@@ -3,7 +3,6 @@
 //
 
 #include <iostream>
-#include <curses.h>
 #include "../Machine.h"
 #include "../Components/Conveyor.h"
 #include "../Components/Feeder.h"
