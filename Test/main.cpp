@@ -3,6 +3,7 @@
 //
 
 #include <iostream>
+#include <curses.h>
 #include "../Machine.h"
 #include "../Components/Conveyor.h"
 #include "../Components/Feeder.h"
@@ -26,10 +27,6 @@ int main() {
         std::shared_ptr<Machine> machine = std::make_shared<Machine>("Test Machine 1");
         printMachineState(logger, machine);
 
-        std::shared_ptr<Conveyor> conveyor = std::make_shared<Conveyor>("Conveyor Test 1", *machine.get(), 15000,
-                                                                        15000);
-        machine->addComponent(conveyor);
-
         std::shared_ptr<Feeder> feeder = std::make_shared<Feeder>("Feeder Test 1", *machine.get(), 17000, 100);
         machine->addComponent(feeder);
 
@@ -45,12 +42,17 @@ int main() {
         std::shared_ptr<PaintStation> black = std::make_shared<PaintStation>("PaintStation Black Test 1", *machine.get(), 10000, 10000);
         machine->addComponent(black);
 
-        std::shared_ptr<Delivery> delivery = std::make_shared<Delivery>("Delivery Test 1", *machine.get(), 17000, 0);
+        std::shared_ptr<Delivery> delivery = std::make_shared<Delivery>("Delivery Test 1", *machine.get(), 17000, 16950);
         machine->addComponent(delivery);
 
+        std::shared_ptr<Conveyor> conveyor = std::make_shared<Conveyor>("Conveyor Test 1", *machine.get(), 15000,
+                                                                        15000);
+        machine->addComponent(conveyor);
+
         printMachineState(logger, machine);
-        machine->checkForErrors(false);
         machine->start();
+
+        cin.get();
     } catch (std::exception &e) {
         cout << "Exception was thrown : " << e.what();
     }

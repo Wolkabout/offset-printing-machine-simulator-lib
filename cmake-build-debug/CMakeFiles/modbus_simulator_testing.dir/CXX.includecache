@@ -139,6 +139,8 @@ ComponentMessage.h
 /home/nvuletic/git-nexylmao/modbus-simulator-cpp/Test/main.cpp
 iostream
 -
+curses.h
+-
 ../Machine.h
 /home/nvuletic/git-nexylmao/modbus-simulator-cpp/Machine.h
 ../Components/Conveyor.h

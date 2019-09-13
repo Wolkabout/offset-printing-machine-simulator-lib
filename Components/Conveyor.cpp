@@ -4,6 +4,7 @@
 
 #include <cmath>
 #include <sstream>
+#include <future>
 #include "Conveyor.h"
 
 int Conveyor::getRatePerHour() const {
@@ -88,7 +89,7 @@ void Conveyor::ReceiveMachineStateMessage(std::shared_ptr<MachineStateMessage> m
             }
             runningLoop = true;
             logger.Log("(SM) Found " + std::to_string(components.size()) + " tempo components!");
-//            loop = std::thread([&] { runTempo(); });
+            std::async(&Conveyor::runTempo, this);
             break;
         case CheckForErrors:
             if (message->getCallback() != nullptr) {

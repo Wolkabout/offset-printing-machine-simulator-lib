@@ -37,6 +37,8 @@ Delivery::Delivery(const std::string& name, ComponentMessageReceiver& machine, i
     this->capacity = capacity;
     this->count = initialCount;
     checkCountAndEmit();
+    warning80 = false;
+    warning90 = false;
 }
 
 std::pair<ComponentMessageType, std::string> Delivery::checkCount() {

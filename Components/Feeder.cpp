@@ -88,7 +88,6 @@ bool Feeder::iterate() {
     }
     if (checkCountAndEmit()) {
         count--;
-        checkCountAndEmit();
         return true;
     }
     return false;

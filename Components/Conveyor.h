@@ -18,7 +18,6 @@ private:
     int minRatePerHour = 1000;
     int period;
     bool runningLoop;
-    std::thread loop;
     std::vector<std::shared_ptr<TempoComponent>> components;
     std::vector<std::shared_ptr<ConveyorRateMessageReceiver>> rateMessageReceivers;
 

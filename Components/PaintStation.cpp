@@ -36,6 +36,8 @@ PaintStation::PaintStation(std::string name, ComponentMessageReceiver& machine, 
     this->capacity = capacity;
     this->count = initialCount;
     checkCountAndEmit();
+    warning20 = false;
+    warning10 = false;
 }
 
 std::pair<ComponentMessageType, std::string> PaintStation::checkCount() {

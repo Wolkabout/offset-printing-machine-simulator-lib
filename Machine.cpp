@@ -50,9 +50,8 @@ ActionStatusMessage Machine::start() {
     ActionStatusMessage result = checkForErrors(true);
     if (result.getType() == good) {
         // Notify all the components that we are starting
-        this->EmitToComponents(Starting, "", nullptr);
-
         running = true;
+        this->EmitToComponents(Starting, "", nullptr);
 
         // Notify all the external listeners that we are starting up
         for (auto &externalMachineStateReceiver : externalMachineStateReceivers) {
@@ -71,10 +70,10 @@ ActionStatusMessage Machine::stop() {
         return {message, "Machine is already stopped."};
     }
 
+    running = false;
+
     // Notify all the components that we are shutting down
     this->EmitToComponents(Stopping, "", nullptr);
-
-    running = false;
 
     // Notify all the external listeners that we are shutting down
     for (auto &externalMachineStateReceiver : externalMachineStateReceivers) {
