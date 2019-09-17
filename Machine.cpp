@@ -77,7 +77,7 @@ ActionStatusMessage Machine::stop() {
 
     // Notify all the external listeners that we are shutting down
     for (auto &externalMachineStateReceiver : externalMachineStateReceivers) {
-        externalMachineStateReceiver->ReceiveMachineState(true);
+        externalMachineStateReceiver->ReceiveMachineState(false);
     }
 
     return {good, ""};
