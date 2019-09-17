@@ -19,6 +19,17 @@ void printActionResults(Logger &logger, ActionStatusMessage &message) {
     logger.Log("[ACM] " + std::to_string(message.getType()) + " | " + message.getContent());
 }
 
+class CountListener : public CountMessageReceiver {
+private:
+    Logger logger;
+    TempoComponent &component;
+public:
+    CountListener(const Logger &logger, TempoComponent &component) : logger(logger), component(component) {}
+
+    void ReceiveMessage(std::shared_ptr<CountMessage> ptr) override {
+        logger.Log("[CL] Component " + component.getName() + " says : " + std::to_string(ptr->getCount()));
+    }
+};
 
 int main() {
     try {
@@ -28,6 +39,8 @@ int main() {
 
         std::shared_ptr<Feeder> feeder = std::make_shared<Feeder>("Feeder Test 1", *machine.get(), 17000, 100);
         machine->addComponent(feeder);
+        std::shared_ptr<CountMessageReceiver> listener = std::make_shared<CountListener>(logger, *feeder.get());
+        feeder->getCountMessageReceiver().push_back(listener);
 
         std::shared_ptr<PaintStation> cyan = std::make_shared<PaintStation>("PaintStation Cyan Test 1", *machine.get(), 10000, 10000);
         machine->addComponent(cyan);
