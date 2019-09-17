@@ -77,6 +77,7 @@ bool PaintStation::modifyCount(int i) {
     }
 
     count += i;
+    EmitCount();
     checkCountAndEmit();
     return true;
 }
@@ -88,6 +89,7 @@ bool PaintStation::iterate() {
     }
     if (checkCountAndEmit()) {
         count--;
+        EmitCount();
         checkCountAndEmit();
         return true;
     }
@@ -110,5 +112,12 @@ void PaintStation::ReceiveMachineStateMessage(std::shared_ptr<MachineStateMessag
         case Stopping:
             logger.Log("Stopping work with " + std::to_string(count) + '/' + std::to_string(capacity));
             break;
+    }
+}
+
+void PaintStation::EmitCount() {
+    std::shared_ptr<CountMessage> countMessage = std::make_shared<CountMessage>(count, (double)count / capacity);
+    for (auto receiver : countMessageReceiver) {
+        receiver->ReceiveMessage(countMessage);
     }
 }

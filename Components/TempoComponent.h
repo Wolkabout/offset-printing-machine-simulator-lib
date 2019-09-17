@@ -12,7 +12,11 @@ class TempoComponent : public Component {
 protected:
     explicit TempoComponent(std::string name, ComponentMessageReceiver& machine) : Component(name, machine) {}
 
+    virtual void EmitCount() = 0;
 public:
+
+    virtual int getCount() const = 0;
+
     virtual bool modifyCount(int) = 0;
 
     virtual bool iterate() = 0;

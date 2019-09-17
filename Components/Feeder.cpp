@@ -77,6 +77,7 @@ bool Feeder::modifyCount(int i) {
     }
 
     count += i;
+    EmitCount();
     checkCountAndEmit();
     return true;
 }
@@ -88,6 +89,7 @@ bool Feeder::iterate() {
     }
     if (checkCountAndEmit()) {
         count--;
+        EmitCount();
         return true;
     }
     return false;
@@ -109,5 +111,12 @@ void Feeder::ReceiveMachineStateMessage(std::shared_ptr<MachineStateMessage> mes
         case Stopping:
             logger.Log("Stopping work with " + std::to_string(count) + '/' + std::to_string(capacity));
             break;
+    }
+}
+
+void Feeder::EmitCount() {
+    std::shared_ptr<CountMessage> countMessage = std::make_shared<CountMessage>(count, (double)count / capacity);
+    for (auto receiver : countMessageReceiver) {
+        receiver->ReceiveMessage(countMessage);
     }
 }

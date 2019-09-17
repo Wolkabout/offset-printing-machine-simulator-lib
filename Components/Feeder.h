@@ -27,10 +27,13 @@ private:
 
     bool checkCountAndEmit();
 
+protected:
+    void EmitCount() override;
+
 public:
     int getCapacity() const;
 
-    int getCount() const;
+    int getCount() const override;
 
     double getPercentage();
 

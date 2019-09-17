@@ -78,6 +78,7 @@ bool Delivery::modifyCount(int i) {
     }
 
     count -= i;
+    EmitCount();
     checkCountAndEmit();
     return true;
 }
@@ -89,6 +90,7 @@ bool Delivery::iterate() {
     }
     if (checkCountAndEmit()) {
         count++;
+        EmitCount();
         checkCountAndEmit();
         return true;
     }
@@ -111,5 +113,12 @@ void Delivery::ReceiveMachineStateMessage(std::shared_ptr<MachineStateMessage> m
         case Stopping:
             logger.Log("Stopping work with " + std::to_string(count) + '/' + std::to_string(capacity));
             break;
+    }
+}
+
+void Delivery::EmitCount() {
+    std::shared_ptr<CountMessage> countMessage = std::make_shared<CountMessage>(count, (double)count / capacity);
+    for (auto receiver : countMessageReceiver) {
+        receiver->ReceiveMessage(countMessage);
     }
 }
