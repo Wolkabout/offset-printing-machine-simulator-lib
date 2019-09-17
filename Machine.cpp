@@ -10,7 +10,7 @@ const std::string &Machine::getName() const {
     return name;
 }
 
-const std::vector<std::shared_ptr<ComponentMessage>> &Machine::getMessages() const {
+std::vector<std::shared_ptr<ComponentMessage>> &Machine::getMessages() {
     return messages;
 }
 
@@ -18,11 +18,11 @@ std::vector<std::shared_ptr<MachineStateMessageReceiver>> &Machine::getComponent
     return components;
 }
 
-const std::vector<std::shared_ptr<ExternalMachineMessageReceiver>> &Machine::getExternalMessageReceivers() const {
+std::vector<std::shared_ptr<ExternalMachineMessageReceiver>> &Machine::getExternalMessageReceivers() {
     return externalMessageReceivers;
 }
 
-const std::vector<std::shared_ptr<ExternalMachineStateReceiver>> &Machine::getExternalMachineStateReceivers() const {
+std::vector<std::shared_ptr<ExternalMachineStateReceiver>> &Machine::getExternalMachineStateReceivers() {
     return externalMachineStateReceivers;
 }
 

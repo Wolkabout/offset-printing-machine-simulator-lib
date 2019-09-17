@@ -28,13 +28,13 @@ public:
 
     const std::string &getName() const;
 
-    const std::vector<std::shared_ptr<ComponentMessage>> &getMessages() const;
+    std::vector<std::shared_ptr<ComponentMessage>> &getMessages();
 
     std::vector<std::shared_ptr<MachineStateMessageReceiver>> &getComponents();
 
-    const std::vector<std::shared_ptr<ExternalMachineMessageReceiver>> &getExternalMessageReceivers() const;
+    std::vector<std::shared_ptr<ExternalMachineMessageReceiver>> &getExternalMessageReceivers();
 
-    const std::vector<std::shared_ptr<ExternalMachineStateReceiver>> &getExternalMachineStateReceivers() const;
+    std::vector<std::shared_ptr<ExternalMachineStateReceiver>> &getExternalMachineStateReceivers();
 
     Machine(const std::string &name);
 
