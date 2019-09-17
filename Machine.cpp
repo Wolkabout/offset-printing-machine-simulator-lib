@@ -10,7 +10,7 @@ const std::string &Machine::getName() const {
     return name;
 }
 
-const std::vector<std::shared_ptr<ComponentMessage>> &Machine::getMessages() const {
+std::vector<std::shared_ptr<ComponentMessage>> &Machine::getMessages() {
     return messages;
 }
 
@@ -18,11 +18,11 @@ std::vector<std::shared_ptr<MachineStateMessageReceiver>> &Machine::getComponent
     return components;
 }
 
-const std::vector<std::shared_ptr<ExternalMachineMessageReceiver>> &Machine::getExternalMessageReceivers() const {
+std::vector<std::shared_ptr<ExternalMachineMessageReceiver>> &Machine::getExternalMessageReceivers() {
     return externalMessageReceivers;
 }
 
-const std::vector<std::shared_ptr<ExternalMachineStateReceiver>> &Machine::getExternalMachineStateReceivers() const {
+std::vector<std::shared_ptr<ExternalMachineStateReceiver>> &Machine::getExternalMachineStateReceivers() {
     return externalMachineStateReceivers;
 }
 
@@ -77,7 +77,7 @@ ActionStatusMessage Machine::stop() {
 
     // Notify all the external listeners that we are shutting down
     for (auto &externalMachineStateReceiver : externalMachineStateReceivers) {
-        externalMachineStateReceiver->ReceiveMachineState(true);
+        externalMachineStateReceiver->ReceiveMachineState(false);
     }
 
     return {good, ""};
