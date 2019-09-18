@@ -8,38 +8,38 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/home/nexyy/git-nexylmao/modbus-simulator-cpp/cmake-build-debug"/>
+				<Option working_dir="/home/nvuletic/git-nexylmao/modbus-simulator-cpp/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/nexyy/git-nexylmao/modbus-simulator-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/nexyy/git-nexylmao/modbus-simulator-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/nexyy/git-nexylmao/modbus-simulator-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/nexyy/git-nexylmao/modbus-simulator-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j6 -f &quot;/home/nvuletic/git-nexylmao/modbus-simulator-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j6 -f &quot;/home/nvuletic/git-nexylmao/modbus-simulator-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j6 -f &quot;/home/nvuletic/git-nexylmao/modbus-simulator-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j6 -f &quot;/home/nvuletic/git-nexylmao/modbus-simulator-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/home/nexyy/git-nexylmao/modbus-simulator-cpp/cmake-build-debug"/>
+				<Option working_dir="/home/nvuletic/git-nexylmao/modbus-simulator-cpp/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/nexyy/git-nexylmao/modbus-simulator-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/nexyy/git-nexylmao/modbus-simulator-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/nexyy/git-nexylmao/modbus-simulator-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/nexyy/git-nexylmao/modbus-simulator-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j6 -f &quot;/home/nvuletic/git-nexylmao/modbus-simulator-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j6 -f &quot;/home/nvuletic/git-nexylmao/modbus-simulator-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j6 -f &quot;/home/nvuletic/git-nexylmao/modbus-simulator-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j6 -f &quot;/home/nvuletic/git-nexylmao/modbus-simulator-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/home/nexyy/git-nexylmao/modbus-simulator-cpp/cmake-build-debug"/>
+				<Option working_dir="/home/nvuletic/git-nexylmao/modbus-simulator-cpp/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/nexyy/git-nexylmao/modbus-simulator-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/nexyy/git-nexylmao/modbus-simulator-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/nexyy/git-nexylmao/modbus-simulator-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/nexyy/git-nexylmao/modbus-simulator-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j6 -f &quot;/home/nvuletic/git-nexylmao/modbus-simulator-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j6 -f &quot;/home/nvuletic/git-nexylmao/modbus-simulator-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j6 -f &quot;/home/nvuletic/git-nexylmao/modbus-simulator-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j6 -f &quot;/home/nvuletic/git-nexylmao/modbus-simulator-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="modbus_simulator_cpp">
-				<Option output="/home/nexyy/git-nexylmao/modbus-simulator-cpp/cmake-build-debug/libmodbus_simulator_cpp.a" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/nexyy/git-nexylmao/modbus-simulator-cpp/cmake-build-debug"/>
+				<Option output="/home/nvuletic/git-nexylmao/modbus-simulator-cpp/cmake-build-debug/libmodbus_simulator_cpp.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/nvuletic/git-nexylmao/modbus-simulator-cpp/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="2"/>
 				<Option compiler="gcc"/>
@@ -54,15 +54,15 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/nexyy/git-nexylmao/modbus-simulator-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 modbus_simulator_cpp"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/nexyy/git-nexylmao/modbus-simulator-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/nexyy/git-nexylmao/modbus-simulator-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/nexyy/git-nexylmao/modbus-simulator-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j6 -f &quot;/home/nvuletic/git-nexylmao/modbus-simulator-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 modbus_simulator_cpp"/>
+					<CompileFile command="/usr/bin/make -j6 -f &quot;/home/nvuletic/git-nexylmao/modbus-simulator-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j6 -f &quot;/home/nvuletic/git-nexylmao/modbus-simulator-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j6 -f &quot;/home/nvuletic/git-nexylmao/modbus-simulator-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="modbus_simulator_cpp/fast">
-				<Option output="/home/nexyy/git-nexylmao/modbus-simulator-cpp/cmake-build-debug/libmodbus_simulator_cpp.a" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/nexyy/git-nexylmao/modbus-simulator-cpp/cmake-build-debug"/>
+				<Option output="/home/nvuletic/git-nexylmao/modbus-simulator-cpp/cmake-build-debug/libmodbus_simulator_cpp.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/nvuletic/git-nexylmao/modbus-simulator-cpp/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="2"/>
 				<Option compiler="gcc"/>
@@ -77,15 +77,15 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/nexyy/git-nexylmao/modbus-simulator-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 modbus_simulator_cpp/fast"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/nexyy/git-nexylmao/modbus-simulator-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/nexyy/git-nexylmao/modbus-simulator-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/nexyy/git-nexylmao/modbus-simulator-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j6 -f &quot;/home/nvuletic/git-nexylmao/modbus-simulator-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 modbus_simulator_cpp/fast"/>
+					<CompileFile command="/usr/bin/make -j6 -f &quot;/home/nvuletic/git-nexylmao/modbus-simulator-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j6 -f &quot;/home/nvuletic/git-nexylmao/modbus-simulator-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j6 -f &quot;/home/nvuletic/git-nexylmao/modbus-simulator-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="modbus_simulator_testing">
-				<Option output="/home/nexyy/git-nexylmao/modbus-simulator-cpp/cmake-build-debug/modbus_simulator_testing" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/nexyy/git-nexylmao/modbus-simulator-cpp/cmake-build-debug"/>
+				<Option output="/home/nvuletic/git-nexylmao/modbus-simulator-cpp/cmake-build-debug/modbus_simulator_testing" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/nvuletic/git-nexylmao/modbus-simulator-cpp/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -100,15 +100,15 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/nexyy/git-nexylmao/modbus-simulator-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 modbus_simulator_testing"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/nexyy/git-nexylmao/modbus-simulator-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/nexyy/git-nexylmao/modbus-simulator-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/nexyy/git-nexylmao/modbus-simulator-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j6 -f &quot;/home/nvuletic/git-nexylmao/modbus-simulator-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 modbus_simulator_testing"/>
+					<CompileFile command="/usr/bin/make -j6 -f &quot;/home/nvuletic/git-nexylmao/modbus-simulator-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j6 -f &quot;/home/nvuletic/git-nexylmao/modbus-simulator-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j6 -f &quot;/home/nvuletic/git-nexylmao/modbus-simulator-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="modbus_simulator_testing/fast">
-				<Option output="/home/nexyy/git-nexylmao/modbus-simulator-cpp/cmake-build-debug/modbus_simulator_testing" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/nexyy/git-nexylmao/modbus-simulator-cpp/cmake-build-debug"/>
+				<Option output="/home/nvuletic/git-nexylmao/modbus-simulator-cpp/cmake-build-debug/modbus_simulator_testing" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/nvuletic/git-nexylmao/modbus-simulator-cpp/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -123,116 +123,116 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/nexyy/git-nexylmao/modbus-simulator-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 modbus_simulator_testing/fast"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/nexyy/git-nexylmao/modbus-simulator-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/nexyy/git-nexylmao/modbus-simulator-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/nexyy/git-nexylmao/modbus-simulator-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j6 -f &quot;/home/nvuletic/git-nexylmao/modbus-simulator-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 modbus_simulator_testing/fast"/>
+					<CompileFile command="/usr/bin/make -j6 -f &quot;/home/nvuletic/git-nexylmao/modbus-simulator-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j6 -f &quot;/home/nvuletic/git-nexylmao/modbus-simulator-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j6 -f &quot;/home/nvuletic/git-nexylmao/modbus-simulator-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/nexyy/git-nexylmao/modbus-simulator-cpp/Component.cpp">
+		<Unit filename="/home/nvuletic/git-nexylmao/modbus-simulator-cpp/Component.cpp">
 			<Option target="modbus_simulator_cpp"/>
 		</Unit>
-		<Unit filename="/home/nexyy/git-nexylmao/modbus-simulator-cpp/Component.h">
+		<Unit filename="/home/nvuletic/git-nexylmao/modbus-simulator-cpp/Component.h">
 			<Option target="modbus_simulator_cpp"/>
 		</Unit>
-		<Unit filename="/home/nexyy/git-nexylmao/modbus-simulator-cpp/Components/Conveyor.cpp">
+		<Unit filename="/home/nvuletic/git-nexylmao/modbus-simulator-cpp/Components/Conveyor.cpp">
 			<Option target="modbus_simulator_cpp"/>
 		</Unit>
-		<Unit filename="/home/nexyy/git-nexylmao/modbus-simulator-cpp/Components/Conveyor.h">
+		<Unit filename="/home/nvuletic/git-nexylmao/modbus-simulator-cpp/Components/Conveyor.h">
 			<Option target="modbus_simulator_cpp"/>
 		</Unit>
-		<Unit filename="/home/nexyy/git-nexylmao/modbus-simulator-cpp/Components/Delivery.cpp">
+		<Unit filename="/home/nvuletic/git-nexylmao/modbus-simulator-cpp/Components/Delivery.cpp">
 			<Option target="modbus_simulator_cpp"/>
 		</Unit>
-		<Unit filename="/home/nexyy/git-nexylmao/modbus-simulator-cpp/Components/Delivery.h">
+		<Unit filename="/home/nvuletic/git-nexylmao/modbus-simulator-cpp/Components/Delivery.h">
 			<Option target="modbus_simulator_cpp"/>
 		</Unit>
-		<Unit filename="/home/nexyy/git-nexylmao/modbus-simulator-cpp/Components/Feeder.cpp">
+		<Unit filename="/home/nvuletic/git-nexylmao/modbus-simulator-cpp/Components/Feeder.cpp">
 			<Option target="modbus_simulator_cpp"/>
 		</Unit>
-		<Unit filename="/home/nexyy/git-nexylmao/modbus-simulator-cpp/Components/Feeder.h">
+		<Unit filename="/home/nvuletic/git-nexylmao/modbus-simulator-cpp/Components/Feeder.h">
 			<Option target="modbus_simulator_cpp"/>
 		</Unit>
-		<Unit filename="/home/nexyy/git-nexylmao/modbus-simulator-cpp/Components/PaintStation.cpp">
+		<Unit filename="/home/nvuletic/git-nexylmao/modbus-simulator-cpp/Components/PaintStation.cpp">
 			<Option target="modbus_simulator_cpp"/>
 		</Unit>
-		<Unit filename="/home/nexyy/git-nexylmao/modbus-simulator-cpp/Components/PaintStation.h">
+		<Unit filename="/home/nvuletic/git-nexylmao/modbus-simulator-cpp/Components/PaintStation.h">
 			<Option target="modbus_simulator_cpp"/>
 		</Unit>
-		<Unit filename="/home/nexyy/git-nexylmao/modbus-simulator-cpp/Components/TempoComponent.h">
+		<Unit filename="/home/nvuletic/git-nexylmao/modbus-simulator-cpp/Components/TempoComponent.h">
 			<Option target="modbus_simulator_cpp"/>
 		</Unit>
-		<Unit filename="/home/nexyy/git-nexylmao/modbus-simulator-cpp/Interfaces/ComponentMessageReceiver.h">
+		<Unit filename="/home/nvuletic/git-nexylmao/modbus-simulator-cpp/Interfaces/ComponentMessageReceiver.h">
 			<Option target="modbus_simulator_cpp"/>
 		</Unit>
-		<Unit filename="/home/nexyy/git-nexylmao/modbus-simulator-cpp/Interfaces/ConveyorRateMessageReceiver.h">
+		<Unit filename="/home/nvuletic/git-nexylmao/modbus-simulator-cpp/Interfaces/ConveyorRateMessageReceiver.h">
 			<Option target="modbus_simulator_cpp"/>
 		</Unit>
-		<Unit filename="/home/nexyy/git-nexylmao/modbus-simulator-cpp/Interfaces/CountMessageReceiver.h">
+		<Unit filename="/home/nvuletic/git-nexylmao/modbus-simulator-cpp/Interfaces/CountMessageReceiver.h">
 			<Option target="modbus_simulator_cpp"/>
 		</Unit>
-		<Unit filename="/home/nexyy/git-nexylmao/modbus-simulator-cpp/Interfaces/ExternalMachineMessageReceiver.h">
+		<Unit filename="/home/nvuletic/git-nexylmao/modbus-simulator-cpp/Interfaces/ExternalMachineMessageReceiver.h">
 			<Option target="modbus_simulator_cpp"/>
 		</Unit>
-		<Unit filename="/home/nexyy/git-nexylmao/modbus-simulator-cpp/Interfaces/ExternalMachineStateReceiver.h">
+		<Unit filename="/home/nvuletic/git-nexylmao/modbus-simulator-cpp/Interfaces/ExternalMachineStateReceiver.h">
 			<Option target="modbus_simulator_cpp"/>
 		</Unit>
-		<Unit filename="/home/nexyy/git-nexylmao/modbus-simulator-cpp/Interfaces/MachineStateMessageReceiver.h">
+		<Unit filename="/home/nvuletic/git-nexylmao/modbus-simulator-cpp/Interfaces/MachineStateMessageReceiver.h">
 			<Option target="modbus_simulator_cpp"/>
 		</Unit>
-		<Unit filename="/home/nexyy/git-nexylmao/modbus-simulator-cpp/Logger/Logger.cpp">
+		<Unit filename="/home/nvuletic/git-nexylmao/modbus-simulator-cpp/Logger/Logger.cpp">
 			<Option target="modbus_simulator_cpp"/>
 		</Unit>
-		<Unit filename="/home/nexyy/git-nexylmao/modbus-simulator-cpp/Logger/Logger.h">
+		<Unit filename="/home/nvuletic/git-nexylmao/modbus-simulator-cpp/Logger/Logger.h">
 			<Option target="modbus_simulator_cpp"/>
 		</Unit>
-		<Unit filename="/home/nexyy/git-nexylmao/modbus-simulator-cpp/Machine.cpp">
+		<Unit filename="/home/nvuletic/git-nexylmao/modbus-simulator-cpp/Machine.cpp">
 			<Option target="modbus_simulator_cpp"/>
 		</Unit>
-		<Unit filename="/home/nexyy/git-nexylmao/modbus-simulator-cpp/Machine.h">
+		<Unit filename="/home/nvuletic/git-nexylmao/modbus-simulator-cpp/Machine.h">
 			<Option target="modbus_simulator_cpp"/>
 		</Unit>
-		<Unit filename="/home/nexyy/git-nexylmao/modbus-simulator-cpp/Messages/ActionStatusMessage.cpp">
+		<Unit filename="/home/nvuletic/git-nexylmao/modbus-simulator-cpp/Messages/ActionStatusMessage.cpp">
 			<Option target="modbus_simulator_cpp"/>
 		</Unit>
-		<Unit filename="/home/nexyy/git-nexylmao/modbus-simulator-cpp/Messages/ActionStatusMessage.h">
+		<Unit filename="/home/nvuletic/git-nexylmao/modbus-simulator-cpp/Messages/ActionStatusMessage.h">
 			<Option target="modbus_simulator_cpp"/>
 		</Unit>
-		<Unit filename="/home/nexyy/git-nexylmao/modbus-simulator-cpp/Messages/ComponentMessage.cpp">
+		<Unit filename="/home/nvuletic/git-nexylmao/modbus-simulator-cpp/Messages/ComponentMessage.cpp">
 			<Option target="modbus_simulator_cpp"/>
 		</Unit>
-		<Unit filename="/home/nexyy/git-nexylmao/modbus-simulator-cpp/Messages/ComponentMessage.h">
+		<Unit filename="/home/nvuletic/git-nexylmao/modbus-simulator-cpp/Messages/ComponentMessage.h">
 			<Option target="modbus_simulator_cpp"/>
 		</Unit>
-		<Unit filename="/home/nexyy/git-nexylmao/modbus-simulator-cpp/Messages/ConveyorRateMessage.cpp">
+		<Unit filename="/home/nvuletic/git-nexylmao/modbus-simulator-cpp/Messages/ConveyorRateMessage.cpp">
 			<Option target="modbus_simulator_cpp"/>
 		</Unit>
-		<Unit filename="/home/nexyy/git-nexylmao/modbus-simulator-cpp/Messages/ConveyorRateMessage.h">
+		<Unit filename="/home/nvuletic/git-nexylmao/modbus-simulator-cpp/Messages/ConveyorRateMessage.h">
 			<Option target="modbus_simulator_cpp"/>
 		</Unit>
-		<Unit filename="/home/nexyy/git-nexylmao/modbus-simulator-cpp/Messages/CountMessage.cpp">
+		<Unit filename="/home/nvuletic/git-nexylmao/modbus-simulator-cpp/Messages/CountMessage.cpp">
 			<Option target="modbus_simulator_cpp"/>
 		</Unit>
-		<Unit filename="/home/nexyy/git-nexylmao/modbus-simulator-cpp/Messages/CountMessage.h">
+		<Unit filename="/home/nvuletic/git-nexylmao/modbus-simulator-cpp/Messages/CountMessage.h">
 			<Option target="modbus_simulator_cpp"/>
 		</Unit>
-		<Unit filename="/home/nexyy/git-nexylmao/modbus-simulator-cpp/Messages/MachineStateMessage.cpp">
+		<Unit filename="/home/nvuletic/git-nexylmao/modbus-simulator-cpp/Messages/MachineStateMessage.cpp">
 			<Option target="modbus_simulator_cpp"/>
 		</Unit>
-		<Unit filename="/home/nexyy/git-nexylmao/modbus-simulator-cpp/Messages/MachineStateMessage.h">
+		<Unit filename="/home/nvuletic/git-nexylmao/modbus-simulator-cpp/Messages/MachineStateMessage.h">
 			<Option target="modbus_simulator_cpp"/>
 		</Unit>
-		<Unit filename="/home/nexyy/git-nexylmao/modbus-simulator-cpp/Messages/StateChangeMessage.cpp">
+		<Unit filename="/home/nvuletic/git-nexylmao/modbus-simulator-cpp/Messages/StateChangeMessage.cpp">
 			<Option target="modbus_simulator_cpp"/>
 		</Unit>
-		<Unit filename="/home/nexyy/git-nexylmao/modbus-simulator-cpp/Messages/StateChangeMessage.h">
+		<Unit filename="/home/nvuletic/git-nexylmao/modbus-simulator-cpp/Messages/StateChangeMessage.h">
 			<Option target="modbus_simulator_cpp"/>
 		</Unit>
-		<Unit filename="/home/nexyy/git-nexylmao/modbus-simulator-cpp/Test/main.cpp">
+		<Unit filename="/home/nvuletic/git-nexylmao/modbus-simulator-cpp/Test/main.cpp">
 			<Option target="modbus_simulator_testing"/>
 		</Unit>
-		<Unit filename="/home/nexyy/git-nexylmao/modbus-simulator-cpp/CMakeLists.txt">
+		<Unit filename="/home/nvuletic/git-nexylmao/modbus-simulator-cpp/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

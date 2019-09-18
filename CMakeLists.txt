@@ -3,8 +3,6 @@ project(modbus_simulator_cpp)
 
 set(CMAKE_CXX_STANDARD 17)
 
-find_package(Threads REQUIRED)
-
 add_library(${PROJECT_NAME}
         Machine.cpp
         Machine.h
@@ -41,7 +39,7 @@ add_library(${PROJECT_NAME}
         Components/PaintStation.cpp
         Components/PaintStation.h
         Components/TempoComponent.h)
-target_link_libraries(${PROJECT_NAME} Threads::Threads)
+target_link_libraries(${PROJECT_NAME} pthread)
 
 add_executable(modbus_simulator_testing Test/main.cpp)
 target_link_libraries(modbus_simulator_testing ${PROJECT_NAME})

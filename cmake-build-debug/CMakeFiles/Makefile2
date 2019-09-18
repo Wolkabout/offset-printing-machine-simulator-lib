@@ -50,19 +50,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /home/nexyy/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/192.6262.62/bin/cmake/linux/bin/cmake
+CMAKE_COMMAND = /snap/clion/83/bin/cmake/linux/bin/cmake
 
 # The command to remove a file.
-RM = /home/nexyy/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/192.6262.62/bin/cmake/linux/bin/cmake -E remove -f
+RM = /snap/clion/83/bin/cmake/linux/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/nexyy/git-nexylmao/modbus-simulator-cpp
+CMAKE_SOURCE_DIR = /home/nvuletic/git-nexylmao/modbus-simulator-cpp
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/nexyy/git-nexylmao/modbus-simulator-cpp/cmake-build-debug
+CMAKE_BINARY_DIR = /home/nvuletic/git-nexylmao/modbus-simulator-cpp/cmake-build-debug
 
 #=============================================================================
 # Target rules for target CMakeFiles/modbus_simulator_cpp.dir
@@ -71,7 +71,7 @@ CMAKE_BINARY_DIR = /home/nexyy/git-nexylmao/modbus-simulator-cpp/cmake-build-deb
 CMakeFiles/modbus_simulator_cpp.dir/all:
 	$(MAKE) -f CMakeFiles/modbus_simulator_cpp.dir/build.make CMakeFiles/modbus_simulator_cpp.dir/depend
 	$(MAKE) -f CMakeFiles/modbus_simulator_cpp.dir/build.make CMakeFiles/modbus_simulator_cpp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/nexyy/git-nexylmao/modbus-simulator-cpp/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14 "Built target modbus_simulator_cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/nvuletic/git-nexylmao/modbus-simulator-cpp/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14 "Built target modbus_simulator_cpp"
 .PHONY : CMakeFiles/modbus_simulator_cpp.dir/all
 
 # Include target in all.
@@ -81,9 +81,9 @@ all: CMakeFiles/modbus_simulator_cpp.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/modbus_simulator_cpp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/nexyy/git-nexylmao/modbus-simulator-cpp/cmake-build-debug/CMakeFiles 14
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/nvuletic/git-nexylmao/modbus-simulator-cpp/cmake-build-debug/CMakeFiles 14
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/modbus_simulator_cpp.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/nexyy/git-nexylmao/modbus-simulator-cpp/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/nvuletic/git-nexylmao/modbus-simulator-cpp/cmake-build-debug/CMakeFiles 0
 .PHONY : CMakeFiles/modbus_simulator_cpp.dir/rule
 
 # Convenience name for target.
@@ -108,7 +108,7 @@ clean: CMakeFiles/modbus_simulator_cpp.dir/clean
 CMakeFiles/modbus_simulator_testing.dir/all: CMakeFiles/modbus_simulator_cpp.dir/all
 	$(MAKE) -f CMakeFiles/modbus_simulator_testing.dir/build.make CMakeFiles/modbus_simulator_testing.dir/depend
 	$(MAKE) -f CMakeFiles/modbus_simulator_testing.dir/build.make CMakeFiles/modbus_simulator_testing.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/nexyy/git-nexylmao/modbus-simulator-cpp/cmake-build-debug/CMakeFiles --progress-num=15,16 "Built target modbus_simulator_testing"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/nvuletic/git-nexylmao/modbus-simulator-cpp/cmake-build-debug/CMakeFiles --progress-num=15,16 "Built target modbus_simulator_testing"
 .PHONY : CMakeFiles/modbus_simulator_testing.dir/all
 
 # Include target in all.
@@ -118,9 +118,9 @@ all: CMakeFiles/modbus_simulator_testing.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/modbus_simulator_testing.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/nexyy/git-nexylmao/modbus-simulator-cpp/cmake-build-debug/CMakeFiles 16
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/nvuletic/git-nexylmao/modbus-simulator-cpp/cmake-build-debug/CMakeFiles 16
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/modbus_simulator_testing.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/nexyy/git-nexylmao/modbus-simulator-cpp/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/nvuletic/git-nexylmao/modbus-simulator-cpp/cmake-build-debug/CMakeFiles 0
 .PHONY : CMakeFiles/modbus_simulator_testing.dir/rule
 
 # Convenience name for target.
