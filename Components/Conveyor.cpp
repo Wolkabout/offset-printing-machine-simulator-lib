@@ -89,7 +89,7 @@ void Conveyor::ReceiveMachineStateMessage(std::shared_ptr<MachineStateMessage> m
             }
             runningLoop = true;
             logger.Log("(SM) Found " + std::to_string(components.size()) + " tempo components!");
-            std::async(&Conveyor::runTempo, this);
+            loop = std::thread(&Conveyor::runTempo, this);
             break;
         case CheckForErrors:
             if (message->getCallback() != nullptr) {
