@@ -99,6 +99,7 @@ void Conveyor::ReceiveMachineStateMessage(std::shared_ptr<MachineStateMessage> m
             break;
         case Stopping:
             runningLoop = false;
+            loop.detach();
             break;
     }
 }
