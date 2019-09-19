@@ -36,7 +36,7 @@ void Conveyor::setRatePerHour(int value) {
         throw std::invalid_argument("The rate has to be in the appropriate range.");
     }
     ratePerHour = value;
-    period = round(3600 / ratePerHour * 1000);
+    period = (int) round(3600 / (double) ratePerHour * 1000);
 
     std::shared_ptr<ConveyorRateMessage> message = std::make_shared<ConveyorRateMessage>(ratePerHour);
     for (auto &conveyorRateMessageReceiver : rateMessageReceivers) {
