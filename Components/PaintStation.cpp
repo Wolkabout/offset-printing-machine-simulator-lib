@@ -90,7 +90,6 @@ bool PaintStation::iterate() {
     if (checkCountAndEmit()) {
         count--;
         EmitCount();
-        checkCountAndEmit();
         return true;
     }
     return false;
