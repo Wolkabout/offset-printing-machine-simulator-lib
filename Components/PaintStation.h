@@ -40,6 +40,8 @@ public:
 
     bool modifyCount(int i) override;
 
+    bool setCount(int i) override;
+
     bool iterate() override;
 
     void ReceiveMachineStateMessage(std::shared_ptr<MachineStateMessage> message) override;

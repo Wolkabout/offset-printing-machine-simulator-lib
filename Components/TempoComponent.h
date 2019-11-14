@@ -19,6 +19,8 @@ public:
 
     virtual bool modifyCount(int) = 0;
 
+    virtual bool setCount(int) = 0;
+
     virtual bool iterate() = 0;
 };
 

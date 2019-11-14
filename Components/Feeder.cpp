@@ -82,6 +82,11 @@ bool Feeder::modifyCount(int i) {
     return true;
 }
 
+bool Feeder::setCount(int i) {
+    count = i;
+    return true;
+}
+
 bool Feeder::iterate() {
     if (!((Machine &) machine).isRunning()) {
         Emit(Severe, "You can\'t take paper, the machine isn\'t running.");

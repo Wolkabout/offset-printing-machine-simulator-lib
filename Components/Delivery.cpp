@@ -83,6 +83,11 @@ bool Delivery::modifyCount(int i) {
     return true;
 }
 
+bool Delivery::setCount(int i) {
+    count = i;
+    return true;
+}
+
 bool Delivery::iterate() {
     if (!((Machine &) machine).isRunning()) {
         Emit(Severe, "You can\'t take paper, the machine isn\'t runing.");

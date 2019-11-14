@@ -1,4 +1,0 @@
-/home/nvuletic/git-nexylmao/modbus-simulator-cpp/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/nvuletic/git-nexylmao/modbus-simulator-cpp/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/nvuletic/git-nexylmao/modbus-simulator-cpp/cmake-build-debug/CMakeFiles/modbus_simulator_cpp.dir
-/home/nvuletic/git-nexylmao/modbus-simulator-cpp/cmake-build-debug/CMakeFiles/modbus_simulator_testing.dir

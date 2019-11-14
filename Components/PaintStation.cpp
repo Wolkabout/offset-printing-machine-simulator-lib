@@ -82,6 +82,11 @@ bool PaintStation::modifyCount(int i) {
     return true;
 }
 
+bool PaintStation::setCount(int i) {
+    count = i;
+    return true;
+}
+
 bool PaintStation::iterate() {
     if (!((Machine &) machine).isRunning()) {
         Emit(Severe, "You can\'t take paint, the machine isn\'t running.");
