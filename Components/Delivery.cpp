@@ -85,6 +85,7 @@ bool Delivery::modifyCount(int i) {
 
 bool Delivery::setCount(int i) {
     count = i;
+    EmitCount();
     checkCountAndEmit();
     return true;
 }
