@@ -84,6 +84,7 @@ bool PaintStation::modifyCount(int i) {
 
 bool PaintStation::setCount(int i) {
     count = i;
+    checkCountAndEmit();
     return true;
 }
 

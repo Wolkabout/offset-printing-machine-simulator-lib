@@ -84,6 +84,7 @@ bool Feeder::modifyCount(int i) {
 
 bool Feeder::setCount(int i) {
     count = i;
+    checkCountAndEmit();
     return true;
 }
 
