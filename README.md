@@ -45,7 +45,7 @@ There is an example compiled together with the library, you can start by:
 ./out/modbus_simulator_testing
 ```
 
-The code for it is located in [here](Test/main.cpp).
+The code for it is located in [here](src/Test/main.cpp).
 I will go over it step by step:
 
 You have to create a machine (you can name it anyway you want):

@@ -1,45 +1,34 @@
-cmake_minimum_required(VERSION 3.14)
+cmake_minimum_required(VERSION 3.5)
 project(modbus_simulator_cpp)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_library(${PROJECT_NAME}
-        Machine.cpp
-        Machine.h
-        Component.cpp
-        Component.h
-        Logger/Logger.cpp
-        Logger/Logger.h
-        Interfaces/ComponentMessageReceiver.h
-        Interfaces/ConveyorRateMessageReceiver.h
-        Interfaces/CountMessageReceiver.h
-        Interfaces/ExternalMachineStateReceiver.h
-        Interfaces/ExternalMachineMessageReceiver.h
-        Interfaces/MachineStateMessageReceiver.h
-        Messages/ComponentMessage.cpp
-        Messages/ComponentMessage.h
-        Messages/ActionStatusMessage.cpp
-        Messages/ActionStatusMessage.h
-        Messages/ComponentMessage.cpp
-        Messages/ComponentMessage.h
-        Messages/ConveyorRateMessage.cpp
-        Messages/ConveyorRateMessage.h
-        Messages/CountMessage.cpp
-        Messages/CountMessage.h
-        Messages/MachineStateMessage.cpp
-        Messages/MachineStateMessage.h
-        Messages/StateChangeMessage.cpp
-        Messages/StateChangeMessage.h
-        Components/Conveyor.cpp
-        Components/Conveyor.h
-        Components/Delivery.cpp
-        Components/Delivery.h
-        Components/Feeder.cpp
-        Components/Feeder.h
-        Components/PaintStation.cpp
-        Components/PaintStation.h
-        Components/TempoComponent.h)
+#  "Messages/*.h" "Logger/*.h" "Interfaces/*.h" "Components/*.h"
+#  "Messages/*.cpp" "Logger/*.cpp" "Interfaces/*.cpp" "Components/*.cpp"
+include_directories("src")
+
+file(GLOB_RECURSE HEADER_FILES "src/*.h")
+file(GLOB_RECURSE SOURCE_FILES "src/*.cpp")
+
+add_library(${PROJECT_NAME} ${SOURCE_FILES})
+
 target_link_libraries(${PROJECT_NAME} pthread)
 
-add_executable(modbus_simulator_testing Test/main.cpp)
+set(CMAKE_CXX_FLAGS  "${CMAKE_CXX_FLAGS}    -Wall -Wextra -pedantic                                                    \
+                                            -pedantic-errors -Wcast-align                                              \
+                                            -Wcast-qual -Wconversion                                                   \
+                                            -Wdisabled-optimization                                                    \
+                                            -Wfloat-equal -Wformat=2                                                   \
+                                            -Werror=init-self -Werror=return-type                                      \
+                                            -Werror=missing-field-initializers -Wmissing-format-attribute              \
+                                            -Wmissing-include-dirs -Wmissing-noreturn                                  \
+                                            -Werror=pointer-arith                                                      \
+                                            -Wno-packed  -Wno-padded -Wredundant-decls                                 \
+                                            -Werror=shadow -Werror=stack-protector                                     \
+                                            -Wstrict-aliasing=2                                                        \
+                                            -Werror=unreachable-code -Wno-unused                                       \
+                                            -Wvariadic-macros                                                          \
+                                            -Wwrite-strings -Werror=non-virtual-dtor")
+
+add_executable(modbus_simulator_testing src/Test/main.cpp)
 target_link_libraries(modbus_simulator_testing ${PROJECT_NAME})
