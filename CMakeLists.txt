@@ -30,5 +30,5 @@ set(CMAKE_CXX_FLAGS  "${CMAKE_CXX_FLAGS}    -Wall -Wextra -pedantic             
                                             -Wvariadic-macros                                                          \
                                             -Wwrite-strings -Werror=non-virtual-dtor")
 
-add_executable(modbus_simulator_testing src/Test/main.cpp)
-target_link_libraries(modbus_simulator_testing ${PROJECT_NAME})
+add_executable(test_example src/Test/main.cpp)
+target_link_libraries(test_example ${PROJECT_NAME})
