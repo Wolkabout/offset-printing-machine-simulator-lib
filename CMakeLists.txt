@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.5)
-project(modbus_simulator_cpp)
+project(opm-simulator)
 
 set(CMAKE_CXX_STANDARD 17)
 
