@@ -42,7 +42,7 @@ Other components just serve to keep track of counts, and also notify the machine
 
 There is an example compiled together with the library, you can start by:
 ```
-./out/modbus_simulator_testing
+./out/test_example
 ```
 
 The code for it is located in [here](src/Test/main.cpp).
