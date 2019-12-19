@@ -1,4 +1,5 @@
 mkdir out
-cd out
+pushd out
 cmake ..
 make
+popd
