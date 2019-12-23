@@ -21,7 +21,7 @@ From there, you can run the shell script setup to build the entire project:
 
 Which generates the library, and an example executable:
 ```
-./modbus_simulator_testing
+./test_example
 ```
 
 ### How it works
