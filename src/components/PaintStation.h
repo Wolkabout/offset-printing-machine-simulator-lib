@@ -5,10 +5,10 @@
 #ifndef MBS_SIMULATOR_PAINTSTATION_H
 #define MBS_SIMULATOR_PAINTSTATION_H
 
-#include "Interfaces/ComponentMessageReceiver.h"
-#include "Interfaces/CountMessageReceiver.h"
-#include "Messages/ComponentMessage.h"
-#include "Messages/MachineStateMessage.h"
+#include "interfaces/ComponentMessageReceiver.h"
+#include "interfaces/CountMessageReceiver.h"
+#include "messages/ComponentMessage.h"
+#include "messages/MachineStateMessage.h"
 #include "TempoComponent.h"
 
 #include <vector>

@@ -5,7 +5,7 @@
 #ifndef MBS_SIMULATOR_MACHINESTATEMESSAGERECEIVER_H
 #define MBS_SIMULATOR_MACHINESTATEMESSAGERECEIVER_H
 
-#include "Messages/MachineStateMessage.h"
+#include "messages/MachineStateMessage.h"
 
 #include <memory>
 

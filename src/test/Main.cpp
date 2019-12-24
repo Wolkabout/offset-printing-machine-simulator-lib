@@ -2,10 +2,10 @@
 // Created by nvuletic on 11.9.19..
 //
 
-#include "Components/Conveyor.h"
-#include "Components/Delivery.h"
-#include "Components/Feeder.h"
-#include "Components/PaintStation.h"
+#include "components/Conveyor.h"
+#include "components/Delivery.h"
+#include "components/Feeder.h"
+#include "components/PaintStation.h"
 #include "Machine.h"
 
 #include <iostream>

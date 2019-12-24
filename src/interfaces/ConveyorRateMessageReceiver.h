@@ -5,7 +5,7 @@
 #ifndef MBS_SIMULATOR_CONVEYORRATEMESSAGERECEIVER_H
 #define MBS_SIMULATOR_CONVEYORRATEMESSAGERECEIVER_H
 
-#include "Messages/ConveyorRateMessage.h"
+#include "messages/ConveyorRateMessage.h"
 
 #include <memory>
 

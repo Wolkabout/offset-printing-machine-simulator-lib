@@ -2,14 +2,14 @@
 #define MODBUS_SIMULATOR_CPP_MACHINE_H
 
 #include "Component.h"
-#include "Logger/Logger.h"
-#include "Interfaces/ComponentMessageReceiver.h"
-#include "Interfaces/ExternalMachineStateReceiver.h"
-#include "Interfaces/ExternalMachineMessageReceiver.h"
-#include "Interfaces/MachineStateMessageReceiver.h"
-#include "Messages/ActionStatusMessage.h"
-#include "Messages/ComponentMessage.h"
-#include "Messages/MachineStateMessage.h"
+#include "logger/Logger.h"
+#include "interfaces/ComponentMessageReceiver.h"
+#include "interfaces/ExternalMachineStateReceiver.h"
+#include "interfaces/ExternalMachineMessageReceiver.h"
+#include "interfaces/MachineStateMessageReceiver.h"
+#include "messages/ActionStatusMessage.h"
+#include "messages/ComponentMessage.h"
+#include "messages/MachineStateMessage.h"
 
 #include <vector>
 

@@ -5,7 +5,7 @@
 #ifndef MBS_SIMULATOR_COUNTMESSAGERECEIVER_H
 #define MBS_SIMULATOR_COUNTMESSAGERECEIVER_H
 
-#include "Messages/CountMessage.h"
+#include "messages/CountMessage.h"
 
 #include <memory>
 

@@ -6,7 +6,7 @@
 #define MBS_SIMULATOR_CONVEYOR_H
 
 #include "Component.h"
-#include "Interfaces/ConveyorRateMessageReceiver.h"
+#include "interfaces/ConveyorRateMessageReceiver.h"
 #include "TempoComponent.h"
 
 #include <thread>

@@ -5,7 +5,7 @@
 #ifndef MBS_SIMULATOR_COMPONENTMESSAGERECEIVER_H
 #define MBS_SIMULATOR_COMPONENTMESSAGERECEIVER_H
 
-#include "Messages/ComponentMessage.h"
+#include "messages/ComponentMessage.h"
 
 #include <memory>
 

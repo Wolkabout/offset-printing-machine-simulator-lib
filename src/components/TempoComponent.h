@@ -6,7 +6,7 @@
 #define MBS_SIMULATOR_TEMPOCOMPONENT_H
 
 #include "Component.h"
-#include "Interfaces/ComponentMessageReceiver.h"
+#include "interfaces/ComponentMessageReceiver.h"
 
 namespace simulator
 {

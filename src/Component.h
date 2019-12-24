@@ -5,9 +5,9 @@
 #ifndef MODBUS_SIMULATOR_CPP_COMPONENT_H
 #define MODBUS_SIMULATOR_CPP_COMPONENT_H
 
-#include "Logger/Logger.h"
-#include "Interfaces/MachineStateMessageReceiver.h"
-#include "Interfaces/ComponentMessageReceiver.h"
+#include "logger/Logger.h"
+#include "interfaces/MachineStateMessageReceiver.h"
+#include "interfaces/ComponentMessageReceiver.h"
 #include "Machine.h"
 
 namespace simulator

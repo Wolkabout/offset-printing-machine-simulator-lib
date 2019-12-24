@@ -5,7 +5,7 @@
 #ifndef MBS_SIMULATOR_DELIVERY_H
 #define MBS_SIMULATOR_DELIVERY_H
 
-#include "Interfaces/CountMessageReceiver.h"
+#include "interfaces/CountMessageReceiver.h"
 #include "TempoComponent.h"
 
 #include <string>

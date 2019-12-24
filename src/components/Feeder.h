@@ -5,9 +5,9 @@
 #ifndef MBS_SIMULATOR_FEEDER_H
 #define MBS_SIMULATOR_FEEDER_H
 
-#include "Interfaces/CountMessageReceiver.h"
+#include "interfaces/CountMessageReceiver.h"
 #include "Machine.h"
-#include "Messages/ComponentMessage.h"
+#include "messages/ComponentMessage.h"
 #include "TempoComponent.h"
 
 #include <vector>
