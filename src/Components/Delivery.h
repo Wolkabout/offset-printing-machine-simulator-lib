@@ -5,47 +5,51 @@
 #ifndef MBS_SIMULATOR_DELIVERY_H
 #define MBS_SIMULATOR_DELIVERY_H
 
-#include <string>
+#include "Interfaces/CountMessageReceiver.h"
 #include "TempoComponent.h"
-#include "../Interfaces/CountMessageReceiver.h"
 
-class Delivery : public TempoComponent {
-private:
-    int m_capacity;
-    int m_count;
-    bool m_warning80;
-    bool m_warning90;
-    std::string m_w80;
-    std::string m_w90;
-    std::string m_wFull;
-    std::vector<std::shared_ptr<CountMessageReceiver>> m_CountMessageReceivers;
+#include <string>
 
-    std::pair<ComponentMessageType, std::string> checkCount();
+namespace simulator
+{
+    class Delivery : public TempoComponent
+    {
+    public:
+        int getCapacity() const;
 
-    bool checkCountAndEmit();
+        int getCount() const override;
 
-protected:
-    void EmitCount() override;
+        double getPercentage();
 
-public:
-    int getCapacity() const;
+        std::vector<std::shared_ptr<CountMessageReceiver>>& getCountMessageReceiver();
 
-    int getCount() const override;
+        Delivery(const std::string& name, ComponentMessageReceiver& machine, int capacity, int initialCount);
 
-    double getPercentage();
+        bool modifyCount(int i) override;
 
-    std::vector<std::shared_ptr<CountMessageReceiver>> &getCountMessageReceiver();
+        bool setCount(int i) override;
 
-    Delivery(const std::string& name, ComponentMessageReceiver& machine, int capacity, int initialCount);
+        bool iterate() override;
 
-    bool modifyCount(int i) override;
+        void ReceiveMachineStateMessage(std::shared_ptr<MachineStateMessage> message) override;
 
-    bool setCount(int i) override;
+    protected:
+        void EmitCount() override;
 
-    bool iterate() override;
+    private:
+        bool checkCountAndEmit();
 
-    void ReceiveMachineStateMessage(std::shared_ptr<MachineStateMessage> message) override;
-};
+        std::pair<ComponentMessageType, std::string> checkCount();
 
+        int m_capacity;
+        int m_count;
+        bool m_warning80;
+        bool m_warning90;
+        std::string m_w80;
+        std::string m_w90;
+        std::string m_wFull;
+        std::vector<std::shared_ptr<CountMessageReceiver>> m_CountMessageReceivers;
+    };
+}
 
 #endif //MBS_SIMULATOR_DELIVERY_H

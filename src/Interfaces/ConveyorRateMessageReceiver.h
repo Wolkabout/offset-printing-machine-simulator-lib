@@ -5,13 +5,19 @@
 #ifndef MBS_SIMULATOR_CONVEYORRATEMESSAGERECEIVER_H
 #define MBS_SIMULATOR_CONVEYORRATEMESSAGERECEIVER_H
 
-#include <memory>
-#include "../Messages/ConveyorRateMessage.h"
+#include "Messages/ConveyorRateMessage.h"
 
-class ConveyorRateMessageReceiver {
-public:
-    virtual ~ConveyorRateMessageReceiver() = default;
-    virtual void ReceiveMessage(std::shared_ptr<ConveyorRateMessage>) = 0;
-};
+#include <memory>
+
+namespace simulator
+{
+    class ConveyorRateMessageReceiver
+    {
+    public:
+        virtual ~ConveyorRateMessageReceiver() = default;
+
+        virtual void ReceiveMessage(std::shared_ptr<ConveyorRateMessage>) = 0;
+    };
+}
 
 #endif //MBS_SIMULATOR_CONVEYORRATEMESSAGERECEIVER_H

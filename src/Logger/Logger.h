@@ -7,13 +7,17 @@
 
 #include <string>
 
-class Logger {
-private:
-    std::string m_name;
-public:
-    Logger(const std::string name);
-    void Log(const std::string& message);
-};
+namespace simulator
+{
+    class Logger
+    {
+    private:
+        std::string m_name;
+    public:
+        Logger(const std::string name);
 
+        void Log(const std::string& message);
+    };
+}
 
 #endif //MODBUS_SIMULATOR_CPP_LOGGER_H

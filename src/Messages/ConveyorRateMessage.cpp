@@ -4,8 +4,12 @@
 
 #include "ConveyorRateMessage.h"
 
-ConveyorRateMessage::ConveyorRateMessage(int currentRate) : m_currentRate(currentRate) {}
+namespace simulator
+{
+    ConveyorRateMessage::ConveyorRateMessage(int currentRate) : m_currentRate(currentRate) {}
 
-int ConveyorRateMessage::getCurrentRate() const {
-    return m_currentRate;
+    int ConveyorRateMessage::getCurrentRate() const
+    {
+        return m_currentRate;
+    }
 }

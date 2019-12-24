@@ -5,51 +5,54 @@
 #ifndef MBS_SIMULATOR_PAINTSTATION_H
 #define MBS_SIMULATOR_PAINTSTATION_H
 
+#include "Interfaces/ComponentMessageReceiver.h"
+#include "Interfaces/CountMessageReceiver.h"
+#include "Messages/ComponentMessage.h"
+#include "Messages/MachineStateMessage.h"
+#include "TempoComponent.h"
 
 #include <vector>
-#include <Interfaces/ComponentMessageReceiver.h>
-#include <Messages/MachineStateMessage.h>
-#include "TempoComponent.h"
-#include "Messages/ComponentMessage.h"
-#include "Interfaces/CountMessageReceiver.h"
 
-class PaintStation : public TempoComponent {
-private:
-    int m_capacity;
-    int m_count;
-    bool m_warning20;
-    bool m_warning10;
-    std::string m_w20;
-    std::string m_w10;
-    std::string m_wEmpty;
-    std::vector<std::shared_ptr<CountMessageReceiver>> m_countMessageReceiver;
+namespace simulator
+{
+    class PaintStation : public TempoComponent
+    {
+    public:
+        int getCapacity() const;
 
-    std::pair<ComponentMessageType, std::string> checkCount();
+        int getCount() const override;
 
-    bool checkCountAndEmit();
+        double getPercentage();
 
-protected:
-    void EmitCount() override;
+        std::vector<std::shared_ptr<CountMessageReceiver>>& getCountMessageReceiver();
 
-public:
-    int getCapacity() const;
+        PaintStation(std::string name, ComponentMessageReceiver& machine, int capacity, int initialCount);
 
-    int getCount() const override;
+        bool modifyCount(int i) override;
 
-    double getPercentage();
+        bool setCount(int i) override;
 
-    std::vector<std::shared_ptr<CountMessageReceiver>> &getCountMessageReceiver();
+        bool iterate() override;
 
-    PaintStation(std::string name, ComponentMessageReceiver& machine, int capacity, int initialCount);
+        void ReceiveMachineStateMessage(std::shared_ptr<MachineStateMessage> message) override;
 
-    bool modifyCount(int i) override;
+    protected:
+        void EmitCount() override;
 
-    bool setCount(int i) override;
+    private:
+        std::pair<ComponentMessageType, std::string> checkCount();
 
-    bool iterate() override;
+        bool checkCountAndEmit();
 
-    void ReceiveMachineStateMessage(std::shared_ptr<MachineStateMessage> message) override;
-};
-
+        int m_capacity;
+        int m_count;
+        bool m_warning20;
+        bool m_warning10;
+        std::string m_w20;
+        std::string m_w10;
+        std::string m_wEmpty;
+        std::vector<std::shared_ptr<CountMessageReceiver>> m_countMessageReceiver;
+    };
+}
 
 #endif //MBS_SIMULATOR_PAINTSTATION_H

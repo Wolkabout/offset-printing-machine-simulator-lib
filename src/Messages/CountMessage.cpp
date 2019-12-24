@@ -4,12 +4,17 @@
 
 #include "CountMessage.h"
 
-CountMessage::CountMessage(int count, double percentage) : m_count(count), m_percentage(percentage) {}
+namespace simulator
+{
+    CountMessage::CountMessage(int count, double percentage) : m_count(count), m_percentage(percentage) {}
 
-int CountMessage::getCount() const {
-    return m_count;
-}
+    int CountMessage::getCount() const
+    {
+        return m_count;
+    }
 
-double CountMessage::getPercentage() const {
-    return m_percentage;
+    double CountMessage::getPercentage() const
+    {
+        return m_percentage;
+    }
 }

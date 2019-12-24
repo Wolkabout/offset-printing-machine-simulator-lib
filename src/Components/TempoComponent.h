@@ -6,22 +6,26 @@
 #define MBS_SIMULATOR_TEMPOCOMPONENT_H
 
 #include "Component.h"
-#include "Machine.h"
+#include "Interfaces/ComponentMessageReceiver.h"
 
-class TempoComponent : public Component {
-protected:
-    explicit TempoComponent(std::string name, ComponentMessageReceiver& machine) : Component(name, machine) {}
+namespace simulator
+{
+    class TempoComponent : public Component
+    {
+    public:
+        virtual int getCount() const = 0;
 
-    virtual void EmitCount() = 0;
-public:
+        virtual bool modifyCount(int) = 0;
 
-    virtual int getCount() const = 0;
+        virtual bool setCount(int) = 0;
 
-    virtual bool modifyCount(int) = 0;
+        virtual bool iterate() = 0;
 
-    virtual bool setCount(int) = 0;
+    protected:
+        TempoComponent(std::string name, ComponentMessageReceiver& machine) : Component(name, machine) {}
 
-    virtual bool iterate() = 0;
-};
+        virtual void EmitCount() = 0;
+    };
+}
 
 #endif //MBS_SIMULATOR_TEMPOCOMPONENT_H

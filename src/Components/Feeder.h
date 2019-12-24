@@ -5,50 +5,53 @@
 #ifndef MBS_SIMULATOR_FEEDER_H
 #define MBS_SIMULATOR_FEEDER_H
 
-
-#include <vector>
 #include "Interfaces/CountMessageReceiver.h"
-#include "Messages/ComponentMessage.h"
 #include "Machine.h"
+#include "Messages/ComponentMessage.h"
 #include "TempoComponent.h"
 
-class Feeder : public TempoComponent {
-private:
-    int m_capacity;
-    int m_count;
-    bool m_warning20;
-    bool m_warning10;
-    std::string m_w20;
-    std::string m_w10;
-    std::string m_wEmpty;
-    std::vector<std::shared_ptr<CountMessageReceiver>> m_countMessageReceiver;
+#include <vector>
 
-    std::pair<ComponentMessageType, std::string> checkCount();
+namespace simulator
+{
+    class Feeder : public TempoComponent
+    {
+    public:
+        int getCapacity() const;
 
-    bool checkCountAndEmit();
+        int getCount() const override;
 
-protected:
-    void EmitCount() override;
+        double getPercentage();
 
-public:
-    int getCapacity() const;
+        std::vector<std::shared_ptr<CountMessageReceiver>>& getCountMessageReceiver();
 
-    int getCount() const override;
+        Feeder(std::string name, ComponentMessageReceiver& machine, int capacity, int initialCount);
 
-    double getPercentage();
+        bool modifyCount(int i) override;
 
-    std::vector<std::shared_ptr<CountMessageReceiver>> &getCountMessageReceiver();
+        bool setCount(int i) override;
 
-    Feeder(std::string name, ComponentMessageReceiver& machine, int capacity, int initialCount);
+        bool iterate() override;
 
-    bool modifyCount(int i) override;
+        void ReceiveMachineStateMessage(std::shared_ptr<MachineStateMessage> message) override;
 
-    bool setCount(int i) override;
+    protected:
+        void EmitCount() override;
 
-    bool iterate() override;
+    private:
+        std::pair<ComponentMessageType, std::string> checkCount();
 
-    void ReceiveMachineStateMessage(std::shared_ptr<MachineStateMessage> message) override;
-};
+        bool checkCountAndEmit();
 
+        int m_capacity;
+        int m_count;
+        bool m_warning20;
+        bool m_warning10;
+        std::string m_w20;
+        std::string m_w10;
+        std::string m_wEmpty;
+        std::vector<std::shared_ptr<CountMessageReceiver>> m_countMessageReceiver;
+    };
+}
 
 #endif //MBS_SIMULATOR_FEEDER_H

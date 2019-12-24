@@ -5,15 +5,17 @@
 #ifndef MBS_SIMULATOR_CONVEYORRATEMESSAGE_H
 #define MBS_SIMULATOR_CONVEYORRATEMESSAGE_H
 
+namespace simulator
+{
+    class ConveyorRateMessage
+    {
+    public:
+        ConveyorRateMessage(int currentRate);
 
-class ConveyorRateMessage {
-private:
-    int m_currentRate;
-public:
-    ConveyorRateMessage(int currentRate);
-
-    int getCurrentRate() const;
-};
-
+        int getCurrentRate() const;
+    private:
+        int m_currentRate;
+    };
+}
 
 #endif //MBS_SIMULATOR_CONVEYORRATEMESSAGE_H

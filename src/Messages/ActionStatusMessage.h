@@ -7,26 +7,30 @@
 
 #include <string>
 
-enum class ActionStatusType {
-    good, bad, message
-};
+namespace simulator
+{
+    enum class ActionStatusType
+    {
+        Good, Bad, Message
+    };
 
-/*
- * This class is used to carry the message of
- * Machine actions like start(), stop(), checkForErrors()
- */
+    /*
+     * This class is used to carry the message of
+     * Machine actions like start(), stop(), checkForErrors()
+     */
 
-class ActionStatusMessage {
-private:
-    ActionStatusType m_type;
-    std::string m_content;
-public:
-    ActionStatusMessage(ActionStatusType type, const std::string &content);
+    class ActionStatusMessage
+    {
+    public:
+        ActionStatusMessage(ActionStatusType type, const std::string& content);
 
-    ActionStatusType getType() const;
+        ActionStatusType getType() const;
 
-    const std::string &getContent() const;
-};
-
+        const std::string& getContent() const;
+    private:
+        ActionStatusType m_type;
+        std::string m_content;
+    };
+}
 
 #endif //MBS_SIMULATOR_CPP_ACTIONSTATUSMESSAGE_H

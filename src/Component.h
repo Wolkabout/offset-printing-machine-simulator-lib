@@ -6,24 +6,28 @@
 #define MODBUS_SIMULATOR_CPP_COMPONENT_H
 
 #include "Logger/Logger.h"
-#include "Machine.h"
 #include "Interfaces/MachineStateMessageReceiver.h"
 #include "Interfaces/ComponentMessageReceiver.h"
+#include "Machine.h"
 
-class Component : public MachineStateMessageReceiver {
-protected:
-    std::string m_name;
-    ComponentMessageReceiver &m_machine;
-    Logger m_logger;
-public:
-    const std::string &getName() const;
+namespace simulator
+{
+    class Component : public MachineStateMessageReceiver
+    {
+    public:
+        const std::string& getName() const;
 
-    Component(const std::string &name, ComponentMessageReceiver& machine);
+        Component(const std::string& name, ComponentMessageReceiver& machine);
 
-    void Emit(ComponentMessageType type, const std::string& content);
+        void Emit(ComponentMessageType type, const std::string& content);
 
-    virtual void ReceiveMachineStateMessage(std::shared_ptr<MachineStateMessage>) = 0;
-};
+        virtual void ReceiveMachineStateMessage(std::shared_ptr<MachineStateMessage>) = 0;
 
+    protected:
+        std::string m_name;
+        ComponentMessageReceiver& m_machine;
+        Logger m_logger;
+    };
+}
 
 #endif //MODBUS_SIMULATOR_CPP_COMPONENT_H
