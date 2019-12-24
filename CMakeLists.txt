@@ -3,8 +3,8 @@ project(opm-simulator)
 
 set(CMAKE_CXX_STANDARD 17)
 
-#  "Messages/*.h" "Logger/*.h" "Interfaces/*.h" "Components/*.h"
-#  "Messages/*.cpp" "Logger/*.cpp" "Interfaces/*.cpp" "Components/*.cpp"
+#  "messages/*.h" "logger/*.h" "interfaces/*.h" "components/*.h"
+#  "messages/*.cpp" "logger/*.cpp" "interfaces/*.cpp" "components/*.cpp"
 include_directories("src")
 
 file(GLOB_RECURSE HEADER_FILES "src/*.h")
@@ -30,5 +30,5 @@ set(CMAKE_CXX_FLAGS  "${CMAKE_CXX_FLAGS}    -Wall -Wextra -pedantic             
                                             -Wvariadic-macros                                                          \
                                             -Wwrite-strings -Werror=non-virtual-dtor")
 
-add_executable(test_example src/Test/main.cpp)
+add_executable(test_example src/test/Main.cpp)
 target_link_libraries(test_example ${PROJECT_NAME})
