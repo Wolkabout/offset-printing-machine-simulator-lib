@@ -53,25 +53,25 @@ namespace simulator
 
     std::pair<ComponentMessageType, std::string> Delivery::checkCount()
     {
-        ComponentMessageType type = ComponentMessageType::Neutral;
+        ComponentMessageType type = ComponentMessageType::NEUTRAL;
         std::string content;
         if (m_count == m_capacity)
         {
-            type = ComponentMessageType::Severe;
+            type = ComponentMessageType::SEVERE;
             content = m_wFull;
             m_warning90 = true;
             m_warning80 = true;
         }
         else if ((m_capacity / 10) * 9 <= m_count && !m_warning90)
         {
-            type = ComponentMessageType::Alarming;
+            type = ComponentMessageType::ALARMING;
             content = m_w90;
             m_warning90 = true;
             m_warning80 = true;
         }
         else if ((m_capacity / 5) * 4 <= m_count && !m_warning80)
         {
-            type = ComponentMessageType::Alarming;
+            type = ComponentMessageType::ALARMING;
             content = m_w80;
             m_warning80 = true;
         }
@@ -81,10 +81,10 @@ namespace simulator
     bool Delivery::checkCountAndEmit()
     {
         std::pair<ComponentMessageType, std::string> result = checkCount();
-        if (result.first != ComponentMessageType::Neutral)
+        if (result.first != ComponentMessageType::NEUTRAL)
         {
             Emit(result.first, result.second);
-            return result.first != ComponentMessageType::Severe;
+            return result.first != ComponentMessageType::SEVERE;
         }
         return true;
     }
@@ -93,7 +93,7 @@ namespace simulator
     {
         if (m_count < i)
         {
-            Emit(ComponentMessageType::Alarming,
+            Emit(ComponentMessageType::ALARMING,
                     "You can\'t take more paper than there is here.");
             return false;
         }
@@ -116,7 +116,7 @@ namespace simulator
     {
         if (!((Machine&) m_machine).isRunning())
         {
-            Emit(ComponentMessageType::Severe,
+            Emit(ComponentMessageType::SEVERE,
                     "You can\'t take paper, the machine isn\'t runing.");
             return false;
         }
@@ -136,11 +136,11 @@ namespace simulator
                      + std::to_string(static_cast<double>(message->getType())) + " | " + message->getContent());
         switch (message->getType())
         {
-            case MachineMessageType::Starting:
+            case MachineMessageType::STARTING:
                 m_logger.Log("Starting work with "
                              + std::to_string(m_count) + '/' + std::to_string(m_capacity));
                 break;
-            case MachineMessageType::CheckForErrors:
+            case MachineMessageType::CHECK_FOR_ERRORS:
                 if (message->getCallback() != nullptr)
                 {
                     std::pair<ComponentMessageType, std::string> result = checkCount();
@@ -148,7 +148,7 @@ namespace simulator
                     callback(std::make_shared<ComponentMessage>(result.first, result.second));
                 }
                 break;
-            case MachineMessageType::Stopping:
+            case MachineMessageType::STOPPING:
                 m_logger.Log("Stopping work with "
                              + std::to_string(m_count) + '/' + std::to_string(m_capacity));
                 break;

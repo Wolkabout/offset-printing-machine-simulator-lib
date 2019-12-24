@@ -98,7 +98,7 @@ namespace simulator
         " | " + message->getContent());
         switch (message->getType())
         {
-            case MachineMessageType::Starting:
+            case MachineMessageType::STARTING:
                 m_components.clear();
                 for (const std::shared_ptr<MachineStateMessageReceiver>& component :
                         ((Machine&) m_machine).getComponents())
@@ -119,14 +119,14 @@ namespace simulator
                              + std::to_string(m_components.size()) + " tempo m_components!");
                 m_loop = std::thread(&Conveyor::runTempo, this);
                 break;
-            case MachineMessageType::CheckForErrors:
+            case MachineMessageType::CHECK_FOR_ERRORS:
                 if (message->getCallback() != nullptr)
                 {
                     std::function<void(std::shared_ptr<ComponentMessage>)> callback = message->getCallback();
-                    callback(std::make_shared<ComponentMessage>(ComponentMessageType::Neutral, ""));
+                    callback(std::make_shared<ComponentMessage>(ComponentMessageType::NEUTRAL, ""));
                 }
                 break;
-            case MachineMessageType::Stopping:
+            case MachineMessageType::STOPPING:
                 m_runningLoop = false;
                 m_loop.detach();
                 break;

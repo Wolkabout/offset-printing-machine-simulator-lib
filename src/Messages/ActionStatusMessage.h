@@ -11,7 +11,7 @@ namespace simulator
 {
     enum class ActionStatusType
     {
-        Good, Bad, Message
+        GOOD, BAD, MESSAGE
     };
 
     /*

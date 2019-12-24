@@ -52,25 +52,25 @@ namespace simulator
 
     std::pair<ComponentMessageType, std::string> PaintStation::checkCount()
     {
-        ComponentMessageType type = ComponentMessageType::Neutral;
+        ComponentMessageType type = ComponentMessageType::NEUTRAL;
         std::string content;
         if (m_count == 0)
         {
-            type = ComponentMessageType::Severe;
+            type = ComponentMessageType::SEVERE;
             content = m_wEmpty;
             m_warning10 = true;
             m_warning20 = true;
         }
         else if (m_capacity / 10 > m_count && !m_warning10)
         {
-            type = ComponentMessageType::Alarming;
+            type = ComponentMessageType::ALARMING;
             content = m_w10;
             m_warning10 = true;
             m_warning20 = true;
         }
         else if (m_capacity / 5 > m_count && !m_warning20)
         {
-            type = ComponentMessageType::Alarming;
+            type = ComponentMessageType::ALARMING;
             content = m_w20;
             m_warning20 = true;
         }
@@ -80,10 +80,10 @@ namespace simulator
     bool PaintStation::checkCountAndEmit()
     {
         std::pair<ComponentMessageType, std::string> result = checkCount();
-        if (result.first != ComponentMessageType::Neutral)
+        if (result.first != ComponentMessageType::NEUTRAL)
         {
             Emit(result.first, result.second);
-            return result.first != ComponentMessageType::Severe;
+            return result.first != ComponentMessageType::SEVERE;
         }
         return true;
     }
@@ -92,7 +92,7 @@ namespace simulator
     {
         if (m_capacity - m_count < i)
         {
-            Emit(ComponentMessageType::Alarming,
+            Emit(ComponentMessageType::ALARMING,
                     "You can\'t put more paint than there's room for.");
             return false;
         }
@@ -115,7 +115,7 @@ namespace simulator
     {
         if (!((Machine&) m_machine).isRunning())
         {
-            Emit(ComponentMessageType::Severe,
+            Emit(ComponentMessageType::SEVERE,
                     "You can\'t take paint, the machine isn\'t m_running.");
             return false;
         }
@@ -134,11 +134,11 @@ namespace simulator
                      + std::to_string(static_cast<double>(message->getType())) + " | " + message->getContent());
         switch (message->getType())
         {
-            case MachineMessageType::Starting:
+            case MachineMessageType::STARTING:
                 m_logger.Log("Starting work with "
                              + std::to_string(m_count) + '/' + std::to_string(m_capacity));
                 break;
-            case MachineMessageType::CheckForErrors:
+            case MachineMessageType::CHECK_FOR_ERRORS:
                 if (message->getCallback() != nullptr)
                 {
                     std::pair<ComponentMessageType, std::string> result = checkCount();
@@ -146,7 +146,7 @@ namespace simulator
                     callback(std::make_shared<ComponentMessage>(result.first, result.second));
                 }
                 break;
-            case MachineMessageType::Stopping:
+            case MachineMessageType::STOPPING:
                 m_logger.Log("Stopping work with "
                              + std::to_string(m_count) + '/' + std::to_string(m_capacity));
                 break;

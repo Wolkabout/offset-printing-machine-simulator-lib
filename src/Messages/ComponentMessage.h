@@ -11,7 +11,7 @@ namespace simulator
 {
     enum class ComponentMessageType
     {
-        Neutral, Alarming, Severe
+        NEUTRAL, ALARMING, SEVERE
     };
 
     /*

@@ -55,15 +55,15 @@ namespace simulator
     {
         if (m_running)
         {
-            return {ActionStatusType::Message, "Machine is already m_running."};
+            return {ActionStatusType::MESSAGE, "Machine is already m_running."};
         }
 
         ActionStatusMessage result = checkForErrors(true);
-        if (result.getType() == ActionStatusType::Good)
+        if (result.getType() == ActionStatusType::GOOD)
         {
             // Notify all the m_components that we are starting
             m_running = true;
-            this->EmitToComponents(MachineMessageType::Starting, "", nullptr);
+            this->EmitToComponents(MachineMessageType::STARTING, "", nullptr);
 
             // Notify all the external listeners that we are starting up
             for (auto& externalMachineStateReceiver : m_externalMachineStateReceivers)
@@ -71,7 +71,7 @@ namespace simulator
                 externalMachineStateReceiver->ReceiveMachineState(true);
             }
 
-            return {ActionStatusType::Good, ""};
+            return {ActionStatusType::GOOD, ""};
         }
 
         // If there was an error, return it
@@ -82,13 +82,13 @@ namespace simulator
     {
         if (!m_running)
         {
-            return {ActionStatusType::Message, "Machine is already stopped."};
+            return {ActionStatusType::MESSAGE, "Machine is already stopped."};
         }
 
         m_running = false;
 
         // Notify all the m_components that we are shutting down
-        this->EmitToComponents(MachineMessageType::Stopping, "", nullptr);
+        this->EmitToComponents(MachineMessageType::STOPPING, "", nullptr);
 
         // Notify all the external listeners that we are shutting down
         for (auto& externalMachineStateReceiver : m_externalMachineStateReceivers)
@@ -96,14 +96,14 @@ namespace simulator
             externalMachineStateReceiver->ReceiveMachineState(false);
         }
 
-        return {ActionStatusType::Good, ""};
+        return {ActionStatusType::GOOD, ""};
     }
 
     ActionStatusMessage Machine::checkForErrors(bool starting = false)
     {
         if (m_running)
         {
-            return {ActionStatusType::Message, "Machine is already m_running."};
+            return {ActionStatusType::MESSAGE, "Machine is already m_running."};
         }
 
         try
@@ -114,7 +114,7 @@ namespace simulator
                 m_logger.Log("(CFE) " + std::to_string(static_cast<double>(message->getType())) +
                              " | " + message->getContent());
                 // If it's notification worthy
-                if (message->getType() != ComponentMessageType::Neutral && starting)
+                if (message->getType() != ComponentMessageType::NEUTRAL && starting)
                 {
                     for (auto& externalMessageReceiver : m_externalMessageReceivers)
                     {
@@ -123,22 +123,22 @@ namespace simulator
                 }
 
                 // If it's breaking
-                if (message->getType() == ComponentMessageType::Severe)
+                if (message->getType() == ComponentMessageType::SEVERE)
                 {
                     throw std::runtime_error(message->getContent());
                 }
             };
 
             // Send the message to each component
-            this->EmitToComponents(MachineMessageType::CheckForErrors, "", callback);
+            this->EmitToComponents(MachineMessageType::CHECK_FOR_ERRORS, "", callback);
 
-            return {ActionStatusType::Good, ""};
+            return {ActionStatusType::GOOD, ""};
         }
         catch (const std::exception& e)
         {
             m_logger.Log("Machine detected an error.");
             m_logger.Log(const_cast<char *>(e.what()));
-            return {ActionStatusType::Bad, const_cast<char *>(e.what())};
+            return {ActionStatusType::BAD, const_cast<char *>(e.what())};
         }
     }
 
@@ -154,7 +154,7 @@ namespace simulator
             externalMessageReceiver->ReceiveMessage(ptr);
         }
         // stop the machine if necessary
-        if (ptr->getType() == ComponentMessageType::Severe)
+        if (ptr->getType() == ComponentMessageType::SEVERE)
         {
             stop();
         }

@@ -14,7 +14,7 @@ namespace simulator
 {
     enum class MachineMessageType
     {
-        Starting, Stopping, CheckForErrors
+        STARTING, STOPPING, CHECK_FOR_ERRORS
     };
 
     /*
