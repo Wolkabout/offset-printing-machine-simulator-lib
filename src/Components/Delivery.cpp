@@ -42,20 +42,20 @@ Delivery::Delivery(const std::string& name, ComponentMessageReceiver& machine, i
 }
 
 std::pair<ComponentMessageType, std::string> Delivery::checkCount() {
-    ComponentMessageType type = Neutral;
+    ComponentMessageType type = ComponentMessageType::Neutral;
     std::string content;
     if (m_count == m_capacity) {
-        type = Severe;
+        type = ComponentMessageType::Severe;
         content = m_wFull;
         m_warning90 = true;
         m_warning80 = true;
     } else if ((m_capacity / 10) * 9 <= m_count && !m_warning90) {
-        type = Alarming;
+        type = ComponentMessageType::Alarming;
         content = m_w90;
         m_warning90 = true;
         m_warning80 = true;
     } else if ((m_capacity / 5) * 4 <= m_count && !m_warning80) {
-        type = Alarming;
+        type = ComponentMessageType::Alarming;
         content = m_w80;
         m_warning80 = true;
     }
@@ -64,16 +64,16 @@ std::pair<ComponentMessageType, std::string> Delivery::checkCount() {
 
 bool Delivery::checkCountAndEmit() {
     std::pair<ComponentMessageType, std::string> result = checkCount();
-    if (result.first != Neutral) {
+    if (result.first != ComponentMessageType::Neutral) {
         Emit(result.first, result.second);
-        return result.first != Severe;
+        return result.first != ComponentMessageType::Severe;
     }
     return true;
 }
 
 bool Delivery::modifyCount(int i) {
     if (m_count < i) {
-        Emit(Alarming, "You can\'t take more paper than there is here.");
+        Emit(ComponentMessageType::Alarming, "You can\'t take more paper than there is here.");
         return false;
     }
 
@@ -92,7 +92,7 @@ bool Delivery::setCount(int i) {
 
 bool Delivery::iterate() {
     if (!((Machine &) m_machine).isRunning()) {
-        Emit(Severe, "You can\'t take paper, the machine isn\'t runing.");
+        Emit(ComponentMessageType::Severe, "You can\'t take paper, the machine isn\'t runing.");
         return false;
     }
     if (checkCountAndEmit()) {
@@ -107,17 +107,17 @@ bool Delivery::iterate() {
 void Delivery::ReceiveMachineStateMessage(std::shared_ptr<MachineStateMessage> message) {
 //    m_logger.Log("(SM) " + std::to_string(message->getType()) + " | " + message->getContent());
     switch (message->getType()) {
-        case Starting:
+        case MachineMessageType::Starting:
             m_logger.Log("Starting work with " + std::to_string(m_count) + '/' + std::to_string(m_capacity));
             break;
-        case CheckForErrors:
+        case MachineMessageType::CheckForErrors:
             if (message->getCallback() != nullptr) {
                 std::pair<ComponentMessageType, std::string> result = checkCount();
                 std::function<void(std::shared_ptr<ComponentMessage>)> callback = message->getCallback();
                 callback(std::make_shared<ComponentMessage>(result.first, result.second));
             }
             break;
-        case Stopping:
+        case MachineMessageType::Stopping:
             m_logger.Log("Stopping work with " + std::to_string(m_count) + '/' + std::to_string(m_capacity));
             break;
     }

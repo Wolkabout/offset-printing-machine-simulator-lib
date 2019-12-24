@@ -41,20 +41,20 @@ PaintStation::PaintStation(std::string name, ComponentMessageReceiver& machine, 
 }
 
 std::pair<ComponentMessageType, std::string> PaintStation::checkCount() {
-    ComponentMessageType type = Neutral;
+    ComponentMessageType type = ComponentMessageType::Neutral;
     std::string content;
     if (m_count == 0) {
-        type = Severe;
+        type = ComponentMessageType::Severe;
         content = m_wEmpty;
         m_warning10 = true;
         m_warning20 = true;
     } else if (m_capacity / 10 > m_count && !m_warning10) {
-        type = Alarming;
+        type = ComponentMessageType::Alarming;
         content = m_w10;
         m_warning10 = true;
         m_warning20 = true;
     } else if (m_capacity / 5 > m_count && !m_warning20) {
-        type = Alarming;
+        type = ComponentMessageType::Alarming;
         content = m_w20;
         m_warning20 = true;
     }
@@ -63,16 +63,16 @@ std::pair<ComponentMessageType, std::string> PaintStation::checkCount() {
 
 bool PaintStation::checkCountAndEmit() {
     std::pair<ComponentMessageType, std::string> result = checkCount();
-    if (result.first != Neutral) {
+    if (result.first != ComponentMessageType::Neutral) {
         Emit(result.first, result.second);
-        return result.first != Severe;
+        return result.first != ComponentMessageType::Severe;
     }
     return true;
 }
 
 bool PaintStation::modifyCount(int i) {
     if (m_capacity - m_count < i) {
-        Emit(Alarming, "You can\'t put more paint than there's room for.");
+        Emit(ComponentMessageType::Alarming, "You can\'t put more paint than there's room for.");
         return false;
     }
 
@@ -91,7 +91,7 @@ bool PaintStation::setCount(int i) {
 
 bool PaintStation::iterate() {
     if (!((Machine &) m_machine).isRunning()) {
-        Emit(Severe, "You can\'t take paint, the machine isn\'t m_running.");
+        Emit(ComponentMessageType::Severe, "You can\'t take paint, the machine isn\'t m_running.");
         return false;
     }
     if (checkCountAndEmit()) {
@@ -105,17 +105,17 @@ bool PaintStation::iterate() {
 void PaintStation::ReceiveMachineStateMessage(std::shared_ptr<MachineStateMessage> message) {
 //    m_logger.Log("(SM) " + std::to_string(message->getType()) + " | " + message->getContent());
     switch (message->getType()) {
-        case Starting:
+        case MachineMessageType::Starting:
             m_logger.Log("Starting work with " + std::to_string(m_count) + '/' + std::to_string(m_capacity));
             break;
-        case CheckForErrors:
+        case MachineMessageType::CheckForErrors:
             if (message->getCallback() != nullptr) {
                 std::pair<ComponentMessageType, std::string> result = checkCount();
                 std::function<void(std::shared_ptr<ComponentMessage>)> callback = message->getCallback();
                 callback(std::make_shared<ComponentMessage>(result.first, result.second));
             }
             break;
-        case Stopping:
+        case MachineMessageType::Stopping:
             m_logger.Log("Stopping work with " + std::to_string(m_count) + '/' + std::to_string(m_capacity));
             break;
     }

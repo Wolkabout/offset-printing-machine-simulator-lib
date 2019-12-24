@@ -44,21 +44,21 @@ void Machine::addComponent(std::shared_ptr<MachineStateMessageReceiver> componen
 
 ActionStatusMessage Machine::start() {
     if (m_running) {
-        return {message, "Machine is already m_running."};
+        return {ActionStatusType::message, "Machine is already m_running."};
     }
 
     ActionStatusMessage result = checkForErrors(true);
-    if (result.getType() == good) {
+    if (result.getType() == ActionStatusType::good) {
         // Notify all the m_components that we are starting
         m_running = true;
-        this->EmitToComponents(Starting, "", nullptr);
+        this->EmitToComponents(MachineMessageType::Starting, "", nullptr);
 
         // Notify all the external listeners that we are starting up
         for (auto &externalMachineStateReceiver : m_externalMachineStateReceivers) {
             externalMachineStateReceiver->ReceiveMachineState(true);
         }
 
-        return {good, ""};
+        return {ActionStatusType::good, ""};
     }
 
     // If there was an error, return it
@@ -67,41 +67,42 @@ ActionStatusMessage Machine::start() {
 
 ActionStatusMessage Machine::stop() {
     if (!m_running) {
-        return {message, "Machine is already stopped."};
+        return {ActionStatusType::message, "Machine is already stopped."};
     }
 
     m_running = false;
 
     // Notify all the m_components that we are shutting down
-    this->EmitToComponents(Stopping, "", nullptr);
+    this->EmitToComponents(MachineMessageType::Stopping, "", nullptr);
 
     // Notify all the external listeners that we are shutting down
     for (auto &externalMachineStateReceiver : m_externalMachineStateReceivers) {
         externalMachineStateReceiver->ReceiveMachineState(false);
     }
 
-    return {good, ""};
+    return {ActionStatusType::good, ""};
 }
 
 ActionStatusMessage Machine::checkForErrors(bool starting = false) {
     if (m_running) {
-        return {message, "Machine is already m_running."};
+        return {ActionStatusType::message, "Machine is already m_running."};
     }
 
     try {
         // Check all m_components if they're working
         // Generate the callback for component reply
         auto callback = [&](const std::shared_ptr<ComponentMessage> &message) {
-            m_logger.Log("(CFE) " + std::to_string(message->getType()) + " | " + message->getContent());
+            m_logger.Log("(CFE) " + std::to_string(static_cast<double>(message->getType())) +
+            " | " + message->getContent());
             // If it's notification worthy
-            if (message->getType() != Neutral && starting) {
+            if (message->getType() != ComponentMessageType::Neutral && starting) {
                 for (auto &externalMessageReceiver : m_externalMessageReceivers) {
                     externalMessageReceiver->ReceiveMessage(message);
                 }
             }
 
             // If it's breaking
-            if (message->getType() == Severe) {
+            if (message->getType() == ComponentMessageType::Severe) {
                 throw std::runtime_error(message->getContent());
             }
         };
@@ -109,18 +110,18 @@ ActionStatusMessage Machine::checkForErrors(bool starting = false) {
         // Send the message to each component
         this->EmitToComponents(MachineMessageType::CheckForErrors, "", callback);
 
-        return {good, ""};
+        return {ActionStatusType::good, ""};
     }
     catch (const std::exception &e) {
         m_logger.Log("Machine detected an error.");
         m_logger.Log(const_cast<char *>(e.what()));
-        return {bad, const_cast<char *>(e.what())};
+        return {ActionStatusType::bad, const_cast<char *>(e.what())};
     }
 }
 
 void Machine::receiveMessages(std::shared_ptr<ComponentMessage> ptr) {
     // Write it to console
-    m_logger.Log("(E) " + std::to_string(ptr->getType()) + " | " + ptr->getContent());
+    m_logger.Log("(E) " + std::to_string(static_cast<double>(ptr->getType())) + " | " + ptr->getContent());
     // Add to the vector of m_messages
     m_messages.push_back(ptr);
     // Notify all the external listeners
@@ -128,7 +129,7 @@ void Machine::receiveMessages(std::shared_ptr<ComponentMessage> ptr) {
         externalMessageReceiver->ReceiveMessage(ptr);
     }
     // stop the machine if necessary
-    if (ptr->getType() == Severe) {
+    if (ptr->getType() == ComponentMessageType::Severe) {
         stop();
     }
 }

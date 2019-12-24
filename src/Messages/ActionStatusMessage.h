@@ -7,7 +7,7 @@
 
 #include <string>
 
-enum ActionStatusType {
+enum class ActionStatusType {
     good, bad, message
 };
 

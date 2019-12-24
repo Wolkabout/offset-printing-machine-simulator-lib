@@ -8,7 +8,7 @@
 #include <functional>
 #include "ComponentMessage.h"
 
-enum MachineMessageType {
+enum class MachineMessageType {
     Starting, Stopping, CheckForErrors
 };
 

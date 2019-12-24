@@ -7,7 +7,7 @@
 
 #include <string>
 
-enum ComponentMessageType {
+enum class ComponentMessageType {
     Neutral, Alarming, Severe
 };
 

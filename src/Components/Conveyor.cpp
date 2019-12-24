@@ -76,7 +76,7 @@ void Conveyor::runTempo() {
 void Conveyor::ReceiveMachineStateMessage(std::shared_ptr<MachineStateMessage> message) {
 //    m_logger.Log("(SM) " + std::to_string(message->getType()) + " | " + message->getContent());
     switch (message->getType()) {
-        case Starting:
+        case MachineMessageType::Starting:
             m_components.clear();
             for (std::shared_ptr<MachineStateMessageReceiver> component : ((Machine &) m_machine).getComponents()) {
                 m_logger.Log("Found component " + ((TempoComponent &) *component.get()).getName());
@@ -91,13 +91,13 @@ void Conveyor::ReceiveMachineStateMessage(std::shared_ptr<MachineStateMessage> m
             m_logger.Log("(SM) Found " + std::to_string(m_components.size()) + " tempo m_components!");
             m_loop = std::thread(&Conveyor::runTempo, this);
             break;
-        case CheckForErrors:
+        case MachineMessageType::CheckForErrors:
             if (message->getCallback() != nullptr) {
                 std::function<void(std::shared_ptr<ComponentMessage>)> callback = message->getCallback();
-                callback(std::make_shared<ComponentMessage>(Neutral, ""));
+                callback(std::make_shared<ComponentMessage>(ComponentMessageType::Neutral, ""));
             }
             break;
-        case Stopping:
+        case MachineMessageType::Stopping:
             m_runningLoop = false;
             m_loop.detach();
             break;
