@@ -61,7 +61,7 @@ namespace simulator
         if (maxRatePerHour < m_minRatePerHour)
         {
             throw std::invalid_argument(
-                    "You can\'t put a rate lower than the minimut rate per hour! (" +
+                    "You can\'t put a rate lower than the minimum rate per hour! (" +
                     std::to_string(m_minRatePerHour) + ')');
         }
         if (initialRatePerHour > maxRatePerHour)
@@ -116,7 +116,7 @@ namespace simulator
                 }
                 m_runningLoop = true;
                 m_logger.Log("(SM) Found "
-                             + std::to_string(m_components.size()) + " tempo m_components!");
+                             + std::to_string(m_components.size()) + " tempo components!");
                 m_loop = std::thread(&Conveyor::runTempo, this);
                 break;
             case MachineMessageType::CHECK_FOR_ERRORS:

@@ -55,7 +55,7 @@ namespace simulator
     {
         if (m_running)
         {
-            return {ActionStatusType::MESSAGE, "Machine is already m_running."};
+            return {ActionStatusType::MESSAGE, "Machine is already running."};
         }
 
         ActionStatusMessage result = checkForErrors(true);
@@ -103,7 +103,7 @@ namespace simulator
     {
         if (m_running)
         {
-            return {ActionStatusType::MESSAGE, "Machine is already m_running."};
+            return {ActionStatusType::MESSAGE, "Machine is already running."};
         }
 
         try

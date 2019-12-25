@@ -37,7 +37,7 @@ namespace simulator
         }
         if (initialCount < 0 || initialCount > capacity)
         {
-            throw std::invalid_argument("Your initial amount of paper must fit in the m_capacity!");
+            throw std::invalid_argument("Your initial amount of paper must fit in the capacity!");
         }
 
         m_w80 = "The " + std::string(name) + " is 80% full.";
@@ -117,7 +117,7 @@ namespace simulator
         if (!((Machine&) m_machine).isRunning())
         {
             Emit(ComponentMessageType::SEVERE,
-                    "You can\'t take paper, the machine isn\'t runing.");
+                    "You can\'t take paper, the machine isn\'t running.");
             return false;
         }
         if (checkCountAndEmit())
